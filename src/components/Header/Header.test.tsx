@@ -8,7 +8,7 @@ describe("Given a Header Component", () => {
 
       render(<Header title={text} />);
 
-      const foundTitle = screen.queryByRole("heading", { text: text });
+      const foundTitle = screen.getByText(text);
 
       expect(foundTitle).toBeInTheDocument();
     });
