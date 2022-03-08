@@ -1,8 +1,16 @@
-const Header = (title: string): JSX.Element => {
+import styled from "styled-components";
+import { primary } from "../../styles/globalStyles";
+
+const TitlePage = styled.h1`
+  font-size: 22px;
+  color: ${primary};
+`;
+
+const Header = (): JSX.Element => {
   return (
     <>
-      <h1>{title}</h1>
-      <img width={"22px"} src="favicon.ico" alt="Skybuzz logo" />
+      <TitlePage>title</TitlePage>
+      <img width={"22px"} src="images/favicon.png" alt="Skybuzz logo" />
       <img
         width={"26px"}
         src="./images/burger-menu.png"
