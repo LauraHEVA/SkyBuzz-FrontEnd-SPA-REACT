@@ -8,6 +8,7 @@ const TitlePage = styled.h1`
 
 const ContainerHeader = styled.div`
   background-color: ${secondary};
+  height: 60px;
 `;
 
 interface TitleProps {
