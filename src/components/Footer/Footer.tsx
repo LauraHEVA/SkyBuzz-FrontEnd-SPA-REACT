@@ -1,10 +1,16 @@
 import styled from "styled-components";
-import { secondary } from "../../styles/globalStyles";
+import { primary, secondary } from "../../styles/globalStyles";
+import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
+import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
 
 const ContainerFooter = styled.div`
   background-color: ${secondary};
   height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid ${primary};
 `;
 
 const Footer = (): JSX.Element => {
@@ -12,6 +18,8 @@ const Footer = (): JSX.Element => {
     <>
       <ContainerFooter className="container">
         <UserIcon />
+        <HomeIcon />
+        <AllUsersIcon />
       </ContainerFooter>
     </>
   );
