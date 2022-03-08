@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { secondary } from "../../styles/globalStyles";
+import UserIcon from "../UserIcon/UserIcon";
 
 const ContainerFooter = styled.div`
   background-color: ${secondary};
@@ -9,7 +10,9 @@ const ContainerFooter = styled.div`
 const Footer = (): JSX.Element => {
   return (
     <>
-      <ContainerFooter className="container"></ContainerFooter>
+      <ContainerFooter className="container">
+        <UserIcon />
+      </ContainerFooter>
     </>
   );
 };

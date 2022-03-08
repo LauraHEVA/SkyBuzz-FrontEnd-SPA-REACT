@@ -1,4 +1,5 @@
 import Header from "../components/Header/Header";
+import UserIcon from "../components/UserIcon/UserIcon";
 
 const HomePage = () => {
   return (
@@ -6,6 +7,7 @@ const HomePage = () => {
       <Header title="Buzzs" />
       <p>List of messages here</p>
       <p>Footer Here</p>
+      <UserIcon />
     </>
   );
 };
