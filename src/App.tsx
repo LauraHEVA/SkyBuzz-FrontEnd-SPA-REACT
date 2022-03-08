@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={"placeholder <LoginPage>"} />
       <Route path="/register" element={"placeholder <RegisterPage>"} />
-      <Route path="/home" element={"placeholder <HomePage>"} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="*" element={"<NotFoundPage />"} />
     </Routes>
   );
