@@ -9,6 +9,10 @@ const TitlePage = styled.h1`
 const ContainerHeader = styled.div`
   background-color: ${secondary};
   height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid ${primary};
 `;
 
 interface TitleProps {
