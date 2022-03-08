@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { primary, secondary } from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
@@ -27,21 +28,21 @@ const Footer = (): JSX.Element => {
         <nav>
           <ListNav>
             <ListItem>
-              <a href="./login">
+              <Link to="./login">
                 {" "}
                 <UserIcon />
-              </a>
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="./home">
+              <Link to="./home">
                 {" "}
                 <HomeIcon />
-              </a>
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="./buzzers">
+              <Link to="./buzzers">
                 <AllUsersIcon />
-              </a>
+              </Link>
             </ListItem>
           </ListNav>
         </nav>
