@@ -28,19 +28,19 @@ const Footer = (): JSX.Element => {
         <nav>
           <ListNav>
             <ListItem>
-              <Link to="./login">
+              <Link to="/login">
                 {" "}
                 <UserIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="./home">
+              <Link to="/home">
                 {" "}
                 <HomeIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="./buzzers">
+              <Link to="/buzzers">
                 <AllUsersIcon />
               </Link>
             </ListItem>
