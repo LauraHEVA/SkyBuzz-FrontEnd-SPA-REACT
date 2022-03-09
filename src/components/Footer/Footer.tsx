@@ -4,7 +4,7 @@ import {
   ListItem,
   ListUlHorizontal,
 } from "../../styles/globalStyledComponents";
-import { primary, secondary } from "../../styles/globalStyles";
+import { grey, primary, secondary } from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
@@ -12,8 +12,9 @@ import UserIcon from "../UserIcon/UserIcon";
 const ContainerFooter = styled.div`
   background-color: ${secondary};
   height: 60px;
-  border-top: 2px solid ${primary};
+  border-top: 1px solid ${primary};
   padding: 0 15px;
+  box-shadow: 0 -4px 10px ${grey};
 `;
 
 const Footer = (): JSX.Element => {
