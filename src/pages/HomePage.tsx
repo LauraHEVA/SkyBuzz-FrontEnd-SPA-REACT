@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../types/buzzInterfaces";
 import {
+  ContainerFooter,
+  ContainerHeader,
   ContainerListBuzzs,
   ListItem,
   ListUlVert,
@@ -22,8 +24,11 @@ const HomePage = () => {
 
   return (
     <>
-      <Header title="Buzzs" />
-      <h2>List of messages here</h2>
+      <ContainerHeader>
+        <Header title="Buzzs" />
+      </ContainerHeader>
+
+      <h2>Aqui: Menu desplegable con categorias</h2>
       <ContainerListBuzzs>
         <ListUlVert>
           {buzzsList.map((buzz: BuzzObject) => {
@@ -35,7 +40,9 @@ const HomePage = () => {
           })}
         </ListUlVert>
       </ContainerListBuzzs>
-      <Footer />
+      <ContainerFooter>
+        <Footer />
+      </ContainerFooter>
     </>
   );
 };
