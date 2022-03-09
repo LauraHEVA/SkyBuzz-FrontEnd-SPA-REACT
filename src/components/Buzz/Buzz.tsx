@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 interface BuzzProps {
   buzz: BuzzObject;
 }
@@ -11,6 +13,17 @@ interface BuzzObject {
   id: string;
 }
 
+const ListUl = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+`;
+
+const ListItem = styled.li`
+  list-style: none;
+`;
+
 const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
   return (
     <>
@@ -18,11 +31,11 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
       <p>{buzz.text}</p>
       <p>#{buzz.category}</p>
       <div>
-        <ul>
-          <li>1h</li>
-          <li>icono comment</li>
-          <li>heart</li>
-        </ul>
+        <ListUl>
+          <ListItem>1h</ListItem>
+          <ListItem>icono comment</ListItem>
+          <ListItem>heart</ListItem>
+        </ListUl>
       </div>
     </>
   );
