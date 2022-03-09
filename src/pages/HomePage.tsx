@@ -27,8 +27,10 @@ const HomePage = () => {
       <ContainerHeader>
         <Header title="Buzzs" />
       </ContainerHeader>
+      <div>
+        <h3>Menu desplegable categorias</h3>
+      </div>
 
-      <h2>Aqui: Menu desplegable con categorias</h2>
       <ContainerListBuzzs>
         <ListUlVert>
           {buzzsList.map((buzz: BuzzObject) => {

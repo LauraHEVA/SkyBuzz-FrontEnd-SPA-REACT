@@ -20,6 +20,8 @@ export const ListUlVert = styled.ul`
 export const ContainerListBuzzs = styled.div`
   margin-left: 15px;
   margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 70px;
 `;
 
 export const ContainerFooter = styled.div`
