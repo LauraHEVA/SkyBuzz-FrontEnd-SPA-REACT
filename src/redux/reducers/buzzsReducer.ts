@@ -1,7 +1,25 @@
-import { BuzzsArrayProps } from "../../types/buzzInterfaces";
+import {
+  BuzzObject,
+  LoadAllBuzsActionInterface,
+} from "../../types/buzzInterfaces";
+import actionsType from "../actions/actionsType";
 
-const buzzsReducer = (buzzs: BuzzsArrayProps = [], action: {}) => {
-  let newBuzzsList;
+const buzzsReducer = (
+  currentBuzzs: BuzzObject[] = [],
+  action: LoadAllBuzsActionInterface = { type: "", buzzs: [] }
+) => {
+  let newBuzzsList: BuzzObject[];
+
+  switch (action.type) {
+    case actionsType.loadAllBuzzs:
+      newBuzzsList = [...action.buzzs];
+      break;
+
+    default:
+      newBuzzsList = [...currentBuzzs];
+      break;
+  }
+  return newBuzzsList;
 };
 
 export default buzzsReducer;
