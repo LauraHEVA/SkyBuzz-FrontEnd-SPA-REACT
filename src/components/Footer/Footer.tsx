@@ -21,7 +21,6 @@ const ListNav = styled.ul`
 
 const ListItem = styled.li`
   list-style: none;
-  padding-left: 0;
 `;
 
 const Footer = (): JSX.Element => {

@@ -9,10 +9,20 @@ const TitlePage = styled.h1`
 const ContainerHeader = styled.div`
   background-color: ${secondary};
   height: 60px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   border-bottom: 2px solid ${primary};
+  padding: 0 15px;
+`;
+
+const ListNav = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+`;
+
+const ListItem = styled.li`
+  list-style: none;
+  padding-left: 0;
 `;
 
 interface TitleProps {
@@ -23,13 +33,23 @@ const Header = ({ title }: TitleProps): JSX.Element => {
   return (
     <>
       <ContainerHeader className="container">
-        <TitlePage>{title}</TitlePage>
-        <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
-        <img
-          width="30px"
-          src="images/burger-menu.png"
-          alt="menu with 'about us' and logout options"
-        />
+        <nav>
+          <ListNav>
+            <ListItem>
+              <TitlePage>{title}</TitlePage>
+            </ListItem>
+            <ListItem>
+              <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
+            </ListItem>
+            <ListItem>
+              <img
+                width="30px"
+                src="images/burger-menu.png"
+                alt="menu with 'about us' and logout options"
+              />
+            </ListItem>
+          </ListNav>
+        </nav>
       </ContainerHeader>
     </>
   );
