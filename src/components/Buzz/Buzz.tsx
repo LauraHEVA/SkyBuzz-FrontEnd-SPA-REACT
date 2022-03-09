@@ -17,11 +17,29 @@ interface BuzzObject {
   id: string;
 }
 
+const MainContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
+const ProfileContainer = styled.div``;
+
+const ProfileCircle = styled.div`
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: ${grey};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const TextAuthor = styled.p`
   color: ${primary};
   font-weight: 900;
   font-size: 14px;
   text-shadow: 0 3px 3px ${grey};
+  margin-top: 0;
 `;
 
 const TextBuzz = styled.p`
@@ -43,22 +61,31 @@ const TextTimeAgo = styled.span`
 const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
   return (
     <>
-      <TextAuthor>{buzz.author}</TextAuthor>
-      <TextBuzz>{buzz.text}</TextBuzz>
-      <TextCategory>#{buzz.category}</TextCategory>
-      <div>
-        <ListUl>
-          <ListItem>
-            <TextTimeAgo>1h</TextTimeAgo>
-          </ListItem>
-          <ListItem>
-            <CommentIcon />
-          </ListItem>
-          <ListItem>
-            <HeartIcon />
-          </ListItem>
-        </ListUl>
-      </div>
+      <MainContainer>
+        <ProfileContainer>
+          <ProfileCircle>
+            {buzz.author.substring(0, 2).toUpperCase()}
+          </ProfileCircle>
+        </ProfileContainer>
+
+        <div>
+          <TextAuthor>{buzz.author}</TextAuthor>
+          <TextBuzz>{buzz.text}</TextBuzz>
+          <TextCategory>#{buzz.category}</TextCategory>
+
+          <ListUl>
+            <ListItem>
+              <TextTimeAgo>1h</TextTimeAgo>
+            </ListItem>
+            <ListItem>
+              <CommentIcon />
+            </ListItem>
+            <ListItem>
+              <HeartIcon />
+            </ListItem>
+          </ListUl>
+        </div>
+      </MainContainer>
     </>
   );
 };
