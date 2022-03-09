@@ -10,3 +10,7 @@ export interface BuzzObject {
   date: string;
   id: string;
 }
+
+export interface BuzzsProps {
+  buzzs: BuzzObject[];
+}
