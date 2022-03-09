@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { ListItem, ListUl } from "../../styles/globalStyledComponents";
 import { grey, primary } from "../../styles/globalStyles";
+import CommentIcon from "../CommentIcon/CommentIcon";
+import HeartIcon from "../HeartIcon/HeartIcon";
 
 interface BuzzProps {
   buzz: BuzzObject;
@@ -49,8 +51,12 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
           <ListItem>
             <TextTimeAgo>1h</TextTimeAgo>
           </ListItem>
-          <ListItem>icono comment</ListItem>
-          <ListItem>heart</ListItem>
+          <ListItem>
+            <CommentIcon />
+          </ListItem>
+          <ListItem>
+            <HeartIcon />
+          </ListItem>
         </ListUl>
       </div>
     </>
