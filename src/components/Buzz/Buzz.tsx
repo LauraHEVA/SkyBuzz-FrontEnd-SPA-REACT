@@ -17,12 +17,12 @@ const MainContainer = styled.div`
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid ${greyLight};
-  margin-bottom: 7px;
+  margin-bottom: 20px;
   width: 100%;
 `;
 
 const ProfileContainer = styled.div`
-  padding: 8px;
+  padding-right: 5px;
 `;
 
 const ProfileCircle = styled.div`

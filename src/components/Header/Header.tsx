@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
-import { primary, secondary } from "../../styles/globalStyles";
+import { grey, primary, secondary } from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
   font-size: 22px;
@@ -10,8 +10,9 @@ const TitlePage = styled.h1`
 const ContainerHeader = styled.div`
   background-color: ${secondary};
   height: 60px;
-  border-bottom: 2px solid ${primary};
+  border-bottom: 1px solid ${primary};
   padding: 0 15px;
+  box-shadow: 0 4px 10px ${grey};
 `;
 
 const ListItem = styled.li`
@@ -26,7 +27,7 @@ interface TitleProps {
 const Header = ({ title }: TitleProps): JSX.Element => {
   return (
     <>
-      <ContainerHeader className="container">
+      <ContainerHeader>
         <nav>
           <ListUlHorizontal>
             <ListItem>
