@@ -9,16 +9,19 @@ const ContainerFooter = styled.div`
   background-color: ${secondary};
   height: 60px;
   border-top: 2px solid ${primary};
+  padding: 0 15px;
 `;
 
 const ListNav = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding-left: 0;
 `;
 
 const ListItem = styled.li`
   list-style: none;
+  padding-left: 0;
 `;
 
 const Footer = (): JSX.Element => {
@@ -28,19 +31,19 @@ const Footer = (): JSX.Element => {
         <nav>
           <ListNav>
             <ListItem>
-              <Link to="./login">
+              <Link to="/login">
                 {" "}
                 <UserIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="./home">
+              <Link to="/home">
                 {" "}
                 <HomeIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="./buzzers">
+              <Link to="/buzzers">
                 <AllUsersIcon />
               </Link>
             </ListItem>
