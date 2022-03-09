@@ -33,6 +33,11 @@ const TextCategory = styled.p`
   font-size: 12px;
 `;
 
+const TextTimeAgo = styled.span`
+  color: ${primary};
+  font-size: 14px;
+`;
+
 const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
   return (
     <>
@@ -41,7 +46,9 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
       <TextCategory>#{buzz.category}</TextCategory>
       <div>
         <ListUl>
-          <ListItem>1h</ListItem>
+          <ListItem>
+            <TextTimeAgo>1h</TextTimeAgo>
+          </ListItem>
           <ListItem>icono comment</ListItem>
           <ListItem>heart</ListItem>
         </ListUl>
