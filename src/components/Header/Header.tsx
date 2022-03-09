@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ListUl } from "../../styles/globalStyledComponents";
+import { ListUlHorizontal } from "../../styles/globalStyledComponents";
 import { primary, secondary } from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
@@ -28,7 +28,7 @@ const Header = ({ title }: TitleProps): JSX.Element => {
     <>
       <ContainerHeader className="container">
         <nav>
-          <ListUl>
+          <ListUlHorizontal>
             <ListItem>
               <TitlePage>{title}</TitlePage>
             </ListItem>
@@ -42,7 +42,7 @@ const Header = ({ title }: TitleProps): JSX.Element => {
                 alt="menu three lines"
               />
             </ListItem>
-          </ListUl>
+          </ListUlHorizontal>
         </nav>
       </ContainerHeader>
     </>

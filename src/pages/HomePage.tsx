@@ -6,7 +6,11 @@ import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../types/buzzInterfaces";
-import { ListItem } from "../styles/globalStyledComponents";
+import {
+  ContainerListBuzzs,
+  ListItem,
+  ListUlVert,
+} from "../styles/globalStyledComponents";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -20,16 +24,17 @@ const HomePage = () => {
     <>
       <Header title="Buzzs" />
       <h2>List of messages here</h2>
-      <ul>
-        {buzzsList.map((buzz: BuzzObject) => {
-          return (
-            <ListItem key={buzz.id}>
-              <Buzz buzz={buzz} />
-            </ListItem>
-          );
-        })}
-      </ul>
-
+      <ContainerListBuzzs>
+        <ListUlVert>
+          {buzzsList.map((buzz: BuzzObject) => {
+            return (
+              <ListItem key={buzz.id}>
+                <Buzz buzz={buzz} />
+              </ListItem>
+            );
+          })}
+        </ListUlVert>
+      </ContainerListBuzzs>
       <Footer />
     </>
   );
