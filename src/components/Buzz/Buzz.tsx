@@ -72,7 +72,7 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
       <MainContainer>
         <ProfileContainer>
           <ProfileCircle>
-            {buzz.author.substring(0, 2).toUpperCase()}
+            <span>{buzz.author.substring(0, 2).toUpperCase()}</span>
           </ProfileCircle>
         </ProfileContainer>
 
