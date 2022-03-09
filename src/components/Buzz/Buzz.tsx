@@ -1,21 +1,9 @@
 import styled from "styled-components";
+import { BuzzProps } from "../../interfaces/buzzInterfaces";
 import { ListItem, ListUl } from "../../styles/globalStyledComponents";
 import { grey, greyLight, primary } from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
-
-interface BuzzProps {
-  buzz: BuzzObject;
-}
-interface BuzzObject {
-  category: string;
-  likes: number;
-  comments: number[];
-  author: string;
-  text: string;
-  date: string;
-  id: string;
-}
 
 const MainContainer = styled.div`
   display: flex;
