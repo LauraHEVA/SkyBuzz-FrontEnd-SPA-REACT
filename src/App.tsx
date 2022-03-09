@@ -6,7 +6,7 @@ import "@fontsource/nunito";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/login" element={"placeholder <LoginPage>"} />
       <Route path="/register" element={"placeholder <RegisterPage>"} />
       <Route path="/home" element={<HomePage />} />
