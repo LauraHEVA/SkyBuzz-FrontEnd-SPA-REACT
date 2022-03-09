@@ -15,7 +15,15 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
   return (
     <>
       <p>{buzz.author}</p>
-      <p>Buzz</p>
+      <p>{buzz.text}</p>
+      <p>#{buzz.category}</p>
+      <div>
+        <ul>
+          <li>1h</li>
+          <li>icono comment</li>
+          <li>heart</li>
+        </ul>
+      </div>
     </>
   );
 };
