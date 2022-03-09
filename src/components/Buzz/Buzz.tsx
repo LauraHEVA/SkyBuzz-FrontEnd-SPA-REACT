@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import { BuzzProps } from "../../types/buzzInterfaces";
-import { ListItem, ListUl } from "../../styles/globalStyledComponents";
-import { grey, greyLight, primary } from "../../styles/globalStyles";
+import {
+  ListItem,
+  ListUlHorizontal,
+} from "../../styles/globalStyledComponents";
+import {
+  grey,
+  greenCircleAuthor,
+  greyLight,
+  primary,
+} from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
 
@@ -9,18 +17,20 @@ const MainContainer = styled.div`
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid ${greyLight};
-  margin-bottom: 7px;
+  margin-bottom: 20px;
+  width: 100%;
 `;
 
 const ProfileContainer = styled.div`
-  padding: 8px;
+  padding-right: 5px;
 `;
 
 const ProfileCircle = styled.div`
+  font-family: "Permanent Marker";
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: ${grey};
+  background-color: ${greenCircleAuthor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +38,7 @@ const ProfileCircle = styled.div`
 
 const MessageContainer = styled.div`
   padding-left: 8px;
+  width: 100%;
 `;
 
 const TextAuthor = styled.p`
@@ -69,7 +80,7 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
           <TextBuzz>{buzz.text}</TextBuzz>
           <TextCategory>#{buzz.category}</TextCategory>
 
-          <ListUl>
+          <ListUlHorizontal>
             <ListItem>
               <TextTimeAgo>1h</TextTimeAgo>
             </ListItem>
@@ -79,7 +90,7 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
             <ListItem>
               <HeartIcon />
             </ListItem>
-          </ListUl>
+          </ListUlHorizontal>
         </MessageContainer>
       </MainContainer>
     </>

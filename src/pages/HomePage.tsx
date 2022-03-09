@@ -6,6 +6,13 @@ import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../types/buzzInterfaces";
+import {
+  ContainerFooter,
+  ContainerHeader,
+  ContainerListBuzzs,
+  ListItem,
+  ListUlVert,
+} from "../styles/globalStyledComponents";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -17,19 +24,27 @@ const HomePage = () => {
 
   return (
     <>
-      <Header title="Buzzs" />
-      <h2>List of messages here</h2>
-      <ul>
-        {buzzsList.map((buzz: BuzzObject) => {
-          return (
-            <li key={buzz.id}>
-              <Buzz buzz={buzz} />
-            </li>
-          );
-        })}
-      </ul>
+      <ContainerHeader>
+        <Header title="Buzzs" />
+      </ContainerHeader>
+      <div>
+        <h3>Menu desplegable categorias</h3>
+      </div>
 
-      <Footer />
+      <ContainerListBuzzs>
+        <ListUlVert>
+          {buzzsList.map((buzz: BuzzObject) => {
+            return (
+              <ListItem key={buzz.id}>
+                <Buzz buzz={buzz} />
+              </ListItem>
+            );
+          })}
+        </ListUlVert>
+      </ContainerListBuzzs>
+      <ContainerFooter>
+        <Footer />
+      </ContainerFooter>
     </>
   );
 };
