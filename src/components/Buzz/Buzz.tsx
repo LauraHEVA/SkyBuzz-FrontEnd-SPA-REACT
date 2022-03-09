@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ListItem, ListUl } from "../../styles/globalStyledComponents";
+import { grey, primary } from "../../styles/globalStyles";
 
 interface BuzzProps {
   buzz: BuzzObject;
@@ -13,23 +15,30 @@ interface BuzzObject {
   id: string;
 }
 
-const ListUl = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0;
+const TextAuthor = styled.p`
+  color: ${primary};
+  font-weight: 900;
+  font-size: 14px;
+  text-shadow: 0 3px 3px ${grey};
 `;
 
-const ListItem = styled.li`
-  list-style: none;
+const TextBuzz = styled.p`
+  color: ${primary};
+  font-size: 14px;
+`;
+
+const TextCategory = styled.p`
+  color: ${primary};
+  font-weight: 900;
+  font-size: 12px;
 `;
 
 const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
   return (
     <>
-      <p>{buzz.author}</p>
-      <p>{buzz.text}</p>
-      <p>#{buzz.category}</p>
+      <TextAuthor>{buzz.author}</TextAuthor>
+      <TextBuzz>{buzz.text}</TextBuzz>
+      <TextCategory>#{buzz.category}</TextCategory>
       <div>
         <ListUl>
           <ListItem>1h</ListItem>
