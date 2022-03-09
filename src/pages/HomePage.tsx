@@ -6,6 +6,7 @@ import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../types/buzzInterfaces";
+import { ListItem } from "../styles/globalStyledComponents";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -22,9 +23,9 @@ const HomePage = () => {
       <ul>
         {buzzsList.map((buzz: BuzzObject) => {
           return (
-            <li key={buzz.id}>
+            <ListItem key={buzz.id}>
               <Buzz buzz={buzz} />
-            </li>
+            </ListItem>
           );
         })}
       </ul>

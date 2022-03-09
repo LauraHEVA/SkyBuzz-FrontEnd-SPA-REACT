@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { BuzzProps } from "../../types/buzzInterfaces";
 import { ListItem, ListUl } from "../../styles/globalStyledComponents";
-import { grey, greyLight, primary } from "../../styles/globalStyles";
+import {
+  grey,
+  greenCircleAuthor,
+  greyLight,
+  primary,
+} from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
 
@@ -17,10 +22,11 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileCircle = styled.div`
+  font-family: "Permanent Marker";
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: ${grey};
+  background-color: ${greenCircleAuthor};
   display: flex;
   justify-content: center;
   align-items: center;
