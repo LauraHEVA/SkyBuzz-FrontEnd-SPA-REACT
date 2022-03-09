@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BuzzProps } from "../../interfaces/buzzInterfaces";
+import { BuzzProps } from "../../types/buzzInterfaces";
 import { ListItem, ListUl } from "../../styles/globalStyledComponents";
 import { grey, greyLight, primary } from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";

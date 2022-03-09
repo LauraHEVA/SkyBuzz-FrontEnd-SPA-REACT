@@ -1,4 +1,4 @@
-import { BuzzsArrayProps } from "../../interfaces/buzzInterfaces";
+import { BuzzsArrayProps } from "../../types/buzzInterfaces";
 import { loadAllBuzzsAction } from "./actionsCreator";
 
 describe("Given a loadAllBuzzs Action", () => {
