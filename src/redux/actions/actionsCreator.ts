@@ -1,7 +1,7 @@
-import { BuzzsProps } from "../../interfaces/buzzInterfaces";
+import { BuzzsArray } from "../../interfaces/buzzInterfaces";
 import actionsType from "./actionsType";
 
-export const loadAllBuzzs = (buzzs: BuzzsProps) => ({
+export const loadAllBuzzsAction = (buzzs: BuzzsArray) => ({
   type: actionsType.loadAllBuzzs,
   buzzs,
 });

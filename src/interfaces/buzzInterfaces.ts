@@ -11,6 +11,6 @@ export interface BuzzObject {
   id: string;
 }
 
-export interface BuzzsProps {
+export interface BuzzsArrayProps {
   buzzs: BuzzObject[];
 }
