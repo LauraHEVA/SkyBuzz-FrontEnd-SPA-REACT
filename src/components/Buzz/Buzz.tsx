@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ListItem, ListUl } from "../../styles/globalStyledComponents";
-import { grey, primary } from "../../styles/globalStyles";
+import { grey, greyLight, primary } from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
 
@@ -20,9 +20,13 @@ interface BuzzObject {
 const MainContainer = styled.div`
   display: flex;
   align-items: flex-start;
+  border-bottom: 1px solid ${greyLight};
+  margin-bottom: 7px;
 `;
 
-const ProfileContainer = styled.div``;
+const ProfileContainer = styled.div`
+  padding: 8px;
+`;
 
 const ProfileCircle = styled.div`
   height: 50px;
@@ -32,6 +36,10 @@ const ProfileCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const MessageContainer = styled.div`
+  padding-left: 8px;
 `;
 
 const TextAuthor = styled.p`
@@ -68,7 +76,7 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
           </ProfileCircle>
         </ProfileContainer>
 
-        <div>
+        <MessageContainer>
           <TextAuthor>{buzz.author}</TextAuthor>
           <TextBuzz>{buzz.text}</TextBuzz>
           <TextCategory>#{buzz.category}</TextCategory>
@@ -84,7 +92,7 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
               <HeartIcon />
             </ListItem>
           </ListUl>
-        </div>
+        </MessageContainer>
       </MainContainer>
     </>
   );

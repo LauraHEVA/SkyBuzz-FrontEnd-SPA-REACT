@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ListUl } from "../../styles/globalStyledComponents";
 import { primary, secondary } from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
@@ -11,13 +12,6 @@ const ContainerHeader = styled.div`
   height: 60px;
   border-bottom: 2px solid ${primary};
   padding: 0 15px;
-`;
-
-const ListNav = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0;
 `;
 
 const ListItem = styled.li`
@@ -34,7 +28,7 @@ const Header = ({ title }: TitleProps): JSX.Element => {
     <>
       <ContainerHeader className="container">
         <nav>
-          <ListNav>
+          <ListUl>
             <ListItem>
               <TitlePage>{title}</TitlePage>
             </ListItem>
@@ -45,10 +39,10 @@ const Header = ({ title }: TitleProps): JSX.Element => {
               <img
                 width="30px"
                 src="images/burger-menu.png"
-                alt="menu with 'about us' and logout options"
+                alt="menu three lines"
               />
             </ListItem>
-          </ListNav>
+          </ListUl>
         </nav>
       </ContainerHeader>
     </>

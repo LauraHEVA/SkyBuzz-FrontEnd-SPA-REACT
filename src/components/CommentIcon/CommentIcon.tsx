@@ -8,7 +8,7 @@ const CommentIcon = () => {
       <FontAwesomeIcon
         data-testid="arrow"
         icon={faCommentDots}
-        size="2x"
+        size="1x"
         color={primary}
       />
     </>

@@ -9,4 +9,5 @@ export const ListUl = styled.ul`
 
 export const ListItem = styled.li`
   list-style: none;
+  margin: 0;
 `;
