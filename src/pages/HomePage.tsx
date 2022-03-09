@@ -7,16 +7,6 @@ import { useEffect } from "react";
 import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../types/buzzInterfaces";
 
-// const buzz = {
-//   category: "general",
-//   likes: 0,
-//   comments: [1],
-//   author: "Madonna",
-//   text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
-//   date: "2022-03-08T19:21:30.764Z",
-//   id: "324k2l",
-// };
-
 const HomePage = () => {
   const dispatch = useDispatch();
   const buzzsList = useSelector((state: RootState) => state.buzzs);
@@ -32,7 +22,7 @@ const HomePage = () => {
       <ul>
         {buzzsList.map((buzz: BuzzObject) => {
           return (
-            <li>
+            <li key={buzz.id}>
               <Buzz buzz={buzz} />
             </li>
           );
