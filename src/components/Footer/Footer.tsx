@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ListItem, ListUl } from "../../styles/globalStyledComponents";
 import { primary, secondary } from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
@@ -12,24 +13,12 @@ const ContainerFooter = styled.div`
   padding: 0 15px;
 `;
 
-const ListNav = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0;
-`;
-
-const ListItem = styled.li`
-  list-style: none;
-  padding-left: 0;
-`;
-
 const Footer = (): JSX.Element => {
   return (
     <>
       <ContainerFooter className="container">
         <nav>
-          <ListNav>
+          <ListUl>
             <ListItem>
               <Link to="/login">
                 {" "}
@@ -47,7 +36,7 @@ const Footer = (): JSX.Element => {
                 <AllUsersIcon />
               </Link>
             </ListItem>
-          </ListNav>
+          </ListUl>
         </nav>
       </ContainerFooter>
     </>
