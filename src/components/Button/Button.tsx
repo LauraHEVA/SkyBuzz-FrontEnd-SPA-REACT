@@ -1,10 +1,4 @@
-import React from "react";
-
-interface ButtonProps {
-  actionOnClick: () => void;
-  text: string;
-  className: string;
-}
+import { ButtonProps } from "../../types/componentsInterfaces";
 
 const Button = ({
   actionOnClick,
