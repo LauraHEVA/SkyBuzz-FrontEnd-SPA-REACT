@@ -5,7 +5,7 @@ import { loadAllBuzzsAction } from "../actions/actionsCreator";
 export const loadAllBuzzsThunk = async (
   dispatch: ThunkDispatch<void, unknown, AnyAction>
 ) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}buzzs/`);
+  const response = await fetch(`${process.env.REACT_APP_PUBLIC_API}buzzs/`);
 
   const buzzsListResponse = await response.json();
   const buzzListArray = buzzsListResponse.buzzs;
