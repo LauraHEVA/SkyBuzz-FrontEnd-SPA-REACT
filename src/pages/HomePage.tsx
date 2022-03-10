@@ -17,8 +17,9 @@ import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import styled from "styled-components";
 
 const ButtonContainerNewBuzz = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  position: fixed;
+  bottom: 70px;
+  right: 15px;
 `;
 
 const HomePage = () => {
