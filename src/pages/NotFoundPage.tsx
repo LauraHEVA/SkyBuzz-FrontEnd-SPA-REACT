@@ -24,6 +24,7 @@ const AnchorHome = styled.a`
 
 const TitleCentered = styled.h2`
   text-align: center;
+  font-family: "permanent marker";
 `;
 
 const NotFoundPage = () => {
