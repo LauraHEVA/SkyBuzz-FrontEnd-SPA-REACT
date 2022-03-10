@@ -15,6 +15,7 @@ import {
 } from "../styles/globalStyledComponents";
 import ButtonGeneric from "../components/Buttons/ButtonGeneric";
 import { useNavigate } from "react-router-dom";
+import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const HomePage = () => {
             );
           })}
         </ListUlVert>
-        <ButtonGeneric
+        <ButtonPrimary
           actionOnClick={() => goToNewBuzz()}
           className={"btn-primary"}
           text={"New Buzz"}
