@@ -22,7 +22,7 @@ export const ContainerListBuzzs = styled.div`
   margin-left: 15px;
   margin-right: 20px;
   margin-top: 50px;
-  margin-bottom: 70px;
+  margin-bottom: 75px;
 `;
 
 export const ContainerFooter = styled.div`
