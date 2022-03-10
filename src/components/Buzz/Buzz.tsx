@@ -12,6 +12,7 @@ import {
 } from "../../styles/globalStyles";
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
+import TrashIcon from "../TrashIcon/TrashIcon";
 
 const MainContainer = styled.div`
   display: flex;
@@ -65,7 +66,12 @@ const TextTimeAgo = styled.span`
   font-size: 14px;
 `;
 
-const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
+const ContainerSuperior = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
   return (
     <>
       <MainContainer>
@@ -76,7 +82,10 @@ const Buzz = ({ buzz }: BuzzProps): JSX.Element => {
         </ProfileContainer>
 
         <MessageContainer>
-          <TextAuthor>{buzz.author}</TextAuthor>
+          <ContainerSuperior>
+            <TextAuthor>{buzz.author}</TextAuthor>
+            <TrashIcon onClick={onClick} />
+          </ContainerSuperior>
           <TextBuzz>{buzz.text}</TextBuzz>
           <TextCategory>#{buzz.category}</TextCategory>
 

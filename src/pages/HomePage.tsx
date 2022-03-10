@@ -4,8 +4,7 @@ import Header from "../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
-import { loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
-import { BuzzObject } from "../types/buzzInterfaces";
+import { deleteBuzzThunk, loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import {
   ContainerFooter,
   ContainerHeader,
@@ -30,6 +29,11 @@ const HomePage = () => {
     dispatch(loadAllBuzzsThunk);
   }, [dispatch]);
 
+  const deleteBuzz = (id: string) => {
+    dispatch(deleteBuzzThunk(id));
+    console.log("Delete");
+  };
+
   const navigate = useNavigate();
 
   const goToNewBuzz = () => {
@@ -47,10 +51,10 @@ const HomePage = () => {
 
       <ContainerListBuzzs>
         <ListUlVert>
-          {buzzsList.map((buzz: BuzzObject) => {
+          {buzzsList.map((buzz) => {
             return (
               <ListItem key={buzz.id}>
-                <Buzz buzz={buzz} />
+                <Buzz buzz={buzz} onClick={() => deleteBuzz(buzz.id)} />
               </ListItem>
             );
           })}
