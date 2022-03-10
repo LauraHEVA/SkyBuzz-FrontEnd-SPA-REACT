@@ -13,9 +13,14 @@ import {
   ListItem,
   ListUlVert,
 } from "../styles/globalStyledComponents";
-import ButtonGeneric from "../components/Buttons/ButtonGeneric";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
+import styled from "styled-components";
+
+const ButtonContainerNewBuzz = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -50,11 +55,13 @@ const HomePage = () => {
             );
           })}
         </ListUlVert>
-        <ButtonPrimary
-          actionOnClick={() => goToNewBuzz()}
-          className={"btn-primary"}
-          text={"New Buzz"}
-        />
+        <ButtonContainerNewBuzz>
+          <ButtonPrimary
+            actionOnClick={() => goToNewBuzz()}
+            className={"btn-primary"}
+            text={"New Buzz"}
+          />
+        </ButtonContainerNewBuzz>
       </ContainerListBuzzs>
       <ContainerFooter>
         <Footer />
