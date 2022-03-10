@@ -13,6 +13,8 @@ import {
   ListItem,
   ListUlVert,
 } from "../styles/globalStyledComponents";
+import ButtonGeneric from "../components/Buttons/ButtonGeneric";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -21,6 +23,12 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(loadAllBuzzsThunk);
   }, [dispatch]);
+
+  const navigate = useNavigate();
+
+  const goToNewBuzz = () => {
+    navigate(`/newbuzz`);
+  };
 
   return (
     <>
@@ -41,6 +49,11 @@ const HomePage = () => {
             );
           })}
         </ListUlVert>
+        <ButtonGeneric
+          actionOnClick={() => goToNewBuzz()}
+          className={"btn-primary"}
+          text={"New Buzz"}
+        />
       </ContainerListBuzzs>
       <ContainerFooter>
         <Footer />
