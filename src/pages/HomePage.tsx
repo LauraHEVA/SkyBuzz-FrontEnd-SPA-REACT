@@ -13,6 +13,14 @@ import {
   ListItem,
   ListUlVert,
 } from "../styles/globalStyledComponents";
+import { useNavigate } from "react-router-dom";
+import ButtonPrimary from "../components/Buttons/ButtonPrimary";
+import styled from "styled-components";
+
+const ButtonContainerNewBuzz = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -21,6 +29,12 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(loadAllBuzzsThunk);
   }, [dispatch]);
+
+  const navigate = useNavigate();
+
+  const goToNewBuzz = () => {
+    navigate(`/newbuzz`);
+  };
 
   return (
     <>
@@ -41,6 +55,13 @@ const HomePage = () => {
             );
           })}
         </ListUlVert>
+        <ButtonContainerNewBuzz>
+          <ButtonPrimary
+            actionOnClick={() => goToNewBuzz()}
+            className={"btn-primary"}
+            text={"New Buzz"}
+          />
+        </ButtonContainerNewBuzz>
       </ContainerListBuzzs>
       <ContainerFooter>
         <Footer />

@@ -1,6 +1,6 @@
 import { ButtonProps } from "../../types/componentsInterfaces";
 
-const Button = ({
+const ButtonGeneric = ({
   actionOnClick,
   text,
   className,
@@ -12,4 +12,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default ButtonGeneric;
