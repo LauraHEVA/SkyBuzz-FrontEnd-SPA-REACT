@@ -1,6 +1,9 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { loadAllBuzzsAction } from "../actions/actionsCreator";
+import {
+  deleteBuzzAction,
+  loadAllBuzzsAction,
+} from "../actions/actionsCreator";
 
 export const loadAllBuzzsThunk = async (
   dispatch: ThunkDispatch<void, unknown, AnyAction>
@@ -21,6 +24,6 @@ export const deleteBuzzThunk =
       }
     );
     if (response.ok) {
-      dispatch(deleteBuzzThunk(id));
+      dispatch(deleteBuzzAction(id));
     }
   };
