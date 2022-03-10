@@ -8,6 +8,11 @@ export const loadAllBuzzsAction = (
   buzzs,
 });
 
+export const deleteBuzzAction = (id: string) => ({
+  type: actionsType.deleteBuzz,
+  id,
+});
+
 interface SomeActionInterface {
   type: string;
 }
