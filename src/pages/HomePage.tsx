@@ -31,7 +31,6 @@ const HomePage = () => {
 
   const deleteBuzz = (id: string) => {
     dispatch(deleteBuzzThunk(id));
-    console.log("Delete");
   };
 
   const navigate = useNavigate();
