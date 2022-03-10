@@ -16,7 +16,7 @@ describe("Given a Buzz Component", () => {
 
       const text = "Queen is awesome";
 
-      render(<Buzz buzz={buzz} />);
+      render(<Buzz buzz={buzz} onClick={() => {}} />);
 
       const foundMessageText = screen.getByText(text);
 
@@ -37,7 +37,7 @@ describe("Given a Buzz Component", () => {
       };
       const text = "FR";
 
-      render(<Buzz buzz={buzz} />);
+      render(<Buzz buzz={buzz} onClick={() => {}} />);
       const foundSpanInitials = screen.getByText(text);
 
       expect(foundSpanInitials).toBeInTheDocument();

@@ -1,5 +1,6 @@
 export interface BuzzProps {
   buzz: BuzzObject;
+  onClick: React.MouseEventHandler;
 }
 export interface BuzzObject {
   category: string;
