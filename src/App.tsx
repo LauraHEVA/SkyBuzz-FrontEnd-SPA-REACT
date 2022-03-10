@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import "@fontsource/nunito";
 import "@fontsource/poppins";
 import "@fontsource/permanent-marker";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Route path="/login" element={"placeholder <LoginPage>"} />
       <Route path="/register" element={"placeholder <RegisterPage>"} />
       <Route path="/home" element={<HomePage />} />
-      <Route path="*" element={"<NotFoundPage />"} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
