@@ -1,18 +1,32 @@
 import {
-  BuzzObject,
+  DeleteBuzzActionInterface,
   LoadAllBuzsActionInterface,
-} from "../../types/buzzInterfaces";
+  SomeActionInterface,
+} from "../../types/actionInterfaces";
+import { BuzzObject } from "../../types/buzzInterfaces";
+
 import actionsType from "../actions/actionsType";
 
 const buzzsReducer = (
   currentBuzzs: BuzzObject[] = [],
-  action: LoadAllBuzsActionInterface = { type: "", buzzs: [] }
+  action:
+    | SomeActionInterface
+    | LoadAllBuzsActionInterface
+    | DeleteBuzzActionInterface = {
+    type: "",
+  }
 ) => {
   let newBuzzsList: BuzzObject[];
 
   switch (action.type) {
     case actionsType.loadAllBuzzs:
-      newBuzzsList = [...action.buzzs];
+      newBuzzsList = [...(action as LoadAllBuzsActionInterface).buzzs];
+      break;
+
+    case actionsType.deleteBuzz:
+      newBuzzsList = currentBuzzs.filter(
+        (buzz) => buzz.id !== (action as DeleteBuzzActionInterface).id
+      );
       break;
 
     default:

@@ -14,11 +14,3 @@ export interface BuzzObject {
 export interface BuzzsArrayProps {
   buzzs: BuzzObject[];
 }
-
-export interface SomeActionInterface {
-  type: string;
-}
-
-export interface LoadAllBuzsActionInterface extends SomeActionInterface {
-  buzzs: BuzzObject[];
-}

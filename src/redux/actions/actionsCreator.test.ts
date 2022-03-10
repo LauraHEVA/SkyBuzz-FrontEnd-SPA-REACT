@@ -1,5 +1,5 @@
 import { BuzzsArrayProps } from "../../types/buzzInterfaces";
-import { loadAllBuzzsAction } from "./actionsCreator";
+import { deleteBuzzAction, loadAllBuzzsAction } from "./actionsCreator";
 
 describe("Given a loadAllBuzzs Action", () => {
   describe("When it receives an array with buzzs", () => {
@@ -33,6 +33,23 @@ describe("Given a loadAllBuzzs Action", () => {
       };
 
       const action = loadAllBuzzsAction(buzzs);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a deleteBuzzAction function", () => {
+  describe("When it receives an id", () => {
+    test("Then it should return an action with type 'delete-one-buzz' and the buzz id as another property", () => {
+      const idTodelete = "10";
+
+      const expectedAction = {
+        type: "delete-one-buzz",
+        id: idTodelete,
+      };
+
+      const action = deleteBuzzAction(idTodelete);
 
       expect(action).toEqual(expectedAction);
     });
