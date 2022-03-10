@@ -18,8 +18,9 @@ import styled from "styled-components";
 
 const ButtonContainerNewBuzz = styled.div`
   position: fixed;
-  bottom: 70px;
+  bottom: 50px;
   right: 15px;
+  z-index: 2;
 `;
 
 const HomePage = () => {
