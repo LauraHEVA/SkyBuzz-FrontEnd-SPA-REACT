@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grey, greyLight, primary } from "./globalStyles";
+import { greenCircleAuthor, grey, greyLight, primary } from "./globalStyles";
 
 export const MainContainer = styled.div`
   display: flex;
