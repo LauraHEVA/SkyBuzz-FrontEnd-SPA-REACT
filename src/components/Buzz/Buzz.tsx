@@ -29,25 +29,24 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
             <span>{buzz.author.substring(0, 2).toUpperCase()}</span>
           </ProfileCircle>
         </ProfileContainer>
-
         <MessageContainer>
           <ContainerSuperior>
             <TextAuthor>{buzz.author}</TextAuthor>
-            <TrashIcon onClick={onClick} />
+            <TextTimeAgo>
+              <Published date={buzz.date} />
+            </TextTimeAgo>
           </ContainerSuperior>
           <TextBuzz>{buzz.text}</TextBuzz>
           <TextCategory>#{buzz.category}</TextCategory>
           <ListUlHorizontal>
             <ListItem>
-              <TextTimeAgo>
-                <Published date={buzz.date} />
-              </TextTimeAgo>
-            </ListItem>
-            <ListItem>
               <CommentIcon />
             </ListItem>
             <ListItem>
               <HeartIcon />
+            </ListItem>
+            <ListItem>
+              <TrashIcon onClick={onClick} />
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>

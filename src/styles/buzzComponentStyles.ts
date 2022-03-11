@@ -50,7 +50,7 @@ export const TextCategory = styled.p`
 
 export const TextTimeAgo = styled.span`
   color: ${primary};
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 export const ContainerSuperior = styled.div`
