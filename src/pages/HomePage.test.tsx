@@ -21,5 +21,37 @@ describe("Given a HomePage component", () => {
 
       expect(foundHeading.textContent).toBe(expectedText);
     });
+
+    test("Then it should render a footer with three icons as Links", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <HomePage />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const links = screen.queryAllByRole("link");
+
+      expect(links[0]).toBeInTheDocument();
+      expect(links[1]).toBeInTheDocument();
+      expect(links[2]).toBeInTheDocument();
+      expect(links).toHaveLength(3);
+    });
+
+    test("Then it should render a button with the text 'New Buzz' inside", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <HomePage />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const buttonNewBuzz = screen.getByRole("button");
+
+      expect(buttonNewBuzz).toBeInTheDocument();
+      expect(buttonNewBuzz.textContent).toBe("New Buzz");
+    });
   });
 });
