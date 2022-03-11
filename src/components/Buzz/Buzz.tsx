@@ -18,6 +18,7 @@ import {
   TextCategory,
   TextTimeAgo,
 } from "../../styles/buzzComponentStyles";
+import Published from "../../utils/timeAgo";
 
 const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
   return (
@@ -38,7 +39,9 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
           <TextCategory>#{buzz.category}</TextCategory>
           <ListUlHorizontal>
             <ListItem>
-              <TextTimeAgo>1h</TextTimeAgo>
+              <TextTimeAgo>
+                <Published date={buzz.date} />
+              </TextTimeAgo>
             </ListItem>
             <ListItem>
               <CommentIcon />
