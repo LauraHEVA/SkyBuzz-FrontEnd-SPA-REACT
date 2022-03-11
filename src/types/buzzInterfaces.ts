@@ -8,7 +8,7 @@ export interface BuzzObject {
   comments: number[];
   author: string;
   text: string;
-  date: string;
+  date: Date | number;
   id: string;
 }
 
