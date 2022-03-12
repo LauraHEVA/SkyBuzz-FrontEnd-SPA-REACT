@@ -5,9 +5,14 @@ import {
   ContainerNavMenu,
   ContainerHeader,
 } from "../styles/globalStyledComponents";
-import { grey, primary } from "../styles/globalStyles";
+import {
+  breakpointXS,
+  grey,
+  primary,
+  widthNavMenu,
+} from "../styles/globalStyles";
 
-const MainContainerNav = styled.div`
+const MainContainerNFP = styled.div`
   height: 80vh;
   padding: 30px;
   display: flex;
@@ -15,11 +20,15 @@ const MainContainerNav = styled.div`
   justify-content: center;
   align-items: center;
   color: ${primary};
+  @media (min-width: ${breakpointXS}) {
+    margin-left: calc(${widthNavMenu}*1.3);
+  }
 `;
 
 const AnchorHome = styled.a`
   text-decoration: none;
   color: ${grey};
+  cursor: pointer;
 `;
 
 const TitleCentered = styled.h2`
@@ -33,13 +42,13 @@ const NotFoundPage = () => {
       <ContainerHeader>
         <Header title="Not Found" />
       </ContainerHeader>
-      <MainContainerNav>
+      <MainContainerNFP>
         <TitleCentered>Ups...There is nothing in this page.</TitleCentered>
         <p>
           Please go to
           <AnchorHome href="/home"> Home Page</AnchorHome>
         </p>
-      </MainContainerNav>
+      </MainContainerNFP>
       <ContainerNavMenu>
         <NavMenu />
       </ContainerNavMenu>
