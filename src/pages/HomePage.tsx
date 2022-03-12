@@ -1,12 +1,12 @@
 import Buzz from "../components/Buzz/Buzz";
-import Footer from "../components/Footer/Footer";
+import NavMenu from "../components/NavMenu/NavMenu";
 import Header from "../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { deleteBuzzThunk, loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import {
-  ContainerFooter,
+  ContainerNavMenu,
   ContainerHeader,
   ContainerListBuzzs,
   ListItem,
@@ -68,9 +68,9 @@ const HomePage = () => {
           />
         </ButtonContainerNewBuzz>
       </ContainerListBuzzs>
-      <ContainerFooter>
-        <Footer />
-      </ContainerFooter>
+      <ContainerNavMenu>
+        <NavMenu />
+      </ContainerNavMenu>
     </>
   );
 };

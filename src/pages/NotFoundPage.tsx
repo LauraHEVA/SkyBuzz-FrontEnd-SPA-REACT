@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Footer from "../components/Footer/Footer";
+import NavMenu from "../components/NavMenu/NavMenu";
 import Header from "../components/Header/Header";
 import {
-  ContainerFooter,
+  ContainerNavMenu,
   ContainerHeader,
 } from "../styles/globalStyledComponents";
 import { grey, primary } from "../styles/globalStyles";
 
-const MainContainerPage = styled.div`
+const MainContainerNav = styled.div`
   height: 80vh;
   padding: 30px;
   display: flex;
@@ -33,16 +33,16 @@ const NotFoundPage = () => {
       <ContainerHeader>
         <Header title="Not Found" />
       </ContainerHeader>
-      <MainContainerPage>
+      <MainContainerNav>
         <TitleCentered>Ups...There is nothing in this page.</TitleCentered>
         <p>
           Please go to
           <AnchorHome href="/home"> Home Page</AnchorHome>
         </p>
-      </MainContainerPage>
-      <ContainerFooter>
-        <Footer />
-      </ContainerFooter>
+      </MainContainerNav>
+      <ContainerNavMenu>
+        <NavMenu />
+      </ContainerNavMenu>
     </>
   );
 };

@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Footer from "./Footer";
+import NavMenu from "./NavMenu";
 
-describe("Given a Footer Component", () => {
+describe("Given a NavMenu Component", () => {
   describe("When it's rendered", () => {
     test("Then it should display three icons as Links", () => {
       render(
         <BrowserRouter>
-          <Footer />
+          <NavMenu />
         </BrowserRouter>
       );
 

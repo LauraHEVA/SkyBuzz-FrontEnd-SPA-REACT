@@ -9,7 +9,7 @@ import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
 
-const ContainerFooter = styled.nav`
+const ContainerNavMenu = styled.nav`
   background-color: ${secondary};
   height: 60px;
   border-top: 1px solid ${primary};
@@ -20,10 +20,10 @@ const ContainerFooter = styled.nav`
   justify-content: center;
 `;
 
-const Footer = (): JSX.Element => {
+const NavMenu = (): JSX.Element => {
   return (
     <>
-      <ContainerFooter>
+      <ContainerNavMenu>
         <ListUlHorizontal>
           <ListItem>
             <Link to="/login">
@@ -41,9 +41,9 @@ const Footer = (): JSX.Element => {
             </Link>
           </ListItem>
         </ListUlHorizontal>
-      </ContainerFooter>
+      </ContainerNavMenu>
     </>
   );
 };
 
-export default Footer;
+export default NavMenu;

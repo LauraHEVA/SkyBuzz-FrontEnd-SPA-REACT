@@ -18,19 +18,19 @@ export const ListUlVert = styled.ul`
   padding-left: 0;
 `;
 
-export const ContainerListBuzzs = styled.div`
-  margin-left: 15px;
-  margin-right: 20px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-`;
-
-export const ContainerFooter = styled.div`
+export const ContainerNavMenu = styled.div`
   position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+`;
+
+export const ContainerListBuzzs = styled.div`
+  margin-left: 15px;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 `;
 
 export const ContainerHeader = styled.div`
