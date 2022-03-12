@@ -35,6 +35,15 @@ const ContainerNavMenu = styled.nav`
 `;
 
 const ContainerIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    font-size: 28px;
+  }
+
   @media (min-width: ${breakpointXS}) {
     border-radius: 50%;
     width: 70px;
@@ -44,6 +53,7 @@ const ContainerIcon = styled.div`
     justify-content: center;
     :hover {
       border: 2px solid ${primary};
+      font-size: 36px;
     }
   }
 `;
