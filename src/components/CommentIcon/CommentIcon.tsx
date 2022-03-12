@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
 import { primary } from "../../styles/globalStyles";
 
-const CommentIcon = () => {
+const CommentIcon = (): JSX.Element => {
   return (
     <>
       <FontAwesomeIcon

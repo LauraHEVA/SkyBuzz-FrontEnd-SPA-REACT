@@ -10,7 +10,7 @@ const userLookUp: IconLookup = {
   iconName: "user",
 };
 
-const UserIcon = () => {
+const UserIcon = (): JSX.Element => {
   return <FontAwesomeIcon icon={userLookUp} size="1x" color={primary} />;
 };
 
