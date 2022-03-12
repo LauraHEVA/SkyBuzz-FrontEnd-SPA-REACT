@@ -13,6 +13,7 @@ export const handlers = [
             author: "Dan",
             text: "React Redux",
             id: "324k2l",
+            date: "2022-03-12T14:14:10.573Z",
           },
           {
             category: "general",
@@ -21,6 +22,7 @@ export const handlers = [
             author: "Dan",
             text: "React Redux",
             id: "324k2l",
+            date: "2022-03-12T14:14:10.573Z",
           },
         ],
       })
