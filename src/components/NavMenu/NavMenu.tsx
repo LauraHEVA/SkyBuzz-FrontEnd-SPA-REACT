@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {
-  ListItem,
-  ListUlHorizontal,
-  ListUlNavMenu,
-} from "../../styles/globalStyledComponents";
+import { ListItem, ListUlNavMenu } from "../../styles/globalStyledComponents";
 import {
   breakpointXS,
   grey,
