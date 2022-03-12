@@ -10,8 +10,8 @@ const allUsersLookUp: IconLookup = {
   iconName: "users",
 };
 
-const AllUsersIcon = () => {
-  return <FontAwesomeIcon icon={allUsersLookUp} size="2x" color={primary} />;
+const AllUsersIcon = (): JSX.Element => {
+  return <FontAwesomeIcon icon={allUsersLookUp} size="1x" color={primary} />;
 };
 
 export default AllUsersIcon;

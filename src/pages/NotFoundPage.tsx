@@ -11,6 +11,7 @@ import {
   primary,
   widthNavMenu,
 } from "../styles/globalStyles";
+import Footer from "../components/Footer/Footer";
 
 const MainContainerNFP = styled.div`
   height: 80vh;
@@ -52,6 +53,7 @@ const NotFoundPage = () => {
       <ContainerNavMenu>
         <NavMenu />
       </ContainerNavMenu>
+      <Footer />
     </>
   );
 };

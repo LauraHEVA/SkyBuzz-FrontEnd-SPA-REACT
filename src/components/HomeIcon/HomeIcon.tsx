@@ -10,8 +10,8 @@ const homeLookUp: IconLookup = {
   iconName: "home",
 };
 
-const HomeIcon = () => {
-  return <FontAwesomeIcon icon={homeLookUp} size="2x" color={primary} />;
+const HomeIcon = (): JSX.Element => {
+  return <FontAwesomeIcon icon={homeLookUp} size="1x" color={primary} />;
 };
 
 export default HomeIcon;

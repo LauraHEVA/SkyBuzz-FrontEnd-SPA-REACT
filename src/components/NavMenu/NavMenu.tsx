@@ -15,7 +15,7 @@ import UserIcon from "../UserIcon/UserIcon";
 
 const ContainerNavMenu = styled.nav`
   background-color: ${secondary};
-  height: 60px;
+  height: 50px;
   border-top: 1px solid ${primary};
   padding: 0 15px;
   box-shadow: 0 -4px 10px ${grey};

@@ -3,7 +3,11 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { primary } from "../../styles/globalStyles";
 import React from "react";
 
-const TrashIcon = ({ onClick }: { onClick?: React.MouseEventHandler }) => {
+const TrashIcon = ({
+  onClick,
+}: {
+  onClick?: React.MouseEventHandler;
+}): JSX.Element => {
   return (
     <>
       <FontAwesomeIcon
