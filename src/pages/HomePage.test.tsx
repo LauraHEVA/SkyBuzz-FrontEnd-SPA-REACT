@@ -22,7 +22,7 @@ describe("Given a HomePage component", () => {
       expect(foundHeading.textContent).toBe(expectedText);
     });
 
-    test("Then it should render a footer with three icons as Links", () => {
+    test("Then it should render a NavBar with three icons as Links", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
