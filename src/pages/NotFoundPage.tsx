@@ -28,13 +28,11 @@ const MainContainerNFP = styled.div`
 const AnchorHome = styled.a`
   text-decoration: none;
   color: ${grey};
-  z-index: 3;
 `;
 
 const TitleCentered = styled.h2`
   text-align: center;
   font-family: "permanent marker";
-  z-index: 3;
 `;
 
 const NotFoundPage = () => {
