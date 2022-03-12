@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import AllUsersIcon from "./AllUsersIcon";
+import CommentIcon from "./CommentIcon";
 
-describe("Given AllUsersIcon Component", () => {
+describe("Given CommentIcon component", () => {
   describe("When its rendered", () => {
-    test("Then it should display a users icon", () => {
-      const dataTest = "all-users";
+    test("Then it should display a comment icon", () => {
+      const dataTest = "comment";
 
-      render(<AllUsersIcon />);
+      render(<CommentIcon />);
 
       const foundElement = screen.queryByTestId(dataTest);
 

@@ -6,7 +6,7 @@ const CommentIcon = (): JSX.Element => {
   return (
     <>
       <FontAwesomeIcon
-        data-testid="arrow"
+        data-testid="comment"
         icon={faCommentDots}
         size="1x"
         color={primary}
