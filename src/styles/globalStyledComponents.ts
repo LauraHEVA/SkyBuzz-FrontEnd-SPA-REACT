@@ -1,5 +1,24 @@
 import styled from "styled-components";
-import { greenCircleAuthor, grey, primary } from "./globalStyles";
+import {
+  breakpointXS,
+  greenCircleAuthor,
+  grey,
+  primary,
+  widthNavMenu,
+} from "./globalStyles";
+
+export const ListUlNavMenu = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+  @media (min-width: ${breakpointXS}) {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+`;
 
 export const ListUlHorizontal = styled.ul`
   display: flex;
@@ -18,19 +37,41 @@ export const ListUlVert = styled.ul`
   padding-left: 0;
 `;
 
-export const ContainerListBuzzs = styled.div`
-  margin-left: 15px;
-  margin-right: 20px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-`;
-
-export const ContainerFooter = styled.div`
+export const ContainerNavMenu = styled.div`
   position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+  @media (min-width: ${breakpointXS}) {
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+  }
+`;
+
+export const ContainerListBuzzs = styled.div`
+  margin-left: 15px;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  @media (min-width: ${breakpointXS}) {
+    margin-left: calc(${widthNavMenu}*1.7);
+    margin-top: 110px;
+    margin-right: 40px;
+    max-width: 550px;
+  }
+`;
+
+export const ButtonContainerNewBuzz = styled.div`
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+  z-index: 2;
+  @media (min-width: ${breakpointXS}) {
+    top: 80px;
+    right: 40px;
+  }
 `;
 
 export const ContainerHeader = styled.div`
@@ -39,6 +80,9 @@ export const ContainerHeader = styled.div`
   left: 0px;
   right: 0px;
   margin-top: 0px;
+  @media (min-width: ${breakpointXS}) {
+    z-index: 2;
+  }
 `;
 
 export const PrimaryBtn = styled.button`

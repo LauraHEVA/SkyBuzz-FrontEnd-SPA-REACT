@@ -1,18 +1,27 @@
 import styled from "styled-components";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
-import { grey, primary, secondary } from "../../styles/globalStyles";
+import {
+  breakpointXS,
+  greenCircleAuthor,
+  grey,
+  primary,
+  secondary,
+} from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
   font-size: 22px;
   color: ${primary};
 `;
 
-const ContainerHeader = styled.div`
+const MainContainerHeader = styled.div`
   background-color: ${secondary};
   height: 60px;
   border-bottom: 1px solid ${primary};
   padding: 0 15px;
   box-shadow: 0 4px 10px ${grey};
+  @media (min-width: ${breakpointXS}) {
+    background-color: ${greenCircleAuthor};
+  }
 `;
 
 const ListItem = styled.li`
@@ -27,7 +36,7 @@ interface TitleProps {
 const Header = ({ title }: TitleProps): JSX.Element => {
   return (
     <>
-      <ContainerHeader>
+      <MainContainerHeader>
         <nav>
           <ListUlHorizontal>
             <ListItem>
@@ -45,7 +54,7 @@ const Header = ({ title }: TitleProps): JSX.Element => {
             </ListItem>
           </ListUlHorizontal>
         </nav>
-      </ContainerHeader>
+      </MainContainerHeader>
     </>
   );
 };

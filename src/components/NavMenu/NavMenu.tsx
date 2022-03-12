@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ListItem, ListUlNavMenu } from "../../styles/globalStyledComponents";
 import {
-  ListItem,
-  ListUlHorizontal,
-} from "../../styles/globalStyledComponents";
-import { grey, primary, secondary } from "../../styles/globalStyles";
+  breakpointXS,
+  grey,
+  primary,
+  secondary,
+  widthNavMenu,
+} from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
 
-const ContainerFooter = styled.nav`
+const ContainerNavMenu = styled.nav`
   background-color: ${secondary};
   height: 60px;
   border-top: 1px solid ${primary};
@@ -18,13 +21,20 @@ const ContainerFooter = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (min-width: ${breakpointXS}) {
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: ${widthNavMenu};
+  }
 `;
 
-const Footer = (): JSX.Element => {
+const NavMenu = (): JSX.Element => {
   return (
     <>
-      <ContainerFooter>
-        <ListUlHorizontal>
+      <ContainerNavMenu>
+        <ListUlNavMenu>
           <ListItem>
             <Link to="/login">
               <UserIcon />
@@ -40,10 +50,10 @@ const Footer = (): JSX.Element => {
               <AllUsersIcon />
             </Link>
           </ListItem>
-        </ListUlHorizontal>
-      </ContainerFooter>
+        </ListUlNavMenu>
+      </ContainerNavMenu>
     </>
   );
 };
 
-export default Footer;
+export default NavMenu;

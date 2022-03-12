@@ -1,27 +1,20 @@
 import Buzz from "../components/Buzz/Buzz";
-import Footer from "../components/Footer/Footer";
+import NavMenu from "../components/NavMenu/NavMenu";
 import Header from "../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { deleteBuzzThunk, loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import {
-  ContainerFooter,
+  ContainerNavMenu,
   ContainerHeader,
   ContainerListBuzzs,
   ListItem,
   ListUlVert,
+  ButtonContainerNewBuzz,
 } from "../styles/globalStyledComponents";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
-import styled from "styled-components";
-
-const ButtonContainerNewBuzz = styled.div`
-  position: fixed;
-  bottom: 50px;
-  right: 15px;
-  z-index: 2;
-`;
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -68,9 +61,9 @@ const HomePage = () => {
           />
         </ButtonContainerNewBuzz>
       </ContainerListBuzzs>
-      <ContainerFooter>
-        <Footer />
-      </ContainerFooter>
+      <ContainerNavMenu>
+        <NavMenu />
+      </ContainerNavMenu>
     </>
   );
 };
