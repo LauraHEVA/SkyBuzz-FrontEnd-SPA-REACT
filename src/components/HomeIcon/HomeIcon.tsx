@@ -11,7 +11,14 @@ const homeLookUp: IconLookup = {
 };
 
 const HomeIcon = (): JSX.Element => {
-  return <FontAwesomeIcon icon={homeLookUp} size="1x" color={primary} />;
+  return (
+    <FontAwesomeIcon
+      data-testid="home"
+      icon={homeLookUp}
+      size="1x"
+      color={primary}
+    />
+  );
 };
 
 export default HomeIcon;
