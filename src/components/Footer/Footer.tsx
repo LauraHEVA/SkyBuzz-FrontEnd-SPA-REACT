@@ -24,17 +24,35 @@ const ContainerFooter = styled.nav`
   }
 `;
 
-const TextFooter = styled.p`
-  font-family: "permanent marker";
+const SpanSkybuzz = styled.span`
+  font-family: nunito;
+  color: ${primary};
+  font-size: 18px;
+  font-weight: 900;
+  margin: 5px;
+`;
+
+const SpanBy = styled.span`
+  font-family: nunito;
+  color: ${primary};
+  font-size: 14px;
+  margin: 5px;
+`;
+
+const SpanFooter = styled.span`
+  font-family: "Shadows Into Light";
   color: ${primary};
   margin-top: 0;
   margin-bottom: 0;
+  margin: 5px;
 `;
 
 const Footer = (): JSX.Element => {
   return (
     <ContainerFooter>
-      <TextFooter>SkyBuzz by Laura Hernandez</TextFooter>
+      <SpanSkybuzz>SkyBuzz </SpanSkybuzz>
+      <SpanBy>by </SpanBy>
+      <SpanFooter>Laura Hernandez | ISDI Coders</SpanFooter>
     </ContainerFooter>
   );
 };

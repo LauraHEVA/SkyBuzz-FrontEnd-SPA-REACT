@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import "@fontsource/nunito";
 import "@fontsource/poppins";
 import "@fontsource/permanent-marker";
+import "@fontsource/shadows-into-light";
 import NotFoundPage from "./pages/NotFoundPage";
 import Toastr from "./components/Toastr/Toastr";
 
