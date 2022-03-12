@@ -28,6 +28,7 @@ const MainContainerNFP = styled.div`
 const AnchorHome = styled.a`
   text-decoration: none;
   color: ${grey};
+  cursor: pointer;
 `;
 
 const TitleCentered = styled.h2`
