@@ -18,7 +18,6 @@ const MainContainerHeader = styled.div`
   border-bottom: 1px solid ${primary};
   padding: 8px 15px;
   box-shadow: 0 4px 10px ${grey};
-
   @media (min-width: ${breakpointXS}) {
     background-color: ${secondary};
   }

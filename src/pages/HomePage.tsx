@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import { toast } from "react-toastify";
 import Toastr from "../components/Toastr/Toastr";
+import Footer from "../components/Footer/Footer";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -74,6 +75,7 @@ const HomePage = () => {
       <ContainerNavMenu>
         <NavMenu />
       </ContainerNavMenu>
+      <Footer />
     </>
   );
 };
