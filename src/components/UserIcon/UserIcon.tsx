@@ -11,7 +11,7 @@ const userLookUp: IconLookup = {
 };
 
 const UserIcon = () => {
-  return <FontAwesomeIcon icon={userLookUp} size="2x" color={primary} />;
+  return <FontAwesomeIcon icon={userLookUp} size="1x" color={primary} />;
 };
 
 export default UserIcon;

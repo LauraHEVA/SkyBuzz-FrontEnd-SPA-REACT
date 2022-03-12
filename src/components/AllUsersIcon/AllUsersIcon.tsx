@@ -11,7 +11,7 @@ const allUsersLookUp: IconLookup = {
 };
 
 const AllUsersIcon = () => {
-  return <FontAwesomeIcon icon={allUsersLookUp} size="2x" color={primary} />;
+  return <FontAwesomeIcon icon={allUsersLookUp} size="1x" color={primary} />;
 };
 
 export default AllUsersIcon;
