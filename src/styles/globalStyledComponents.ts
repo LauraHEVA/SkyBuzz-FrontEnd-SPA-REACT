@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
+  backgroundSecondary,
   breakpointXS,
-  greenCircleAuthor,
   grey,
   primary,
   secondary,
@@ -94,8 +94,8 @@ export const PrimaryBtn = styled.button`
   border-radius: 10px;
   width: 165px;
   height: 45px;
-  color: ${greenCircleAuthor};
-  border: 1px solid ${greenCircleAuthor};
+  color: ${backgroundSecondary};
+  border: 1px solid ${backgroundSecondary};
   box-shadow: 0 4px 10px ${grey};
   :hover {
     background-color: ${secondary};

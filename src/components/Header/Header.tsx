@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
 import {
   breakpointXS,
-  greenCircleAuthor,
   grey,
   primary,
   secondary,
@@ -21,7 +20,7 @@ const MainContainerHeader = styled.div`
   box-shadow: 0 4px 10px ${grey};
 
   @media (min-width: ${breakpointXS}) {
-    background-color: ${greenCircleAuthor};
+    background-color: ${secondary};
   }
 `;
 
