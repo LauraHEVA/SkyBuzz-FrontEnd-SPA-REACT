@@ -57,6 +57,9 @@ export const ContainerListBuzzs = styled.div`
   margin-bottom: 100px;
   @media (min-width: ${breakpointXS}) {
     margin-left: calc(${widthNavMenu}*1.7);
+    margin-top: 90px;
+    margin-right: 40px;
+    max-width: 550px;
   }
 `;
 
