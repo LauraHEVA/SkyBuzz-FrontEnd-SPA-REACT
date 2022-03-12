@@ -6,7 +6,7 @@ const HeartIcon = () => {
   return (
     <>
       <FontAwesomeIcon
-        data-testid="arrow"
+        data-testid="heart"
         icon={faHeart}
         size="1x"
         color={primary}
