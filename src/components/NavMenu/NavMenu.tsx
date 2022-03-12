@@ -10,6 +10,7 @@ import {
   grey,
   primary,
   secondary,
+  widthNavMenu,
 } from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
@@ -29,7 +30,7 @@ const ContainerNavMenu = styled.nav`
     left: 0px;
     top: 0px;
     height: 100%;
-    width: 150px;
+    width: ${widthNavMenu};
   }
 `;
 

@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { breakpointXS, greenCircleAuthor, grey, primary } from "./globalStyles";
+import {
+  breakpointXS,
+  greenCircleAuthor,
+  grey,
+  primary,
+  widthNavMenu,
+} from "./globalStyles";
 
 export const ListUlNavMenu = styled.ul`
   display: flex;
@@ -57,6 +63,9 @@ export const ContainerHeader = styled.div`
   left: 0px;
   right: 0px;
   margin-top: 0px;
+  @media (min-width: ${breakpointXS}) {
+    width: 100vw-${widthNavMenu};
+  }
 `;
 
 export const PrimaryBtn = styled.button`

@@ -8,3 +8,4 @@ export const greenCircleAuthor = "#a8dadc";
 export const breakpointXS = "600px"; // Small screens
 export const breakpointS = "895px"; // Small screens
 export const breakpointM = "1025px"; // Small screens
+export const widthNavMenu = "170px"; // Width NavMenu desktop
