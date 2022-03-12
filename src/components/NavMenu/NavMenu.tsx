@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ListItem, ListUlNavMenu } from "../../styles/globalStyledComponents";
 import {
+  backgroundSecondary,
   breakpointXS,
   grey,
   primary,
@@ -22,6 +23,7 @@ const ContainerNavMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   @media (min-width: ${breakpointXS}) {
+    background-color: ${backgroundSecondary};
     bottom: 0px;
     left: 0px;
     top: 0px;

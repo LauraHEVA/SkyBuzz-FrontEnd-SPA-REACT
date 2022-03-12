@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { greenCircleAuthor, grey, greyLight, primary } from "./globalStyles";
+import { grey, greyLight, primary, secondary } from "./globalStyles";
 
 export const MainContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const ProfileCircle = styled.div`
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: ${greenCircleAuthor};
+  background-color: ${secondary};
   display: flex;
   justify-content: center;
   align-items: center;
