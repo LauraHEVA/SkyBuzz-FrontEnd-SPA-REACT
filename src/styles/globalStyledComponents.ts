@@ -1,5 +1,18 @@
 import styled from "styled-components";
-import { greenCircleAuthor, grey, primary } from "./globalStyles";
+import { breakpointXS, greenCircleAuthor, grey, primary } from "./globalStyles";
+
+export const ListUlNavMenu = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+  @media (min-width: ${breakpointXS}) {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+`;
 
 export const ListUlHorizontal = styled.ul`
   display: flex;
@@ -24,6 +37,11 @@ export const ContainerNavMenu = styled.div`
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+  @media (min-width: ${breakpointXS}) {
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+  }
 `;
 
 export const ContainerListBuzzs = styled.div`

@@ -3,8 +3,14 @@ import styled from "styled-components";
 import {
   ListItem,
   ListUlHorizontal,
+  ListUlNavMenu,
 } from "../../styles/globalStyledComponents";
-import { grey, primary, secondary } from "../../styles/globalStyles";
+import {
+  breakpointXS,
+  grey,
+  primary,
+  secondary,
+} from "../../styles/globalStyles";
 import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
@@ -18,13 +24,20 @@ const ContainerNavMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (min-width: ${breakpointXS}) {
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 150px;
+  }
 `;
 
 const NavMenu = (): JSX.Element => {
   return (
     <>
       <ContainerNavMenu>
-        <ListUlHorizontal>
+        <ListUlNavMenu>
           <ListItem>
             <Link to="/login">
               <UserIcon />
@@ -40,7 +53,7 @@ const NavMenu = (): JSX.Element => {
               <AllUsersIcon />
             </Link>
           </ListItem>
-        </ListUlHorizontal>
+        </ListUlNavMenu>
       </ContainerNavMenu>
     </>
   );
