@@ -11,7 +11,14 @@ const allUsersLookUp: IconLookup = {
 };
 
 const AllUsersIcon = (): JSX.Element => {
-  return <FontAwesomeIcon icon={allUsersLookUp} size="1x" color={primary} />;
+  return (
+    <FontAwesomeIcon
+      data-testid="all-users"
+      icon={allUsersLookUp}
+      size="1x"
+      color={primary}
+    />
+  );
 };
 
 export default AllUsersIcon;
