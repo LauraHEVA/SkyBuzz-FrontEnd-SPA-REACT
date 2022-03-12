@@ -15,6 +15,8 @@ import {
 } from "../styles/globalStyledComponents";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
+import { toast } from "react-toastify";
+import Toastr from "../components/Toastr/Toastr";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -42,13 +44,19 @@ const HomePage = () => {
       <div>
         <h3>Aqui va a ir el Menu desplegable para categorias</h3>
       </div>
-
+      <Toastr />
       <ContainerListBuzzs>
         <ListUlVert>
           {buzzsList.map((buzz) => {
             return (
               <ListItem key={buzz.id}>
-                <Buzz buzz={buzz} onClick={() => deleteBuzz(buzz.id)} />
+                <Buzz
+                  buzz={buzz}
+                  onClick={() => {
+                    deleteBuzz(buzz.id);
+                    toast.success("Buzz deleted correctly");
+                  }}
+                />
               </ListItem>
             );
           })}
