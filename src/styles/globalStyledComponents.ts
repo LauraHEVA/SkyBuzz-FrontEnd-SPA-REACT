@@ -4,6 +4,7 @@ import {
   greenCircleAuthor,
   grey,
   primary,
+  secondary,
   widthNavMenu,
 } from "./globalStyles";
 
@@ -53,14 +54,12 @@ export const ContainerNavMenu = styled.div`
 
 export const ContainerListBuzzs = styled.div`
   margin-left: 15px;
-  margin-right: 20px;
+  margin-right: 25px;
   margin-top: 50px;
   margin-bottom: 100px;
   @media (min-width: ${breakpointXS}) {
     margin-left: calc(${widthNavMenu}*1.7);
     margin-top: 110px;
-    margin-right: 40px;
-    max-width: 550px;
   }
 `;
 
@@ -80,7 +79,7 @@ export const ContainerHeader = styled.div`
   top: 0px;
   left: 0px;
   right: 0px;
-  margin-top: 0px;
+  margin-top: 0;
   @media (min-width: ${breakpointXS}) {
     z-index: 2;
   }
@@ -98,4 +97,12 @@ export const PrimaryBtn = styled.button`
   color: ${greenCircleAuthor};
   border: 1px solid ${greenCircleAuthor};
   box-shadow: 0 4px 10px ${grey};
+  :hover {
+    background-color: ${secondary};
+    color: ${primary};
+  }
+`;
+
+export const ContainerFontAwesome = styled.div`
+  background-color: red;
 `;
