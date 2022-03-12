@@ -40,7 +40,7 @@ const HomePage = () => {
         <Header title="Buzzs" />
       </ContainerHeader>
       <div>
-        <h3>Menu desplegable categorias</h3>
+        <h3>Aqui va a ir el Menu desplegable para categorias</h3>
       </div>
 
       <ContainerListBuzzs>
@@ -55,7 +55,9 @@ const HomePage = () => {
         </ListUlVert>
         <ButtonContainerNewBuzz>
           <ButtonPrimary
-            actionOnClick={() => goToNewBuzz()}
+            actionOnClick={() => {
+              goToNewBuzz();
+            }}
             className={"btn-primary"}
             text={"New Buzz"}
           />

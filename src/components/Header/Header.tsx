@@ -17,8 +17,9 @@ const MainContainerHeader = styled.div`
   background-color: ${secondary};
   height: 60px;
   border-bottom: 1px solid ${primary};
-  padding: 0 15px;
+  padding: 8px 15px;
   box-shadow: 0 4px 10px ${grey};
+
   @media (min-width: ${breakpointXS}) {
     background-color: ${greenCircleAuthor};
   }
