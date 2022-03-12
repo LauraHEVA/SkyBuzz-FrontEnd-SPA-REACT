@@ -24,6 +24,7 @@ const ContainerNavMenu = styled.nav`
   justify-content: center;
   @media (min-width: ${breakpointXS}) {
     background-color: ${backgroundSecondary};
+    font-size: 30px;
     bottom: 0px;
     left: 0px;
     top: 0px;
