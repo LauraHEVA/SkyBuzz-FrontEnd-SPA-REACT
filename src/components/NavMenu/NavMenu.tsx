@@ -33,6 +33,20 @@ const ContainerNavMenu = styled.nav`
   }
 `;
 
+const ContainerIcon = styled.div`
+  @media (min-width: ${breakpointXS}) {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    :hover {
+      border: 2px solid ${primary};
+    }
+  }
+`;
+
 const NavMenu = (): JSX.Element => {
   return (
     <>
@@ -40,17 +54,23 @@ const NavMenu = (): JSX.Element => {
         <ListUlNavMenu>
           <ListItem>
             <Link to="/login">
-              <UserIcon />
+              <ContainerIcon>
+                <UserIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
           <ListItem>
             <Link to="/home">
-              <HomeIcon />
+              <ContainerIcon>
+                <HomeIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
           <ListItem>
             <Link to="/buzzers">
-              <AllUsersIcon />
+              <ContainerIcon>
+                <AllUsersIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
         </ListUlNavMenu>
