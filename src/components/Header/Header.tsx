@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
 import {
   breakpointXS,
+  greenCircleAuthor,
   grey,
   primary,
   secondary,
-  widthNavMenu,
 } from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
@@ -19,6 +19,9 @@ const MainContainerHeader = styled.div`
   border-bottom: 1px solid ${primary};
   padding: 0 15px;
   box-shadow: 0 4px 10px ${grey};
+  @media (min-width: ${breakpointXS}) {
+    background-color: ${greenCircleAuthor};
+  }
 `;
 
 const ListItem = styled.li`

@@ -55,6 +55,9 @@ export const ContainerListBuzzs = styled.div`
   margin-right: 20px;
   margin-top: 50px;
   margin-bottom: 100px;
+  @media (min-width: ${breakpointXS}) {
+    margin-left: calc(${widthNavMenu}*1.7);
+  }
 `;
 
 export const ContainerHeader = styled.div`
@@ -64,7 +67,7 @@ export const ContainerHeader = styled.div`
   right: 0px;
   margin-top: 0px;
   @media (min-width: ${breakpointXS}) {
-    width: 100vw-${widthNavMenu};
+    z-index: 2;
   }
 `;
 
