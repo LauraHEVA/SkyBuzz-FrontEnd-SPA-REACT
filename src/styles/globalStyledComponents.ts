@@ -47,6 +47,7 @@ export const ContainerNavMenu = styled.div`
     bottom: 0px;
     left: 0px;
     top: 0px;
+    width: ${widthNavMenu};
   }
 `;
 
