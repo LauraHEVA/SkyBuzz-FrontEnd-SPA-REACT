@@ -15,6 +15,7 @@ import UserIcon from "../UserIcon/UserIcon";
 
 const ContainerNavMenu = styled.nav`
   background-color: ${secondary};
+  font-size: 22px;
   height: 50px;
   border-top: 1px solid ${primary};
   padding: 0 15px;
@@ -24,11 +25,36 @@ const ContainerNavMenu = styled.nav`
   justify-content: center;
   @media (min-width: ${breakpointXS}) {
     background-color: ${backgroundSecondary};
+    font-size: 30px;
     bottom: 0px;
     left: 0px;
     top: 0px;
     height: 100%;
     width: ${widthNavMenu};
+  }
+`;
+
+const ContainerIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    font-size: 28px;
+  }
+
+  @media (min-width: ${breakpointXS}) {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    :hover {
+      border: 2px solid ${primary};
+      font-size: 36px;
+    }
   }
 `;
 
@@ -39,17 +65,23 @@ const NavMenu = (): JSX.Element => {
         <ListUlNavMenu>
           <ListItem>
             <Link to="/login">
-              <UserIcon />
+              <ContainerIcon>
+                <UserIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
           <ListItem>
             <Link to="/home">
-              <HomeIcon />
+              <ContainerIcon>
+                <HomeIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
           <ListItem>
             <Link to="/buzzers">
-              <AllUsersIcon />
+              <ContainerIcon>
+                <AllUsersIcon />
+              </ContainerIcon>
             </Link>
           </ListItem>
         </ListUlNavMenu>
