@@ -11,17 +11,10 @@ import {
   ContainerListBuzzs,
   ListItem,
   ListUlVert,
+  ButtonContainerNewBuzz,
 } from "../styles/globalStyledComponents";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
-import styled from "styled-components";
-
-const ButtonContainerNewBuzz = styled.div`
-  position: fixed;
-  bottom: 50px;
-  right: 15px;
-  z-index: 2;
-`;
 
 const HomePage = () => {
   const dispatch = useDispatch();

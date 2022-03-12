@@ -6,7 +6,6 @@ import {
   grey,
   primary,
   secondary,
-  widthNavMenu,
 } from "../../styles/globalStyles";
 
 const TitlePage = styled.h1`
