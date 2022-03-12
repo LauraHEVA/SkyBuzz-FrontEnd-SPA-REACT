@@ -11,7 +11,7 @@ const TrashIcon = ({
   return (
     <>
       <FontAwesomeIcon
-        data-testid="arrow"
+        data-testid="trash-can"
         icon={faTrashCan}
         size="1x"
         color={primary}

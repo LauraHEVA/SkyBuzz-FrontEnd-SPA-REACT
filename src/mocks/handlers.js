@@ -13,14 +13,16 @@ export const handlers = [
             author: "Dan",
             text: "React Redux",
             id: "324k2l",
+            date: "2022-03-12T14:14:10.573Z",
           },
           {
             category: "general",
             likes: 0,
             comments: [],
             author: "Dan",
-            text: "React Redux",
+            text: "I Hate Typescript",
             id: "324k2l",
+            date: "2022-03-12T14:14:10.573Z",
           },
         ],
       })
