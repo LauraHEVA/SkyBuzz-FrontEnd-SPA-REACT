@@ -5,7 +5,6 @@ import {
   ContainerHeader,
   MainContainerPage,
 } from "../styles/globalStyledComponents";
-import Toastr from "../components/Toastr/Toastr";
 import Footer from "../components/Footer/Footer";
 import FormNewBuzz from "../components/FormNewBuzz/FormNewBuzz";
 
@@ -15,7 +14,6 @@ const NewBuzzPage = () => {
       <ContainerHeader>
         <Header title="Buzzs" />
       </ContainerHeader>
-      <Toastr />
       <MainContainerPage>
         <FormNewBuzz />
       </MainContainerPage>

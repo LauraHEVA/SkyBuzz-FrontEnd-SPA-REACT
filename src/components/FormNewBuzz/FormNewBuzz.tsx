@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
-  ButtonSubmitForm,
+  ButtonSubmitContainer,
   ContainerFormNewBuzz,
 } from "../../styles/globalStyledComponents";
-import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonSubmit from "../Buttons/ButtonSubmit";
+import Toastr from "../Toastr/Toastr";
 
 const FormNewBuzz = (): JSX.Element => {
   const navigate = useNavigate();
@@ -12,6 +14,13 @@ const FormNewBuzz = (): JSX.Element => {
   const goToHomePage = () => {
     navigate(`/home`);
   };
+
+  const emptyDataForm = {
+    topicBuzz: "",
+    messageBuzz: "",
+  };
+
+  const [formData, setFormData] = useState(emptyDataForm);
 
   const formSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -43,15 +52,16 @@ const FormNewBuzz = (): JSX.Element => {
           <label htmlFor="messageBuzz">Writte your buzz here...</label>
         </div>
 
-        <ButtonSubmitForm>
-          <ButtonPrimary
+        <ButtonSubmitContainer>
+          <ButtonSubmit
             actionOnClick={() => {
               toast.success("Buzz published correctly");
             }}
             className={"btn-primary"}
             text={"Buzz It!"}
           />
-        </ButtonSubmitForm>
+          <Toastr />
+        </ButtonSubmitContainer>
       </form>
     </ContainerFormNewBuzz>
   );

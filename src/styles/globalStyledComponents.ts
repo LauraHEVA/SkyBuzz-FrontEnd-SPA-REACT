@@ -76,7 +76,7 @@ export const ButtonContainerNewBuzz = styled.div`
   }
 `;
 
-export const ButtonSubmitForm = styled.div`
+export const ButtonSubmitContainer = styled.div`
   margin-top: 18px;
   display: flex;
   justify-content: flex-end;
