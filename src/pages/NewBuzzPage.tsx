@@ -3,10 +3,10 @@ import Header from "../components/Header/Header";
 import {
   ContainerNavMenu,
   ContainerHeader,
-  ContainerListBuzzs,
+  MainContainerPage,
 } from "../styles/globalStyledComponents";
-import Toastr from "../components/Toastr/Toastr";
 import Footer from "../components/Footer/Footer";
+import FormNewBuzz from "../components/FormNewBuzz/FormNewBuzz";
 
 const NewBuzzPage = () => {
   return (
@@ -14,8 +14,9 @@ const NewBuzzPage = () => {
       <ContainerHeader>
         <Header title="Buzzs" />
       </ContainerHeader>
-      <Toastr />
-      <ContainerListBuzzs></ContainerListBuzzs>
+      <MainContainerPage>
+        <FormNewBuzz />
+      </MainContainerPage>
       <ContainerNavMenu>
         <NavMenu />
       </ContainerNavMenu>

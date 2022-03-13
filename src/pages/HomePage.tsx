@@ -8,10 +8,10 @@ import { deleteBuzzThunk, loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
 import {
   ContainerNavMenu,
   ContainerHeader,
-  ContainerListBuzzs,
   ListItem,
   ListUlVert,
   ButtonContainerNewBuzz,
+  MainContainerPage,
 } from "../styles/globalStyledComponents";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
@@ -46,7 +46,7 @@ const HomePage = () => {
         <h3>Aqui va a ir el Menu desplegable para categorias</h3>
       </div>
       <Toastr />
-      <ContainerListBuzzs>
+      <MainContainerPage>
         <ListUlVert>
           {buzzsList.map((buzz) => {
             return (
@@ -71,7 +71,7 @@ const HomePage = () => {
             text={"New Buzz"}
           />
         </ButtonContainerNewBuzz>
-      </ContainerListBuzzs>
+      </MainContainerPage>
       <ContainerNavMenu>
         <NavMenu />
       </ContainerNavMenu>
