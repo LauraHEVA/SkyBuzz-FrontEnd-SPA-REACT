@@ -28,10 +28,18 @@ export const handlers = [
       })
     );
   }),
+
   rest.delete(
     `${process.env.REACT_APP_PUBLIC_API}buzzs/324k2lB`,
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json({}));
+    }
+  ),
+
+  rest.delete(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/123456`,
+    (req, res, ctx) => {
+      return res(ctx.status(404));
     }
   ),
 ];
