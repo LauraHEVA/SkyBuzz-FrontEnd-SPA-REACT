@@ -1,6 +1,7 @@
 export interface BuzzBasic {
   topic: string;
   text: string;
+  author: string;
 }
 
 export interface BuzzProps {
@@ -10,7 +11,6 @@ export interface BuzzProps {
 export interface BuzzObject extends BuzzBasic {
   likes: number;
   comments: number[];
-  author: string;
   date: string;
   id: string;
 }
