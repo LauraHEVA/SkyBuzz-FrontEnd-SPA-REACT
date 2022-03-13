@@ -33,7 +33,7 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
           <ContainerSuperior>
             <TextAuthor>{buzz.author}</TextAuthor>
             <TextTimeAgo>
-              <ReactTimeAgo date={buzz.date} locale="en-US" />
+              <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
             </TextTimeAgo>
           </ContainerSuperior>
           <TextBuzz>{buzz.text}</TextBuzz>
