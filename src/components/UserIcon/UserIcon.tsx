@@ -15,7 +15,7 @@ const UserIcon = (): JSX.Element => {
     <FontAwesomeIcon
       data-testid="user"
       icon={userLookUp}
-      size="1x"
+      size="lg"
       color={primary}
     />
   );

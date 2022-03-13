@@ -1,14 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
 import { primary } from "../../styles/globalStyles";
+import { FaIcon } from "../../styles/globalStyledComponents";
 
 const CommentIcon = (): JSX.Element => {
   return (
     <>
-      <FontAwesomeIcon
+      <FaIcon
         data-testid="comment"
         icon={faCommentDots}
-        size="1x"
+        size="lg"
         color={primary}
       />
     </>
