@@ -40,7 +40,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "test": "react-scripts test",
+    "test-w": "react-scripts test --watchAll --verbose",
     "test-coverage": "react-scripts test --watchAll --verbose --collect-coverage",
     "eject": "react-scripts eject",
     "prepare": "husky install"
