@@ -68,9 +68,9 @@ describe("Given a HomePage component", () => {
         </BrowserRouter>
       );
 
-      const prueba = await screen.findByText(/react redux/i);
+      const textFound = await screen.findByText(/react redux/i);
 
-      expect(prueba).toBeInTheDocument();
+      expect(textFound).toBeInTheDocument();
     });
   });
 });
