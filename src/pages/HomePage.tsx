@@ -18,10 +18,13 @@ import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import { toast } from "react-toastify";
 import Toastr from "../components/Toastr/Toastr";
 import Footer from "../components/Footer/Footer";
+import { BuzzObject } from "../types/buzzInterfaces";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const buzzsList = useSelector((state: RootState) => state.buzzs);
+  const buzzsList: BuzzObject[] = useSelector(
+    (state: RootState) => state.buzzs
+  );
 
   useEffect(() => {
     dispatch(loadAllBuzzsThunk);

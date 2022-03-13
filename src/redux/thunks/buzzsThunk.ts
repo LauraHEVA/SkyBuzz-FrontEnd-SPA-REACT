@@ -43,8 +43,6 @@ export const addNewBuzzThunk =
         body: JSON.stringify(buzz),
       }
     );
-    if (response.ok) {
-      const newBuzz = await response.json();
-      dispatch(addNewBuzzAction(newBuzz));
-    }
+    const newBuzz = await response.json();
+    dispatch(addNewBuzzAction(newBuzz));
   };
