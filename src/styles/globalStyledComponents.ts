@@ -124,3 +124,8 @@ export const FaIcon = styled(FontAwesomeIcon)`
     cursor: pointer;
   }
 `;
+
+export const ContainerFormNewBuzz = styled.div`
+  font-family: nunito, sans-serif;
+  color: ${primary};
+`;

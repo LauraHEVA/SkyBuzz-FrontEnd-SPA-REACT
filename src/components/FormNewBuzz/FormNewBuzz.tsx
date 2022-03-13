@@ -1,11 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { ButtonSubmitForm } from "../../styles/globalStyledComponents";
+import {
+  ButtonSubmitForm,
+  ContainerFormNewBuzz,
+} from "../../styles/globalStyledComponents";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 
 const FormNewBuzz = (): JSX.Element => {
+  const navigate = useNavigate();
+
+  const goToHomePage = () => {
+    navigate(`/home`);
+  };
+
+  const formSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    // dispatch(registerUserThunk(formData));
+    // resetForm();
+    goToHomePage();
+  };
+
   return (
-    <>
-      <div className="container">
+    <ContainerFormNewBuzz className="container">
+      <form onSubmit={formSubmit} autoComplete="off">
         <div className="input-group mb-3">
           <label className="input-group-text" htmlFor="topicBuzz">
             Topic
@@ -23,7 +40,7 @@ const FormNewBuzz = (): JSX.Element => {
             placeholder="Leave a comment here"
             id="messageBuzz"
           ></textarea>
-          <label htmlFor="messageBuzz">Writte your buzz...</label>
+          <label htmlFor="messageBuzz">Writte your buzz here...</label>
         </div>
 
         <ButtonSubmitForm>
@@ -35,8 +52,8 @@ const FormNewBuzz = (): JSX.Element => {
             text={"Buzz It!"}
           />
         </ButtonSubmitForm>
-      </div>
-    </>
+      </form>
+    </ContainerFormNewBuzz>
   );
 };
 
