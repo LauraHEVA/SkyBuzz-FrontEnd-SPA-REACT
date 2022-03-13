@@ -54,7 +54,7 @@ export const ContainerNavMenu = styled.div`
   }
 `;
 
-export const ContainerListBuzzs = styled.div`
+export const MainContainerPage = styled.div`
   margin-left: 15px;
   margin-right: 25px;
   margin-top: 50px;
@@ -73,6 +73,14 @@ export const ButtonContainerNewBuzz = styled.div`
   @media (min-width: ${breakpointXS}) {
     top: 80px;
     right: 40px;
+  }
+`;
+
+export const ButtonSubmitForm = styled.div`
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  @media (min-width: ${breakpointXS}) {
   }
 `;
 
