@@ -17,7 +17,7 @@ describe("Given Buzz Component", () => {
         author: "LauHater",
         text: "Typescript I Hate U",
         id: "324k2l",
-        date: new Date(),
+        date: new Date().toDateString(),
       };
       TimeAgo.addLocale(en);
 

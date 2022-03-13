@@ -11,7 +11,7 @@ describe("Given a loadAllBuzzs Action", () => {
           comments: [1],
           author: "Madonna",
           text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
           id: "324k2l",
         },
         {
@@ -20,7 +20,7 @@ describe("Given a loadAllBuzzs Action", () => {
           comments: [1],
           author: "Freddie",
           text: "Freddie is writting a very long, and also short, and repeated message and he is always copying Madonna's messages",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
           id: "324k2l",
         },
       ];

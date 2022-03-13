@@ -14,7 +14,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Madonna",
           text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
           id: "324k2l",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
         {
           category: "general",
@@ -23,7 +23,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Freddie",
           text: "Freddie is writting a very long, and also short, and repeated message and he is always copying Madonna's messages",
           id: "324k2l",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
       ];
 
@@ -48,7 +48,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Madonna",
           text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
           id: "324k2l",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
       ];
 
@@ -73,7 +73,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Madonna",
           text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
           id: "324k2l",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
         {
           category: "general",
@@ -82,7 +82,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Freddie",
           text: "Freddie is writting a very long and repeated message",
           id: "32454544",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
       ];
 
@@ -99,7 +99,7 @@ describe("Given a buzzsReducer function", () => {
           author: "Madonna",
           text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
           id: "324k2l",
-          date: Date.parse("2022-03-11T12:22:36.899Z"),
+          date: "2022-03-11T12:22:36.899Z",
         },
       ];
 
