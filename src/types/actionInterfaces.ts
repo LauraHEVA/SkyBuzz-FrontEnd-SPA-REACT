@@ -11,3 +11,7 @@ export interface LoadAllBuzsActionInterface extends SomeActionInterface {
 export interface DeleteBuzzActionInterface extends SomeActionInterface {
   id: string;
 }
+
+export interface AddNewBuzzActionInterface extends SomeActionInterface {
+  buzz: BuzzObject;
+}
