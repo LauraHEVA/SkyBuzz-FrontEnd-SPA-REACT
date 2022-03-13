@@ -1,7 +1,5 @@
-import {
-  ButtonContainerNewBuzz,
-  ButtonSubmitForm,
-} from "../../styles/globalStyledComponents";
+import { toast } from "react-toastify";
+import { ButtonSubmitForm } from "../../styles/globalStyledComponents";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 
 const FormNewBuzz = (): JSX.Element => {
@@ -27,9 +25,12 @@ const FormNewBuzz = (): JSX.Element => {
           ></textarea>
           <label htmlFor="messageBuzz">Writte your buzz...</label>
         </div>
+
         <ButtonSubmitForm>
           <ButtonPrimary
-            actionOnClick={() => console.log("Form")}
+            actionOnClick={() => {
+              toast.success("Buzz published correctly");
+            }}
             className={"btn-primary"}
             text={"Buzz It!"}
           />
