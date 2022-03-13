@@ -1,4 +1,4 @@
-import { BuzzObject } from "./buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "./buzzInterfaces";
 
 export interface SomeActionInterface {
   type: string;
@@ -13,5 +13,5 @@ export interface DeleteBuzzActionInterface extends SomeActionInterface {
 }
 
 export interface AddNewBuzzActionInterface extends SomeActionInterface {
-  buzz: BuzzObject;
+  buzz: BuzzBasic;
 }

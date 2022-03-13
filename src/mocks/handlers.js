@@ -7,7 +7,7 @@ export const handlers = [
       ctx.json({
         buzzs: [
           {
-            category: "general",
+            topic: "general",
             likes: 0,
             comments: [],
             author: "Dan",
@@ -16,7 +16,7 @@ export const handlers = [
             date: "2022-03-12T14:14:10.573Z",
           },
           {
-            category: "general",
+            topic: "general",
             likes: 0,
             comments: [],
             author: "Dan",

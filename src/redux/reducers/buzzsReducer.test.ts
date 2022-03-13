@@ -8,7 +8,7 @@ describe("Given a buzzsReducer function", () => {
       const currentBuzzs: BuzzObject[] = [];
       const buzzsToLoad: BuzzObject[] = [
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Madonna",
@@ -17,7 +17,7 @@ describe("Given a buzzsReducer function", () => {
           date: "2022-03-11T12:22:36.899Z",
         },
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Freddie",
@@ -42,7 +42,7 @@ describe("Given a buzzsReducer function", () => {
     test("Then it should return a new state with the current state (initial state)", () => {
       const currentBuzzs: BuzzObject[] = [
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Madonna",
@@ -67,7 +67,7 @@ describe("Given a buzzsReducer function", () => {
     test("Then it should return a new state without the buzz deleted", () => {
       const currentBuzzs: BuzzObject[] = [
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Madonna",
@@ -76,7 +76,7 @@ describe("Given a buzzsReducer function", () => {
           date: "2022-03-11T12:22:36.899Z",
         },
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Freddie",
@@ -93,7 +93,7 @@ describe("Given a buzzsReducer function", () => {
 
       const newBuzzsWithoutIdDeleted = [
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Madonna",

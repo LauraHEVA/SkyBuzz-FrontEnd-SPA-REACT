@@ -15,7 +15,7 @@ import {
   ProfileContainer,
   TextAuthor,
   TextBuzz,
-  TextCategory,
+  TextTopic,
   TextTimeAgo,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
@@ -37,7 +37,7 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
             </TextTimeAgo>
           </ContainerSuperior>
           <TextBuzz>{buzz.text}</TextBuzz>
-          <TextCategory>#{buzz.category}</TextCategory>
+          <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
               <CommentIcon />

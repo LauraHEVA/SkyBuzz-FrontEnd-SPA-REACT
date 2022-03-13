@@ -1,6 +1,6 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzBasic } from "../../types/buzzInterfaces";
 import {
   addNewBuzzAction,
   deleteBuzzAction,
@@ -31,7 +31,7 @@ export const deleteBuzzThunk =
   };
 
 export const addNewBuzzThunk =
-  (buzz: BuzzObject) =>
+  (buzz: BuzzBasic) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/new`,

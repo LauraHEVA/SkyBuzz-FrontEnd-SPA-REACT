@@ -1,15 +1,19 @@
 import { SyntheticEvent, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { addNewBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import {
   ButtonSubmitContainer,
   ContainerFormNewBuzz,
 } from "../../styles/globalStyledComponents";
+import { BuzzBasic } from "../../types/buzzInterfaces";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 import Toastr from "../Toastr/Toastr";
 
 const FormNewBuzz = (): JSX.Element => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [topicValue, setTopicValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
@@ -19,8 +23,14 @@ const FormNewBuzz = (): JSX.Element => {
     setMessageValue("");
   };
 
+  const buzzToCreate: BuzzBasic = {
+    topic: topicValue,
+    text: messageValue,
+  };
+
   const onSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
+    dispatch(addNewBuzzThunk(buzzToCreate));
     resetForm();
     navigate(`/home`);
   };

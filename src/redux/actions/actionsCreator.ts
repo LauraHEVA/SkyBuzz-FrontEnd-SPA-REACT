@@ -3,7 +3,7 @@ import {
   DeleteBuzzActionInterface,
   LoadAllBuzsActionInterface,
 } from "../../types/actionInterfaces";
-import { BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "./actionsType";
 
 export const loadAllBuzzsAction = (
@@ -19,7 +19,7 @@ export const deleteBuzzAction = (id: string): DeleteBuzzActionInterface => ({
 });
 
 export const addNewBuzzAction = (
-  buzz: BuzzObject
+  buzz: BuzzBasic
 ): AddNewBuzzActionInterface => ({
   type: actionsType.addBuzz,
   buzz,

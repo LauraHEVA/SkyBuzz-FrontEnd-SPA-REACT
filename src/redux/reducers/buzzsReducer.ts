@@ -4,7 +4,7 @@ import {
   LoadAllBuzsActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
-import { BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 
 import actionsType from "../actions/actionsType";
 
@@ -18,7 +18,7 @@ const buzzsReducer = (
     type: "",
   }
 ) => {
-  let newBuzzsList: BuzzObject[];
+  let newBuzzsList: BuzzObject[] | BuzzBasic[];
 
   switch (action.type) {
     case actionsType.loadAllBuzzs:
