@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { primary } from "../../styles/globalStyles";
 import React from "react";
+import { FaIcon } from "../../styles/globalStyledComponents";
 
 const TrashIcon = ({
   onClick,
@@ -10,10 +10,10 @@ const TrashIcon = ({
 }): JSX.Element => {
   return (
     <>
-      <FontAwesomeIcon
+      <FaIcon
         data-testid="trash-can"
         icon={faTrashCan}
-        size="1x"
+        size="lg"
         color={primary}
         onClick={onClick}
       />

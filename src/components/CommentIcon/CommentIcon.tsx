@@ -8,7 +8,7 @@ const CommentIcon = (): JSX.Element => {
       <FontAwesomeIcon
         data-testid="comment"
         icon={faCommentDots}
-        size="1x"
+        size="lg"
         color={primary}
       />
     </>

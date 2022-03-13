@@ -8,7 +8,7 @@ const HeartIcon = () => {
       <FontAwesomeIcon
         data-testid="heart"
         icon={faHeart}
-        size="1x"
+        size="lg"
         color={primary}
       />
     </>

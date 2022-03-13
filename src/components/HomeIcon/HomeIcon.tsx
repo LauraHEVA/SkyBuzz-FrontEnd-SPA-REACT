@@ -15,7 +15,7 @@ const HomeIcon = (): JSX.Element => {
     <FontAwesomeIcon
       data-testid="home"
       icon={homeLookUp}
-      size="1x"
+      size="lg"
       color={primary}
     />
   );
