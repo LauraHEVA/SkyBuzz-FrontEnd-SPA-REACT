@@ -14,7 +14,3 @@ export interface BuzzObject extends BuzzBasic {
   date: string;
   id: string;
 }
-
-export interface BuzzsArrayProps {
-  buzzs: BuzzObject[];
-}
