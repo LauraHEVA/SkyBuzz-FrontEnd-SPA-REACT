@@ -28,16 +28,17 @@ const FormNewBuzz = (): JSX.Element => {
     text: messageValue,
   };
 
-  const onSubmit = (event: SyntheticEvent) => {
+  const onSubmitForm = (event: SyntheticEvent) => {
     event.preventDefault();
     dispatch(addNewBuzzThunk(buzzToCreate));
+    toast.success("Buzz published correctly");
     resetForm();
     navigate(`/home`);
   };
 
   return (
     <ContainerFormNewBuzz className="container">
-      <form onSubmit={onSubmit} autoComplete="off">
+      <form onSubmit={onSubmitForm} autoComplete="off">
         <div className="input-group mb-3">
           <label className="input-group-text" htmlFor="topicBuzz">
             Topic
@@ -71,13 +72,7 @@ const FormNewBuzz = (): JSX.Element => {
         </div>
 
         <ButtonSubmitContainer>
-          <ButtonSubmit
-            actionOnClick={() => {
-              toast.success("Buzz published correctly");
-            }}
-            className={"btn-primary"}
-            text={"Buzz It!"}
-          />
+          <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
           <Toastr />
         </ButtonSubmitContainer>
       </form>

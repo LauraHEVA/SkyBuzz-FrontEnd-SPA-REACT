@@ -1,13 +1,9 @@
 import { PrimaryBtn } from "../../styles/globalStyledComponents";
 import { ButtonProps } from "../../types/componentsInterfaces";
 
-const ButtonSubmit = ({
-  actionOnClick,
-  text,
-  className,
-}: ButtonProps): JSX.Element => {
+const ButtonSubmit = ({ text, className }: ButtonProps): JSX.Element => {
   return (
-    <PrimaryBtn type="submit" className={className} onClick={actionOnClick}>
+    <PrimaryBtn type="submit" className={className}>
       {text}
     </PrimaryBtn>
   );

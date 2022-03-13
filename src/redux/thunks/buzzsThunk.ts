@@ -44,6 +44,7 @@ export const addNewBuzzThunk =
       }
     );
     if (response.ok) {
-      dispatch(addNewBuzzAction(buzz));
+      const newBuzz = await response.json();
+      dispatch(addNewBuzzAction(newBuzz));
     }
   };
