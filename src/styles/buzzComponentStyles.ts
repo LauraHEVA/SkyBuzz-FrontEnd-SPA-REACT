@@ -42,7 +42,7 @@ export const TextBuzz = styled.p`
   font-size: 14px;
 `;
 
-export const TextCategory = styled.p`
+export const TextTopic = styled.p`
   color: ${primary};
   font-weight: 900;
   font-size: 12px;

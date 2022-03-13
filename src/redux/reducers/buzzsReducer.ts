@@ -1,9 +1,10 @@
 import {
+  AddNewBuzzActionInterface,
   DeleteBuzzActionInterface,
   LoadAllBuzsActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
-import { BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 
 import actionsType from "../actions/actionsType";
 
@@ -12,11 +13,12 @@ const buzzsReducer = (
   action:
     | SomeActionInterface
     | LoadAllBuzsActionInterface
-    | DeleteBuzzActionInterface = {
+    | DeleteBuzzActionInterface
+    | AddNewBuzzActionInterface = {
     type: "",
   }
 ) => {
-  let newBuzzsList: BuzzObject[];
+  let newBuzzsList: BuzzObject[] | BuzzBasic[];
 
   switch (action.type) {
     case actionsType.loadAllBuzzs:
@@ -27,6 +29,13 @@ const buzzsReducer = (
       newBuzzsList = currentBuzzs.filter(
         (buzz) => buzz.id !== (action as DeleteBuzzActionInterface).id
       );
+      break;
+
+    case actionsType.addBuzz:
+      newBuzzsList = [
+        ...currentBuzzs,
+        (action as AddNewBuzzActionInterface).buzz,
+      ];
       break;
 
     default:

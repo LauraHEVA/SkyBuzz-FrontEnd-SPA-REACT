@@ -1,17 +1,16 @@
+export interface BuzzBasic {
+  topic: string;
+  text: string;
+}
+
 export interface BuzzProps {
   buzz: BuzzObject;
   onClick: React.MouseEventHandler;
 }
-export interface BuzzObject {
-  category: string;
+export interface BuzzObject extends BuzzBasic {
   likes: number;
   comments: number[];
   author: string;
-  text: string;
   date: string;
   id: string;
-}
-
-export interface BuzzsArrayProps {
-  buzzs: BuzzObject[];
 }

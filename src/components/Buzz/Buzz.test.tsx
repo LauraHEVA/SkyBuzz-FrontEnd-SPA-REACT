@@ -11,7 +11,7 @@ describe("Given Buzz Component", () => {
     test("Then it should display paragraph with the text 'Typescript I Hate U'", () => {
       const textMessage = "Typescript I Hate U";
       const buzzFake = {
-        category: "general",
+        topic: "general",
         likes: 0,
         comments: [],
         author: "LauHater",

@@ -6,7 +6,7 @@ describe("Given a loadAllBuzzs Action", () => {
     test("Then it should return an action object with type 'load-all-buzzs'", () => {
       const buzzs: BuzzObject[] = [
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Madonna",
@@ -15,7 +15,7 @@ describe("Given a loadAllBuzzs Action", () => {
           id: "324k2l",
         },
         {
-          category: "general",
+          topic: "general",
           likes: 0,
           comments: [1],
           author: "Freddie",
