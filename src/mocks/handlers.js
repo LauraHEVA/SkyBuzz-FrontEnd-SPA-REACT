@@ -12,7 +12,7 @@ export const handlers = [
             comments: [],
             author: "Dan",
             text: "React Redux",
-            id: "324k2l",
+            id: "324k2lA",
             date: "2022-03-12T14:14:10.573Z",
           },
           {
@@ -21,11 +21,25 @@ export const handlers = [
             comments: [],
             author: "Dan",
             text: "I Hate Typescript",
-            id: "324k2l",
+            id: "324k2lB",
             date: "2022-03-12T14:14:10.573Z",
           },
         ],
       })
     );
   }),
+
+  rest.delete(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/324k2lB`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json({}));
+    }
+  ),
+
+  rest.delete(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/123456`,
+    (req, res, ctx) => {
+      return res(ctx.status(404));
+    }
+  ),
 ];
