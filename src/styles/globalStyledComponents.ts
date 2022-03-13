@@ -113,5 +113,6 @@ export const FaIcon = styled(FontAwesomeIcon)`
   :hover {
     box-shadow: 0 0 10px ${secondary}, 0 0 5px ${greyCyan};
     background-color: ${secondary};
+    cursor: pointer;
   }
 `;
