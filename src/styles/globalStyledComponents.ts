@@ -1,8 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import {
   backgroundSecondary,
   breakpointXS,
   grey,
+  greyCyan,
   primary,
   secondary,
   widthNavMenu,
@@ -105,4 +107,10 @@ export const PrimaryBtn = styled.button`
 
 export const ContainerFontAwesome = styled.div`
   background-color: red;
+`;
+
+export const FaIcon = styled(FontAwesomeIcon)`
+  :hover {
+    box-shadow: 0 0 5px ${primary}, 0 0 10px ${greyCyan};
+  }
 `;
