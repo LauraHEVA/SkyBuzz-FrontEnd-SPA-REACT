@@ -36,8 +36,8 @@ const FormNewBuzz = (): JSX.Element => {
             className="form-select"
             id="topicBuzz"
             value={topicValue}
-            onChange={(ev: React.ChangeEvent<HTMLSelectElement>): void =>
-              setTopicValue(ev.target.value)
+            onChange={(event: React.ChangeEvent<HTMLSelectElement>): void =>
+              setTopicValue(event.target.value)
             }
           >
             <option value="1">General</option>
@@ -53,8 +53,8 @@ const FormNewBuzz = (): JSX.Element => {
             id="messageBuzz"
             type="text"
             value={messageValue}
-            onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
-              setMessageValue(ev.target.value)
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setMessageValue(event.target.value)
             }
           ></input>
           <label htmlFor="messageBuzz">Writte your buzz here...</label>
