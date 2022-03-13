@@ -13,3 +13,8 @@ export const deleteBuzzAction = (id: string) => ({
   type: actionsType.deleteBuzz,
   id,
 });
+
+export const addNewBuzzAction = (buzz: BuzzObject) => ({
+  type: actionsType.addBuzz,
+  buzz,
+});
