@@ -52,10 +52,11 @@ const FormNewBuzz = (): JSX.Element => {
               setTopicValue(event.target.value)
             }
           >
-            <option value="1">General</option>
-            <option value="2">Resources</option>
-            <option value="3">PlayTime</option>
-            <option value="4">Events</option>
+            <option value="general">General</option>
+            <option value="resources">Resources</option>
+            <option value="playtime">PlayTime</option>
+            <option value="events">Events</option>
+            <option value="jobs">Jobs</option>
           </select>
         </div>
         <div className="form-floating">
