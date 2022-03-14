@@ -21,5 +21,21 @@ describe("Given a form component", () => {
 
       expect(textFounded).toBeInTheDocument();
     });
+
+    test("It should display a form with an input", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <FormNewBuzz />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const textFounded = screen.getByRole("textbox", {
+        name: "Writte your buzz here...",
+      });
+
+      expect(textFounded).toBeInTheDocument();
+    });
   });
 });
