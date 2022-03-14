@@ -31,11 +31,31 @@ describe("Given a form component", () => {
         </BrowserRouter>
       );
 
-      const textFounded = screen.getByRole("textbox", {
+      const textboxFounded = screen.getByRole("textbox", {
         name: "Writte your buzz here...",
       });
 
-      expect(textFounded).toBeInTheDocument();
+      expect(textboxFounded).toBeInTheDocument();
+    });
+
+    test("It should display a form with an options to select", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <FormNewBuzz />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const comboboxFounded = screen.getByRole("combobox", {
+        name: "Topic",
+      });
+      const optionFounded = screen.getByRole("option", {
+        name: "General",
+      });
+
+      expect(comboboxFounded).toBeInTheDocument();
+      expect(optionFounded).toBeInTheDocument();
     });
   });
 });
