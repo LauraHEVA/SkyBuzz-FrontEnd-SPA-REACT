@@ -57,11 +57,11 @@ export const ContainerNavMenu = styled.div`
 export const MainContainerPage = styled.div`
   margin-left: 15px;
   margin-right: 25px;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
   @media (min-width: ${breakpointXS}) {
     margin-left: calc(${widthNavMenu}*1.7);
-    margin-top: 110px;
+    margin-top: 140px;
   }
 `;
 
@@ -122,4 +122,7 @@ export const FaIcon = styled(FontAwesomeIcon)`
 export const ContainerFormNewBuzz = styled.div`
   font-family: nunito, sans-serif;
   color: ${primary};
+  @media (min-width: ${breakpointXS}) {
+    margin-top: 200px;
+  }
 `;
