@@ -22,7 +22,7 @@ describe("Given a form component", () => {
       expect(textFounded).toBeInTheDocument();
     });
 
-    test("It should display a form with an input", () => {
+    test("It should display a form with an input to writte a message", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
