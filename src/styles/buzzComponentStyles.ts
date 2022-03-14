@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { grey, greyLight, primary, secondary } from "./globalStyles";
+import {
+  breakpointXS,
+  grey,
+  greyLight,
+  primary,
+  secondary,
+} from "./globalStyles";
 
 export const MainContainer = styled.div`
   display: flex;
@@ -7,6 +13,9 @@ export const MainContainer = styled.div`
   border-bottom: 1px solid ${greyLight};
   margin-bottom: 20px;
   width: 100%;
+  @media (min-width: ${breakpointXS}) {
+    max-width: 500px;
+  }
 `;
 
 export const ProfileContainer = styled.div`

@@ -70,18 +70,12 @@ export const ButtonContainerNewBuzz = styled.div`
   bottom: 50px;
   right: 15px;
   z-index: 2;
-  @media (min-width: ${breakpointXS}) {
-    top: 80px;
-    right: 40px;
-  }
 `;
 
 export const ButtonSubmitContainer = styled.div`
   margin-top: 18px;
   display: flex;
   justify-content: flex-end;
-  @media (min-width: ${breakpointXS}) {
-  }
 `;
 
 export const ContainerHeader = styled.div`

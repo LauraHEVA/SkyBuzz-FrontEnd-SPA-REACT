@@ -8,6 +8,7 @@ import {
   ContainerFormNewBuzz,
 } from "../../styles/globalStyledComponents";
 import { BuzzBasic } from "../../types/buzzInterfaces";
+import ButtonDisabled from "../Buttons/ButtonDisabled";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 import Toastr from "../Toastr/Toastr";
 
@@ -15,11 +16,11 @@ const FormNewBuzz = (): JSX.Element => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [topicValue, setTopicValue] = useState<string>("");
+  const [topicValue, setTopicValue] = useState<string>("general");
   const [messageValue, setMessageValue] = useState<string>("");
 
   const resetForm = () => {
-    setTopicValue("");
+    setTopicValue("general");
     setMessageValue("");
   };
 
@@ -57,7 +58,7 @@ const FormNewBuzz = (): JSX.Element => {
           <select
             className="form-select"
             id="topicBuzz"
-            value={topicValue}
+            defaultValue="general"
             onChange={onChangeTopic}
           >
             <option value="general">General</option>
@@ -67,6 +68,7 @@ const FormNewBuzz = (): JSX.Element => {
             <option value="jobs">Jobs</option>
           </select>
         </div>
+
         <div className="form-floating">
           <input
             className="form-control"
@@ -78,11 +80,19 @@ const FormNewBuzz = (): JSX.Element => {
           ></input>
           <label htmlFor="messageBuzz">Writte your buzz here...</label>
         </div>
-
-        <ButtonSubmitContainer>
-          <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
-          <Toastr />
-        </ButtonSubmitContainer>
+        {messageValue.length > 2 ? (
+          <ButtonSubmitContainer>
+            <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
+            <Toastr />
+          </ButtonSubmitContainer>
+        ) : (
+          <ButtonSubmitContainer>
+            <ButtonDisabled
+              className={"btn btn-outline-secondary"}
+              text={"Buzz It!"}
+            />
+          </ButtonSubmitContainer>
+        )}
       </form>
     </ContainerFormNewBuzz>
   );
