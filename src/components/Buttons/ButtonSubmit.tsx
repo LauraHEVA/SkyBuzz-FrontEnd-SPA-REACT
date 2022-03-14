@@ -3,7 +3,7 @@ import { ButtonProps } from "../../types/componentsInterfaces";
 
 const ButtonSubmit = ({ text, className }: ButtonProps): JSX.Element => {
   return (
-    <PrimaryBtn type="submit" className={className}>
+    <PrimaryBtn type="submit" data-testid="submit" className={className}>
       {text}
     </PrimaryBtn>
   );

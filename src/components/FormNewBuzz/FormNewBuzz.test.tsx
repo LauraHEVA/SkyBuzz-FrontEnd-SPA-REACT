@@ -74,7 +74,6 @@ describe("Given a form component", () => {
       expect(option3Founded).toBeInTheDocument();
       expect(option4Founded).toBeInTheDocument();
       expect(option5Founded).toBeInTheDocument();
-
       expect(allOptions).toHaveLength(5);
     });
   });
