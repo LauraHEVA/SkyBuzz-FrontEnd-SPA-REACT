@@ -37,6 +37,16 @@ const FormNewBuzz = (): JSX.Element => {
     navigate(`/home`);
   };
 
+  const onChangeTopic = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    setTopicValue(event.target.value);
+  };
+
+  const onChangeMessage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setMessageValue(event.target.value);
+  };
+
   return (
     <ContainerFormNewBuzz className="container">
       <form onSubmit={onSubmitForm} autoComplete="off">
@@ -48,9 +58,7 @@ const FormNewBuzz = (): JSX.Element => {
             className="form-select"
             id="topicBuzz"
             value={topicValue}
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>): void =>
-              setTopicValue(event.target.value)
-            }
+            onChange={onChangeTopic}
           >
             <option value="general">General</option>
             <option value="resources">Resources</option>
@@ -66,9 +74,7 @@ const FormNewBuzz = (): JSX.Element => {
             id="messageBuzz"
             type="text"
             value={messageValue}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setMessageValue(event.target.value)
-            }
+            onChange={onChangeMessage}
           ></input>
           <label htmlFor="messageBuzz">Writte your buzz here...</label>
         </div>
