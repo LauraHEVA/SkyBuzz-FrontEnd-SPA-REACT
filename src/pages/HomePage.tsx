@@ -45,9 +45,6 @@ const HomePage = () => {
       <ContainerHeader>
         <Header title="Buzzs" />
       </ContainerHeader>
-      <div>
-        <h3>Aqui va a ir el Menu desplegable para categorias</h3>
-      </div>
       <Toastr />
       <MainContainerPage>
         <ListUlVert>

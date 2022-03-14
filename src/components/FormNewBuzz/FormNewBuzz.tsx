@@ -2,6 +2,7 @@ import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import styled from "styled-components";
 import { addNewBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import {
   ButtonSubmitContainer,
@@ -70,17 +71,17 @@ const FormNewBuzz = (): JSX.Element => {
         </div>
 
         <div className="form-floating">
-          <input
+          <InputMessage
             className="form-control"
             placeholder="Leave a comment here"
             id="messageBuzz"
             type="text"
             value={messageValue}
             onChange={onChangeMessage}
-          ></input>
+          ></InputMessage>
           <label htmlFor="messageBuzz">Writte your buzz here...</label>
         </div>
-        {messageValue.length > 2 ? (
+        {messageValue.length > 2 && messageValue.length < 201 ? (
           <ButtonSubmitContainer>
             <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
             <Toastr />
@@ -97,5 +98,9 @@ const FormNewBuzz = (): JSX.Element => {
     </ContainerFormNewBuzz>
   );
 };
+
+const InputMessage = styled.input`
+  word-break: break-all;
+`;
 
 export default FormNewBuzz;
