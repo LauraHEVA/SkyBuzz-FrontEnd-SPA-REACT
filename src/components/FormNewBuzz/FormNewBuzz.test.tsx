@@ -50,12 +50,32 @@ describe("Given a form component", () => {
       const comboboxFounded = screen.getByRole("combobox", {
         name: "Topic",
       });
-      const optionFounded = screen.getByRole("option", {
+
+      const option1Founded = screen.getByRole("option", {
         name: "General",
       });
+      const option2Founded = screen.getByRole("option", {
+        name: "Resources",
+      });
+      const option3Founded = screen.getByRole("option", {
+        name: "PlayTime",
+      });
+      const option4Founded = screen.getByRole("option", {
+        name: "Events",
+      });
+      const option5Founded = screen.getByRole("option", {
+        name: "Jobs",
+      });
+      const allOptions = screen.getAllByRole("option");
 
       expect(comboboxFounded).toBeInTheDocument();
-      expect(optionFounded).toBeInTheDocument();
+      expect(option1Founded).toBeInTheDocument();
+      expect(option2Founded).toBeInTheDocument();
+      expect(option3Founded).toBeInTheDocument();
+      expect(option4Founded).toBeInTheDocument();
+      expect(option5Founded).toBeInTheDocument();
+
+      expect(allOptions).toHaveLength(5);
     });
   });
 });
