@@ -12,7 +12,7 @@ const NewBuzzPage = () => {
   return (
     <>
       <ContainerHeader>
-        <Header title="Buzzs" />
+        <Header title="New Buzz" />
       </ContainerHeader>
       <MainContainerPage>
         <FormNewBuzz />
