@@ -24,7 +24,11 @@ describe("Given Buzz Component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <Buzz buzz={buzzFake} onClick={() => {}} />
+            <Buzz
+              buzz={buzzFake}
+              onClickTrash={() => {}}
+              onClickHeart={() => {}}
+            />
           </Provider>
         </BrowserRouter>
       );
