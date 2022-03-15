@@ -20,11 +20,18 @@ import {
   NumDataIcons,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
+import { useNavigate } from "react-router-dom";
 
 const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
+  const navigate = useNavigate();
+
+  const viewDetailBuzz = () => {
+    navigate(`/buzz/${buzz.id}`);
+  };
+
   return (
     <>
-      <MainContainer>
+      <MainContainer onClick={viewDetailBuzz}>
         <ProfileContainer>
           <ProfileCircle>
             <span>{buzz.author.substring(0, 2).toUpperCase()}</span>
