@@ -67,7 +67,7 @@ export const ContainerSuperior = styled.div`
   justify-content: space-between;
 `;
 
-export const NumLikes = styled.span`
+export const NumDataIcons = styled.span`
   color: ${primary};
   font-size: 14px;
   padding: 5px;
