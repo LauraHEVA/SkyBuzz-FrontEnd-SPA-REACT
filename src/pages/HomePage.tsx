@@ -4,7 +4,11 @@ import Header from "../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
-import { deleteBuzzThunk, loadAllBuzzsThunk } from "../redux/thunks/buzzsThunk";
+import {
+  deleteBuzzThunk,
+  incrementLikesThunk,
+  loadAllBuzzsThunk,
+} from "../redux/thunks/buzzsThunk";
 import {
   ContainerNavMenu,
   ContainerHeader,
@@ -34,6 +38,10 @@ const HomePage = () => {
     dispatch(deleteBuzzThunk(id));
   };
 
+  const addLikeBuzz = (id: string) => {
+    dispatch(incrementLikesThunk(id));
+  };
+
   const navigate = useNavigate();
 
   const goToNewBuzz = () => {
@@ -53,9 +61,13 @@ const HomePage = () => {
               <ListItem key={buzz.id}>
                 <Buzz
                   buzz={buzz}
-                  onClick={() => {
+                  onClickTrash={() => {
                     deleteBuzz(buzz.id);
                     toast.success("Buzz deleted correctly");
+                  }}
+                  onClickHeart={() => {
+                    addLikeBuzz(buzz.id);
+                    toast.success("Like saved correctly");
                   }}
                 />
               </ListItem>

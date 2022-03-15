@@ -17,10 +17,11 @@ import {
   TextBuzz,
   TextTopic,
   TextTimeAgo,
+  NumDataIcons,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 
-const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
+const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
   return (
     <>
       <MainContainer>
@@ -40,13 +41,15 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
+              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
               <CommentIcon />
             </ListItem>
             <ListItem>
-              <HeartIcon />
+              <NumDataIcons>{buzz.likes}</NumDataIcons>
+              <HeartIcon onClick={onClickHeart} />
             </ListItem>
             <ListItem>
-              <TrashIcon onClick={onClick} />
+              <TrashIcon onClick={onClickTrash} />
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>

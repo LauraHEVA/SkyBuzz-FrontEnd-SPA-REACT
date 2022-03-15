@@ -66,3 +66,9 @@ export const ContainerSuperior = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const NumDataIcons = styled.span`
+  color: ${primary};
+  font-size: 14px;
+  padding: 5px;
+`;
