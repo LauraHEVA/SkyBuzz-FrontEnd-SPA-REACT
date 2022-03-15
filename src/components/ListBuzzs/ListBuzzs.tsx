@@ -10,6 +10,7 @@ import { BuzzObject } from "../../types/buzzInterfaces";
 import { ListItem, ListUlVert } from "../../styles/globalStyledComponents";
 import Buzz from "../Buzz/Buzz";
 import { toast } from "react-toastify";
+import styled from "styled-components";
 
 const ListBuzzs = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const ListBuzzs = (): JSX.Element => {
     dispatch(incrementLikesThunk(id));
   };
   return (
-    <ListUlVert>
+    <ListUlBuzzs>
       {buzzsList.map((buzz) => {
         return (
           <ListItem key={buzz.id}>
@@ -47,8 +48,14 @@ const ListBuzzs = (): JSX.Element => {
           </ListItem>
         );
       })}
-    </ListUlVert>
+    </ListUlBuzzs>
   );
 };
+
+const ListUlBuzzs = styled.ul`
+  padding-left: 0;
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 export default ListBuzzs;
