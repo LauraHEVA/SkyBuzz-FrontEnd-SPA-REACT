@@ -2,11 +2,11 @@ import {
   ActionWithIdInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
-import { BuzzBasic } from "../../types/buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "../actions/actionsType";
 
 const oneBuzzReducer = (
-  currentBuzz: BuzzBasic = { topic: "", text: "", author: "" },
+  currentBuzz: BuzzBasic | BuzzObject = { topic: "", text: "", author: "" },
   action: SomeActionInterface | ActionWithIdInterface = {
     type: "",
   }
@@ -15,11 +15,12 @@ const oneBuzzReducer = (
 
   switch (action.type) {
     case actionsType.incrementLikes:
-      newBuzz = currentBuzz;
+      newBuzz = { ...currentBuzz };
+      (newBuzz as BuzzObject).likes += 1;
       break;
 
     default:
-      newBuzz = currentBuzz;
+      newBuzz = { ...currentBuzz };
   }
 
   return newBuzz;
