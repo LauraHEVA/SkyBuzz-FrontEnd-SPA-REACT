@@ -1,4 +1,8 @@
-import { deleteBuzzThunk, loadAllBuzzsThunk } from "./buzzsThunk";
+import {
+  addNewBuzzThunk,
+  deleteBuzzThunk,
+  loadAllBuzzsThunk,
+} from "./buzzsThunk";
 
 describe("Given a loadAllBuzzsThunk function", () => {
   describe("When it is called", () => {
@@ -36,6 +40,28 @@ describe("Given a deleteBuzzThunk", () => {
       await deleteThunk(dispatch);
 
       expect(dispatch).not.toHaveBeenCalled();
+    });
+  });
+});
+
+describe("Given an addBuzzThunk", () => {
+  describe("When it's called with a new buzz to create", () => {
+    test("Then it should call dispatch with de addBuzzAction as parameter", async () => {
+      const newBuzzToAdd = {
+        topic: "general",
+        author: "Freddie",
+        text: "We are the champions",
+      };
+      const expectedAction = {
+        type: "add-new-buzz",
+        buzz: newBuzzToAdd,
+      };
+      const dispatch = jest.fn();
+
+      const addThunk = addNewBuzzThunk(newBuzzToAdd);
+      await addThunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });

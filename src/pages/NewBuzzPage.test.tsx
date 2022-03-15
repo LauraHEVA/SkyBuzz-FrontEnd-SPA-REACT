@@ -2,9 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../redux/store";
-import HomePage from "./HomePage";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
 import NewBuzzPage from "./NewBuzzPage";
 
 describe("Given a NewBuzzPage component", () => {
