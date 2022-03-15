@@ -31,12 +31,16 @@ const FormNewBuzz = (): JSX.Element => {
     author: "SomeAuthor",
   };
 
+  const goToHomePage = () => {
+    navigate("/home");
+  };
+
   const onSubmitForm = (event: SyntheticEvent) => {
     event.preventDefault();
     dispatch(addNewBuzzThunk(buzzToCreate));
     toast.success("Buzz published correctly");
     resetForm();
-    navigate(`/home`);
+    setTimeout(goToHomePage, 2000);
   };
 
   const onChangeTopic = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -84,7 +88,6 @@ const FormNewBuzz = (): JSX.Element => {
         {messageValue.length > 2 && messageValue.length < 201 ? (
           <ButtonSubmitContainer>
             <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
-            <Toastr />
           </ButtonSubmitContainer>
         ) : (
           <ButtonSubmitContainer>
@@ -95,6 +98,7 @@ const FormNewBuzz = (): JSX.Element => {
           </ButtonSubmitContainer>
         )}
       </form>
+      <Toastr />
     </ContainerFormNewBuzz>
   );
 };
