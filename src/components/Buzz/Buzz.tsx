@@ -21,7 +21,7 @@ import {
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 
-const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
+const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
   return (
     <>
       <MainContainer>
@@ -46,10 +46,10 @@ const Buzz = ({ buzz, onClick }: BuzzProps): JSX.Element => {
             </ListItem>
             <ListItem>
               <NumDataIcons>{buzz.likes}</NumDataIcons>
-              <HeartIcon />
+              <HeartIcon onClick={onClickHeart} />
             </ListItem>
             <ListItem>
-              <TrashIcon onClick={onClick} />
+              <TrashIcon onClick={onClickTrash} />
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>
