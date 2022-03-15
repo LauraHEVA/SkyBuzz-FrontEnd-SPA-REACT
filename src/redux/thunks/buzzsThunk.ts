@@ -4,6 +4,7 @@ import { BuzzBasic } from "../../types/buzzInterfaces";
 import {
   addNewBuzzAction,
   deleteBuzzAction,
+  incrementLikesAction,
   loadAllBuzzsAction,
 } from "../actions/actionsCreator";
 
@@ -45,4 +46,20 @@ export const addNewBuzzThunk =
     );
     const newBuzz = await response.json();
     dispatch(addNewBuzzAction(newBuzz));
+  };
+
+export const incrementLikesThunk =
+  (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}/like`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (response.ok) {
+      dispatch(incrementLikesAction(id));
+    }
   };
