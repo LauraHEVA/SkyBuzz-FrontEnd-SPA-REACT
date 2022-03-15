@@ -47,4 +47,11 @@ export const handlers = [
   rest.post(`${process.env.REACT_APP_PUBLIC_API}buzzs/new`, (req, res, ctx) => {
     return res(ctx.status(201), ctx.json(BuzzListTest[0]));
   }),
+
+  rest.patch(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/6230c7a2f9d0f5ee1f58d6d9/like`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(`Buzz liked correctly`));
+    }
+  ),
 ];
