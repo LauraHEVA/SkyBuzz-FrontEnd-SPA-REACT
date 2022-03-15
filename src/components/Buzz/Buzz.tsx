@@ -9,7 +9,6 @@ import HeartIcon from "../HeartIcon/HeartIcon";
 import TrashIcon from "../TrashIcon/TrashIcon";
 import {
   ContainerSuperior,
-  MainContainer,
   MessageContainer,
   ProfileCircle,
   ProfileContainer,
@@ -18,6 +17,7 @@ import {
   TextTopic,
   TextTimeAgo,
   NumDataIcons,
+  BuzzCardContainer,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
 
   return (
     <>
-      <MainContainer onClick={viewDetailBuzz}>
+      <BuzzCardContainer>
         <ProfileContainer>
           <ProfileCircle>
             <span>{buzz.author.substring(0, 2).toUpperCase()}</span>
@@ -44,7 +44,7 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
               <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
             </TextTimeAgo>
           </ContainerSuperior>
-          <TextBuzz>{buzz.text}</TextBuzz>
+          <TextBuzz onClick={viewDetailBuzz}>{buzz.text}</TextBuzz>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
@@ -60,7 +60,7 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>
-      </MainContainer>
+      </BuzzCardContainer>
     </>
   );
 };
