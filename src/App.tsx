@@ -7,6 +7,7 @@ import "@fontsource/permanent-marker";
 import "@fontsource/shadows-into-light";
 import NotFoundPage from "./pages/NotFoundPage";
 import NewBuzzPage from "./pages/NewBuzzPage";
+import DetailBuzzPage from "./pages/DetailBuzzPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/login" element={<NotFoundPage />} />
       <Route path="/register" element={"placeholder <RegisterPage>"} />
       <Route path="/home" element={<HomePage />} />
+      <Route path="/buzz/:id" element={<DetailBuzzPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
