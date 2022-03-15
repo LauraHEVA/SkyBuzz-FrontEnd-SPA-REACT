@@ -33,7 +33,7 @@ const DetailBuzzPage = () => {
               goToHomePage();
             }}
             className={"btn-primary"}
-            text={"Home Page"}
+            text={"Go Back"}
           />
         </ButtonContainerNewBuzz>
       </MainContainerPage>
