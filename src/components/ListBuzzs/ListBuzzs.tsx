@@ -7,7 +7,7 @@ import {
   loadAllBuzzsThunk,
 } from "../../redux/thunks/buzzsThunk";
 import { BuzzObject } from "../../types/buzzInterfaces";
-import { ListItem, ListUlVert } from "../../styles/globalStyledComponents";
+import { ListItem } from "../../styles/globalStyledComponents";
 import Buzz from "../Buzz/Buzz";
 import { toast } from "react-toastify";
 import styled from "styled-components";
