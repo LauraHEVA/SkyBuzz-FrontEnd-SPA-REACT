@@ -32,4 +32,24 @@ describe("Given a oneBuzzReducer function", () => {
       expect(newState).toEqual(buzzResult);
     });
   });
+
+  describe("When it's called with a nonexistent action", () => {
+    test("Then it should return a new state with the same current buzz", () => {
+      const buzzToLike: BuzzBasic | BuzzObject = {
+        topic: "general",
+        likes: 0,
+        comments: [],
+        author: "Freddie",
+        text: "We are the champions",
+        id: "6230c7a2f9d0f5ee1f58d6d9",
+      };
+      const action = {
+        type: "some-incorrect-action",
+        id: (buzzToLike as BuzzObject).id,
+      };
+      const newState = oneBuzzReducer(buzzToLike, action);
+
+      expect(newState).toEqual(buzzToLike);
+    });
+  });
 });
