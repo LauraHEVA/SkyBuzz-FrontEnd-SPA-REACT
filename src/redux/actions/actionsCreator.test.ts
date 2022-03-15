@@ -1,5 +1,9 @@
 import { BuzzObject } from "../../types/buzzInterfaces";
-import { deleteBuzzAction, loadAllBuzzsAction } from "./actionsCreator";
+import {
+  deleteBuzzAction,
+  incrementLikesAction,
+  loadAllBuzzsAction,
+} from "./actionsCreator";
 
 describe("Given a loadAllBuzzs Action", () => {
   describe("When it receives an array with buzzs", () => {
@@ -47,6 +51,23 @@ describe("Given a deleteBuzzAction function", () => {
       };
 
       const action = deleteBuzzAction(idTodelete);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an incrementLikesAction function", () => {
+  describe("When it receives an id", () => {
+    test("Then it should return an action with type 'increment-likes' and the buzz id as another property", () => {
+      const idToLike = "10";
+
+      const expectedAction = {
+        type: "increment-likes",
+        id: idToLike,
+      };
+
+      const action = incrementLikesAction(idToLike);
 
       expect(action).toEqual(expectedAction);
     });
