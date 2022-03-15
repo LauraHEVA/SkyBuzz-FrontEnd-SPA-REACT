@@ -18,6 +18,17 @@ export const MainContainer = styled.div`
   }
 `;
 
+export const BuzzCardContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid ${greyLight};
+  margin-bottom: 20px;
+  width: 100%;
+  @media (min-width: ${breakpointXS}) {
+    max-width: 500px;
+  }
+`;
+
 export const ProfileContainer = styled.div`
   padding-right: 5px;
 `;
@@ -49,6 +60,7 @@ export const TextAuthor = styled.p`
 export const TextBuzz = styled.p`
   color: ${primary};
   font-size: 14px;
+  cursor: pointer;
 `;
 
 export const TextTopic = styled.p`
