@@ -1,6 +1,6 @@
 import {
   AddNewBuzzActionInterface,
-  DeleteBuzzActionInterface,
+  ActionWithIdInterface,
   LoadAllBuzsActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
@@ -13,7 +13,7 @@ const buzzsReducer = (
   action:
     | SomeActionInterface
     | LoadAllBuzsActionInterface
-    | DeleteBuzzActionInterface
+    | ActionWithIdInterface
     | AddNewBuzzActionInterface = {
     type: "",
   }
@@ -27,7 +27,7 @@ const buzzsReducer = (
 
     case actionsType.deleteBuzz:
       newBuzzsList = currentBuzzs.filter(
-        (buzz) => buzz.id !== (action as DeleteBuzzActionInterface).id
+        (buzz) => buzz.id !== (action as ActionWithIdInterface).id
       );
       break;
 
