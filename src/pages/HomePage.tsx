@@ -1,47 +1,19 @@
-import Buzz from "../components/Buzz/Buzz";
 import NavMenu from "../components/NavMenu/NavMenu";
 import Header from "../components/Header/Header";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { useEffect } from "react";
-import {
-  deleteBuzzThunk,
-  incrementLikesThunk,
-  loadAllBuzzsThunk,
-} from "../redux/thunks/buzzsThunk";
+
 import {
   ContainerNavMenu,
   ContainerHeader,
-  ListItem,
-  ListUlVert,
   ButtonContainerNewBuzz,
   MainContainerPage,
 } from "../styles/globalStyledComponents";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
-import { toast } from "react-toastify";
 import Toastr from "../components/Toastr/Toastr";
 import Footer from "../components/Footer/Footer";
-import { BuzzObject } from "../types/buzzInterfaces";
+import ListBuzzs from "../components/ListBuzzs/ListBuzzs";
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  const buzzsList: BuzzObject[] = useSelector(
-    (state: RootState) => state.buzzs
-  );
-
-  useEffect(() => {
-    dispatch(loadAllBuzzsThunk);
-  }, [dispatch]);
-
-  const deleteBuzz = (id: string) => {
-    dispatch(deleteBuzzThunk(id));
-  };
-
-  const addLikeBuzz = (id: string) => {
-    dispatch(incrementLikesThunk(id));
-  };
-
   const navigate = useNavigate();
 
   const goToNewBuzz = () => {
@@ -55,25 +27,7 @@ const HomePage = () => {
       </ContainerHeader>
       <Toastr />
       <MainContainerPage>
-        <ListUlVert>
-          {buzzsList.map((buzz) => {
-            return (
-              <ListItem key={buzz.id}>
-                <Buzz
-                  buzz={buzz}
-                  onClickTrash={() => {
-                    deleteBuzz(buzz.id);
-                    toast.success("Buzz deleted correctly");
-                  }}
-                  onClickHeart={() => {
-                    addLikeBuzz(buzz.id);
-                    toast.success("Like saved correctly");
-                  }}
-                />
-              </ListItem>
-            );
-          })}
-        </ListUlVert>
+        <ListBuzzs />
         <ButtonContainerNewBuzz>
           <ButtonPrimary
             actionOnClick={() => {

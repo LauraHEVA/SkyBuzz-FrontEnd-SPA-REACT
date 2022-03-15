@@ -1,6 +1,7 @@
 import {
   addNewBuzzThunk,
   deleteBuzzThunk,
+  incrementLikesThunk,
   loadAllBuzzsThunk,
 } from "./buzzsThunk";
 
@@ -64,6 +65,33 @@ describe("Given an addBuzzThunk", () => {
 
       const addThunk = addNewBuzzThunk(newBuzzToAdd);
       await addThunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given an incrementLikesThunk", () => {
+  describe("When it's called with a new buzz to create", () => {
+    test("Then it should call dispatch with de addBuzzAction as parameter", async () => {
+      const newBuzzToLike = {
+        author: "Mia Wallace",
+        text: "I hate uncomfortable silences",
+        topic: "general",
+        date: "2022-03-15T13:41:30.606Z",
+        likes: 0,
+        comments: [],
+        id: "6230c7a2f9d0f5ee1f58d6d9",
+      };
+      const expectedAction = {
+        type: "increment-likes",
+        id: "6230c7a2f9d0f5ee1f58d6d9",
+      };
+      const dispatch = jest.fn();
+
+      const likeThunk = incrementLikesThunk(newBuzzToLike.id);
+      await likeThunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toHaveBeenCalledWith(expectedAction);

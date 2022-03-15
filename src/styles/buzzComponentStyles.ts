@@ -69,6 +69,6 @@ export const ContainerSuperior = styled.div`
 
 export const NumDataIcons = styled.span`
   color: ${primary};
-  font-size: 14px;
+  font-size: 12px;
   padding: 5px;
 `;

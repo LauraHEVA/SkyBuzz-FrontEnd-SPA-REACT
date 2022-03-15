@@ -38,7 +38,7 @@ describe("Given a buzzsReducer function", () => {
     });
   });
 
-  describe("When it's called with an nonexistent action", () => {
+  describe("When it's called with a nonexistent action", () => {
     test("Then it should return a new state with the current state (initial state)", () => {
       const currentBuzzs: BuzzObject[] = [
         {
