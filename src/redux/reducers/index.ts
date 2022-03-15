@@ -4,7 +4,7 @@ import oneBuzzReducer from "./oneBuzzReducer";
 
 const rootReducer = combineReducers({
   buzzs: buzzsReducer,
-  buzz: oneBuzzReducer,
+  oneBuzz: oneBuzzReducer,
 });
 
 export default rootReducer;
