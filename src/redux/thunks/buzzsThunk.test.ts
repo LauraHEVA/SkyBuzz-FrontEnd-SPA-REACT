@@ -48,9 +48,13 @@ describe("Given an addBuzzThunk", () => {
   describe("When it's called with a new buzz to create", () => {
     test("Then it should call dispatch with de addBuzzAction as parameter", async () => {
       const newBuzzToAdd = {
-        topic: "general",
         author: "Freddie",
         text: "We are the champions",
+        topic: "general",
+        date: "2022-03-15T12:41:30.606Z",
+        likes: 0,
+        comments: [],
+        id: "6230897a6de0d0453487ef80",
       };
       const expectedAction = {
         type: "add-new-buzz",
@@ -62,6 +66,7 @@ describe("Given an addBuzzThunk", () => {
       await addThunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
 });

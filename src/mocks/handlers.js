@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import { BuzzListTest } from "./mockedObjects";
 
 export const handlers = [
   rest.get(`${process.env.REACT_APP_PUBLIC_API}buzzs/`, (req, res, ctx) => {
@@ -42,4 +43,8 @@ export const handlers = [
       return res(ctx.status(404));
     }
   ),
+
+  rest.post(`${process.env.REACT_APP_PUBLIC_API}buzzs/new`, (req, res, ctx) => {
+    return res(ctx.status(201), ctx.json(BuzzListTest[0]));
+  }),
 ];
