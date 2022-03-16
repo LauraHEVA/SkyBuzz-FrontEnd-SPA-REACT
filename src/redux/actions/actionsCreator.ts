@@ -2,6 +2,7 @@ import {
   AddNewBuzzActionInterface,
   ActionWithIdInterface,
   LoadAllBuzsActionInterface,
+  LoadOneBuzzActionInterface,
 } from "../../types/actionInterfaces";
 import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "./actionsType";
@@ -28,4 +29,11 @@ export const addNewBuzzAction = (
 export const incrementLikesAction = (id: string): ActionWithIdInterface => ({
   type: actionsType.incrementLikes,
   id,
+});
+
+export const loadDetailBuzzAction = (
+  buzz: BuzzObject
+): LoadOneBuzzActionInterface => ({
+  type: actionsType.loadDetailBuzz,
+  buzz,
 });
