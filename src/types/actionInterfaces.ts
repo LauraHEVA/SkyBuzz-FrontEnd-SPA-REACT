@@ -15,3 +15,7 @@ export interface ActionWithIdInterface extends SomeActionInterface {
 export interface AddNewBuzzActionInterface extends SomeActionInterface {
   buzz: BuzzBasic;
 }
+
+export interface LoadOneBuzzActionInterface extends SomeActionInterface {
+  buzz: BuzzObject;
+}
