@@ -31,9 +31,19 @@ const DetailBuzzPage = () => {
 
   const dispatch = useDispatch();
 
-  const buzzDetail: BuzzObject = useSelector(
-    (state: RootState) => state.oneBuzz
-  );
+  // const buzzDetail: BuzzObject = useSelector(
+  //   (state: RootState) => state.oneBuzz
+  // );
+
+  const buzzDetail = {
+    author: "Tony Curtis",
+    text: "- I'm a man! ...  - Well, nobody's perfect.",
+    topic: "SomeLikeItHot",
+    date: "2022-03-13T23:23:27.981Z",
+    likes: 19,
+    comments: [],
+    id: "622e7cefb077ebdf25a44af8",
+  };
 
   useEffect(() => {
     dispatch(incrementLikesThunk);
