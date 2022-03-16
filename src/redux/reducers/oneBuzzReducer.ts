@@ -19,6 +19,10 @@ const oneBuzzReducer = (
       (newBuzz as BuzzObject).likes += 1;
       break;
 
+    case actionsType.loadDetailBuzz:
+      newBuzz = { ...currentBuzz };
+      break;
+
     default:
       newBuzz = { ...currentBuzz };
   }
