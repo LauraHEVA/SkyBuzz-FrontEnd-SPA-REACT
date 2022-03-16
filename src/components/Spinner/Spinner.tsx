@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primary, secondary } from "../../styles/globalStyles";
 
 export const Spinner = (): JSX.Element => {
   return (
@@ -11,13 +12,12 @@ export const Spinner = (): JSX.Element => {
 
 const ContainerSpinner = styled.div`
   margin-top: 100px;
-  background-color: #137b85;
-  color: #fff;
+  color: ${primary};
   text-align: center;
 `;
 
 const TitleLoading = styled.h2`
-  font-family: "permanent marker", sans-serif;
+  font-family: poppins, sans-serif;
   margin-bottom: 40px;
 `;
 
@@ -25,9 +25,9 @@ const SpinnerDiv = styled.div`
   display: inline-block;
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 7px solid ${primary};
   border-radius: 50%;
-  border-top-color: #fff;
+  border-top-color: ${secondary};
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
   @keyframes spin {

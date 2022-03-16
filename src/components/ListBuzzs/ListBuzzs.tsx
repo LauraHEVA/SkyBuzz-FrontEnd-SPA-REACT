@@ -11,6 +11,7 @@ import { ListItem } from "../../styles/globalStyledComponents";
 import Buzz from "../Buzz/Buzz";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import { Spinner } from "../Spinner/Spinner";
 
 const ListBuzzs = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -30,24 +31,30 @@ const ListBuzzs = (): JSX.Element => {
     dispatch(incrementLikesThunk(id));
   };
   return (
-    <ListUlBuzzs>
-      {buzzsList.map((buzz) => {
-        return (
-          <ListItem key={buzz.id}>
-            <Buzz
-              buzz={buzz}
-              onClickTrash={() => {
-                deleteBuzz(buzz.id);
-                toast.success("Buzz deleted correctly");
-              }}
-              onClickHeart={() => {
-                addLikeBuzz(buzz.id);
-              }}
-            />
-          </ListItem>
-        );
-      })}
-    </ListUlBuzzs>
+    <>
+      {buzzsList.length < 0 ? (
+        <ListUlBuzzs>
+          {buzzsList.map((buzz) => {
+            return (
+              <ListItem key={buzz.id}>
+                <Buzz
+                  buzz={buzz}
+                  onClickTrash={() => {
+                    deleteBuzz(buzz.id);
+                    toast.success("Buzz deleted correctly");
+                  }}
+                  onClickHeart={() => {
+                    addLikeBuzz(buzz.id);
+                  }}
+                />
+              </ListItem>
+            );
+          })}
+        </ListUlBuzzs>
+      ) : (
+        <Spinner />
+      )}
+    </>
   );
 };
 
