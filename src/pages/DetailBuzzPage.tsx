@@ -41,12 +41,12 @@ const DetailBuzzPage = () => {
     dispatch(loadDetailBuzzThunk(id as string));
   }, [dispatch, id]);
 
-  const deleteBuzz = (id: string) => {
-    dispatch(deleteBuzzThunk(id));
+  const deleteBuzz = () => {
+    dispatch(deleteBuzzThunk(id as string));
   };
 
-  const addLikeBuzz = (id: string) => {
-    dispatch(incrementLikesThunk(id));
+  const addLikeBuzz = () => {
+    dispatch(incrementLikesThunk(id as string));
   };
 
   return (
@@ -61,12 +61,12 @@ const DetailBuzzPage = () => {
             <Buzz
               buzz={buzzDetail}
               onClickTrash={() => {
-                deleteBuzz((buzzDetail as BuzzObject).id);
+                deleteBuzz();
                 toast.success("Buzz deleted correctly");
                 setTimeout(goToHomePage, 2000);
               }}
               onClickHeart={() => {
-                addLikeBuzz((buzzDetail as BuzzObject).id);
+                addLikeBuzz();
               }}
             />
             <ButtonContainerNewBuzz>
