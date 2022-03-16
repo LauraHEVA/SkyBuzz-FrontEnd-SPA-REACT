@@ -38,6 +38,17 @@ const buzzsReducer = (
       ];
       break;
 
+    case actionsType.incrementLikes:
+      newBuzzsList = currentBuzzs.map((buzz) => {
+        if (buzz.id === (action as ActionWithIdInterface).id) {
+          (buzz as BuzzObject).likes += 1;
+          return buzz;
+        } else {
+          return buzz;
+        }
+      });
+      break;
+
     default:
       newBuzzsList = [...currentBuzzs];
       break;

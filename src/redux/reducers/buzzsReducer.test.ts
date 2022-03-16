@@ -1,4 +1,4 @@
-import { BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "../actions/actionsType";
 import buzzsReducer from "./buzzsReducer";
 
@@ -178,6 +178,60 @@ describe("Given a buzzsReducer function", () => {
       const newState = buzzsReducer(currentBuzzs, action);
 
       expect(newState).toEqual(newBuzzsWithNewOne);
+    });
+  });
+
+  describe("When it's called with a incrementLikes action with an id", () => {
+    test("Then it should return a new state with the buzz likes incremented in one", () => {
+      const buzzs: BuzzBasic[] | BuzzObject[] = [
+        {
+          topic: "general",
+          likes: 0,
+          comments: [],
+          author: "Madonna",
+          date: "2022-03-13T23:23:27.981Z",
+          text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
+          id: "324k2l",
+        },
+        {
+          topic: "general",
+          likes: 0,
+          comments: [],
+          author: "Lau",
+          date: "2022-02-13T23:23:27.981Z",
+          text: "Some stupid text",
+          id: "324kBB",
+        },
+      ];
+      const buzzsResult: BuzzBasic[] | BuzzObject[] = [
+        {
+          topic: "general",
+          likes: 1,
+          comments: [],
+          author: "Madonna",
+          date: "2022-03-13T23:23:27.981Z",
+          text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
+          id: "324k2l",
+        },
+        {
+          topic: "general",
+          likes: 0,
+          comments: [],
+          author: "Lau",
+          date: "2022-02-13T23:23:27.981Z",
+          text: "Some stupid text",
+          id: "324kBB",
+        },
+      ];
+
+      const action = {
+        type: actionsType.incrementLikes,
+        id: (buzzs as BuzzObject[])[0].id,
+      };
+
+      const newState = buzzsReducer(buzzs, action);
+
+      expect(newState).toEqual(buzzsResult);
     });
   });
 });
