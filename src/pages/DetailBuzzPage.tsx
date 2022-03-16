@@ -21,6 +21,7 @@ import {
 } from "../redux/thunks/buzzsThunk";
 import Buzz from "../components/Buzz/Buzz";
 import { toast } from "react-toastify";
+import NotFoundPage from "./NotFoundPage";
 
 const DetailBuzzPage = () => {
   const { id } = useParams();
@@ -50,35 +51,41 @@ const DetailBuzzPage = () => {
 
   return (
     <>
-      <ContainerHeader>
-        <Header title="Buzz Detail" />
-      </ContainerHeader>
-      <Toastr />
-      <MainContainerPage>
-        <Buzz
-          buzz={buzzDetail}
-          onClickTrash={() => {
-            deleteBuzz((buzzDetail as BuzzObject).id);
-            toast.success("Buzz deleted correctly");
-          }}
-          onClickHeart={() => {
-            addLikeBuzz((buzzDetail as BuzzObject).id);
-          }}
-        />
-        <ButtonContainerNewBuzz>
-          <ButtonPrimary
-            actionOnClick={() => {
-              goToHomePage();
-            }}
-            className={"btn-primary"}
-            text={"Go Back"}
-          />
-        </ButtonContainerNewBuzz>
-      </MainContainerPage>
-      <ContainerNavMenu>
-        <NavMenu />
-      </ContainerNavMenu>
-      <Footer />
+      {buzzDetail.text !== "" ? (
+        <>
+          <ContainerHeader>
+            <Header title="Buzz Detail" />
+          </ContainerHeader>
+          <Toastr />
+          <MainContainerPage>
+            <Buzz
+              buzz={buzzDetail}
+              onClickTrash={() => {
+                deleteBuzz((buzzDetail as BuzzObject).id);
+                toast.success("Buzz deleted correctly");
+              }}
+              onClickHeart={() => {
+                addLikeBuzz((buzzDetail as BuzzObject).id);
+              }}
+            />
+            <ButtonContainerNewBuzz>
+              <ButtonPrimary
+                actionOnClick={() => {
+                  goToHomePage();
+                }}
+                className={"btn-primary"}
+                text={"Go Back"}
+              />
+            </ButtonContainerNewBuzz>
+          </MainContainerPage>
+          <ContainerNavMenu>
+            <NavMenu />
+          </ContainerNavMenu>
+          <Footer />
+        </>
+      ) : (
+        <NotFoundPage />
+      )}
     </>
   );
 };

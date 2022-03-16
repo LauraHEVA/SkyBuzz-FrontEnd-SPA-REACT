@@ -18,6 +18,7 @@ function App() {
       <Route path="/register" element={"placeholder <RegisterPage>"} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/buzz/:id" element={<DetailBuzzPage />} />
+      <Route path="/buzz/*" element={<NotFoundPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
