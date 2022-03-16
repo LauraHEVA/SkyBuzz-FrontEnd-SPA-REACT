@@ -29,3 +29,8 @@ export const incrementLikesAction = (id: string): ActionWithIdInterface => ({
   type: actionsType.incrementLikes,
   id,
 });
+
+export const loadDetailBuzzAction = (id: string): ActionWithIdInterface => ({
+  type: actionsType.loadDetailBuzz,
+  id,
+});
