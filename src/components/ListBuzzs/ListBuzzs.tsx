@@ -42,7 +42,6 @@ const ListBuzzs = (): JSX.Element => {
               }}
               onClickHeart={() => {
                 addLikeBuzz(buzz.id);
-                toast.success("Like saved correctly");
               }}
             />
           </ListItem>
