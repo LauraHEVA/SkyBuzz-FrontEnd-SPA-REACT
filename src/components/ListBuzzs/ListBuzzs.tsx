@@ -32,7 +32,7 @@ const ListBuzzs = (): JSX.Element => {
   };
   return (
     <>
-      {buzzsList.length < 0 ? (
+      {buzzsList.length > 0 ? (
         <ListUlBuzzs>
           {buzzsList.map((buzz) => {
             return (
