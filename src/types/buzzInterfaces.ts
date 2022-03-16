@@ -5,7 +5,7 @@ export interface BuzzBasic {
 }
 
 export interface BuzzProps {
-  buzz: BuzzObject;
+  buzz: BuzzObject | BuzzBasic;
   onClickTrash: React.MouseEventHandler;
   onClickHeart: React.MouseEventHandler;
 }

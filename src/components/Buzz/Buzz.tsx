@@ -1,4 +1,4 @@
-import { BuzzProps } from "../../types/buzzInterfaces";
+import { BuzzObject, BuzzProps } from "../../types/buzzInterfaces";
 import {
   ListItem,
   ListUlHorizontal,
@@ -26,7 +26,7 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
   const navigate = useNavigate();
 
   const viewDetailBuzz = () => {
-    navigate(`/buzz/${buzz.id}`);
+    navigate(`/buzz/${(buzz as BuzzObject).id}`);
   };
 
   return (
@@ -41,18 +41,23 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
           <ContainerSuperior>
             <TextAuthor>{buzz.author}</TextAuthor>
             <TextTimeAgo>
-              <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
+              <ReactTimeAgo
+                date={Date.parse((buzz as BuzzObject).date)}
+                locale="en-US"
+              />
             </TextTimeAgo>
           </ContainerSuperior>
           <TextBuzz onClick={viewDetailBuzz}>{buzz.text}</TextBuzz>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
-              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
+              <NumDataIcons>
+                {(buzz as BuzzObject).comments.length}
+              </NumDataIcons>
               <CommentIcon />
             </ListItem>
             <ListItem>
-              <NumDataIcons>{buzz.likes}</NumDataIcons>
+              <NumDataIcons>{(buzz as BuzzObject).likes}</NumDataIcons>
               <HeartIcon onClick={onClickHeart} />
             </ListItem>
             <ListItem>

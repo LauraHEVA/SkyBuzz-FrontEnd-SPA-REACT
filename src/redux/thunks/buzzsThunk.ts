@@ -6,6 +6,7 @@ import {
   deleteBuzzAction,
   incrementLikesAction,
   loadAllBuzzsAction,
+  loadDetailBuzzAction,
 } from "../actions/actionsCreator";
 
 export const loadAllBuzzsThunk = async (
@@ -62,4 +63,15 @@ export const incrementLikesThunk =
     if (response.ok) {
       dispatch(incrementLikesAction(id));
     }
+  };
+
+export const loadDetailBuzzThunk =
+  (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}`
+    );
+
+    const buzzDetailResponse = await response.json();
+    const buzzDetail = buzzDetailResponse.buzz;
+    dispatch(loadDetailBuzzAction(buzzDetail));
   };
