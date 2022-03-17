@@ -1,17 +1,10 @@
 import styled from "styled-components";
-import NavMenu from "../components/NavMenu/NavMenu";
-import Header from "../components/Header/Header";
-import {
-  ContainerNavMenu,
-  ContainerHeader,
-} from "../styles/globalStyledComponents";
 import {
   breakpointXS,
   grey,
   primary,
   widthNavMenu,
 } from "../styles/globalStyles";
-import Footer from "../components/Footer/Footer";
 
 const MainContainerNFP = styled.div`
   height: 80vh;
