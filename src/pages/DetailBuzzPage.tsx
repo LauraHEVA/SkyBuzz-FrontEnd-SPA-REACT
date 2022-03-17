@@ -21,7 +21,8 @@ import {
 } from "../redux/thunks/buzzsThunk";
 import Buzz from "../components/Buzz/Buzz";
 import { toast } from "react-toastify";
-import NotFoundPage from "./NotFoundPage";
+import { cleanBuzzDetailAction } from "../redux/actions/actionsCreator";
+import { Spinner } from "../components/Spinner/Spinner";
 
 const DetailBuzzPage = () => {
   const { id } = useParams();
@@ -38,7 +39,11 @@ const DetailBuzzPage = () => {
   );
 
   useEffect(() => {
+    const cleanUp = () => {
+      dispatch(cleanBuzzDetailAction());
+    };
     dispatch(loadDetailBuzzThunk(id as string));
+    return cleanUp;
   }, [dispatch, id]);
 
   const deleteBuzz = () => {
@@ -51,11 +56,11 @@ const DetailBuzzPage = () => {
 
   return (
     <>
+      <ContainerHeader>
+        <Header title="Buzz Detail" />
+      </ContainerHeader>
       {buzzDetail.text !== "" ? (
         <>
-          <ContainerHeader>
-            <Header title="Buzz Detail" />
-          </ContainerHeader>
           <Toastr />
           <MainContainerPage>
             <Buzz
@@ -79,14 +84,14 @@ const DetailBuzzPage = () => {
               />
             </ButtonContainerNewBuzz>
           </MainContainerPage>
-          <ContainerNavMenu>
-            <NavMenu />
-          </ContainerNavMenu>
-          <Footer />
         </>
       ) : (
-        <NotFoundPage />
+        <Spinner />
       )}
+      <ContainerNavMenu>
+        <NavMenu />
+      </ContainerNavMenu>
+      <Footer />
     </>
   );
 };
