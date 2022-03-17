@@ -8,22 +8,6 @@ import en from "javascript-time-ago/locale/en.json";
 
 describe("Given a HomePage component", () => {
   describe("When it's rendered", () => {
-    test("Then it should render a h1 element with the text 'Buzzs'", () => {
-      const expectedText = "Buzzs";
-
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <HomePage />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const foundHeading = screen.getByText(expectedText);
-
-      expect(foundHeading.textContent).toBe(expectedText);
-    });
-
     test("Then it should render a NavBar with three icons as Links", () => {
       render(
         <BrowserRouter>

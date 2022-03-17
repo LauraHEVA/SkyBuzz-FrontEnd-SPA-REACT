@@ -1,15 +1,10 @@
-import NavMenu from "../components/NavMenu/NavMenu";
-import Header from "../components/Header/Header";
 import {
-  ContainerNavMenu,
-  ContainerHeader,
   ButtonContainerNewBuzz,
   MainContainerPage,
 } from "../styles/globalStyledComponents";
 import { useNavigate, useParams } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import Toastr from "../components/Toastr/Toastr";
-import Footer from "../components/Footer/Footer";
 import { BuzzBasic, BuzzObject } from "../types/buzzInterfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
@@ -56,9 +51,6 @@ const DetailBuzzPage = () => {
 
   return (
     <>
-      <ContainerHeader>
-        <Header title="Buzz Detail" />
-      </ContainerHeader>
       {buzzDetail.text !== "" ? (
         <>
           <Toastr />
@@ -88,10 +80,6 @@ const DetailBuzzPage = () => {
       ) : (
         <Spinner />
       )}
-      <ContainerNavMenu>
-        <NavMenu />
-      </ContainerNavMenu>
-      <Footer />
     </>
   );
 };

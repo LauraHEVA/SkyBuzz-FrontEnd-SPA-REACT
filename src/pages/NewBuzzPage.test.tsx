@@ -6,39 +6,6 @@ import NewBuzzPage from "./NewBuzzPage";
 
 describe("Given a NewBuzzPage component", () => {
   describe("When it's rendered", () => {
-    test("Then it should render a h1 element with the text 'New Buzz'", () => {
-      const expectedText = "New Buzz";
-
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <NewBuzzPage />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const foundHeading = screen.getByRole("heading", { name: expectedText });
-
-      expect(foundHeading.textContent).toBe(expectedText);
-    });
-
-    test("Then it should render a NavBar with three icons as Links", () => {
-      render(
-        <BrowserRouter>
-          <Provider store={store}>
-            <NewBuzzPage />
-          </Provider>
-        </BrowserRouter>
-      );
-
-      const links = screen.queryAllByRole("link");
-
-      expect(links[0]).toBeInTheDocument();
-      expect(links[1]).toBeInTheDocument();
-      expect(links[2]).toBeInTheDocument();
-      expect(links).toHaveLength(3);
-    });
-
     test("Then it should render a button with the text 'Buzz It!' inside", () => {
       render(
         <BrowserRouter>

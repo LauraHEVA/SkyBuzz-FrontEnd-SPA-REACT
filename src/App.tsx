@@ -8,19 +8,37 @@ import "@fontsource/shadows-into-light";
 import NotFoundPage from "./pages/NotFoundPage";
 import NewBuzzPage from "./pages/NewBuzzPage";
 import DetailBuzzPage from "./pages/DetailBuzzPage";
+import {
+  ContainerHeader,
+  ContainerNavMenu,
+} from "./styles/globalStyledComponents";
+import Header from "./components/Header/Header";
+import NavMenu from "./components/NavMenu/NavMenu";
+import Footer from "./components/Footer/Footer";
+import Toastr from "./components/Toastr/Toastr";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/newbuzz" element={<NewBuzzPage />} />
-      <Route path="/login" element={<NotFoundPage />} />
-      <Route path="/register" element={"placeholder <RegisterPage>"} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/buzz/:id" element={<DetailBuzzPage />} />
-      <Route path="/buzz/*" element={<NotFoundPage />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <>
+      <ContainerHeader>
+        <Header title="SkyBuzz" />
+      </ContainerHeader>
+      <Toastr />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/newbuzz" element={<NewBuzzPage />} />
+        <Route path="/login" element={<NotFoundPage />} />
+        <Route path="/register" element={"placeholder <RegisterPage>"} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/buzz/:id" element={<DetailBuzzPage />} />
+        <Route path="/buzz/*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <ContainerNavMenu>
+        <NavMenu />
+      </ContainerNavMenu>
+      <Footer />
+    </>
   );
 }
 
