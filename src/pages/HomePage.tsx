@@ -1,9 +1,6 @@
 import NavMenu from "../components/NavMenu/NavMenu";
-import Header from "../components/Header/Header";
-
 import {
   ContainerNavMenu,
-  ContainerHeader,
   ButtonContainerNewBuzz,
   MainContainerPage,
 } from "../styles/globalStyledComponents";
@@ -22,9 +19,6 @@ const HomePage = () => {
 
   return (
     <>
-      <ContainerHeader>
-        <Header title="Buzzs" />
-      </ContainerHeader>
       <Toastr />
       <MainContainerPage>
         <ListBuzzs />

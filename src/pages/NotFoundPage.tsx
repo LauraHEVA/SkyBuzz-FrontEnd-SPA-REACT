@@ -40,9 +40,6 @@ const TitleCentered = styled.h2`
 const NotFoundPage = () => {
   return (
     <>
-      <ContainerHeader>
-        <Header title="Not Found" />
-      </ContainerHeader>
       <MainContainerNFP>
         <TitleCentered>Ups...There is nothing in this page.</TitleCentered>
         <p>
@@ -50,10 +47,6 @@ const NotFoundPage = () => {
           <AnchorHome href="/home"> Home Page</AnchorHome>
         </p>
       </MainContainerNFP>
-      <ContainerNavMenu>
-        <NavMenu />
-      </ContainerNavMenu>
-      <Footer />
     </>
   );
 };
