@@ -11,9 +11,9 @@ export const Spinner = (): JSX.Element => {
 };
 
 const ContainerSpinner = styled.div`
-  margin-top: 100px;
   color: ${primary};
   text-align: center;
+  margin: 150px auto;
 `;
 
 const TitleLoading = styled.h2`
