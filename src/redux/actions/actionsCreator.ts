@@ -3,6 +3,7 @@ import {
   ActionWithIdInterface,
   LoadAllBuzsActionInterface,
   LoadOneBuzzActionInterface,
+  SomeActionInterface,
 } from "../../types/actionInterfaces";
 import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "./actionsType";
@@ -36,4 +37,8 @@ export const loadDetailBuzzAction = (
 ): LoadOneBuzzActionInterface => ({
   type: actionsType.loadDetailBuzz,
   buzz,
+});
+
+export const cleanBuzzDetailAction = (): SomeActionInterface => ({
+  type: actionsType.cleanBuzzDetail,
 });

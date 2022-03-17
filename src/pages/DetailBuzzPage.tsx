@@ -38,7 +38,11 @@ const DetailBuzzPage = () => {
   );
 
   useEffect(() => {
+    const cleanUp = () => {
+      // dispatch(cleanBuzzDetailAction);
+    };
     dispatch(loadDetailBuzzThunk(id as string));
+    return cleanUp;
   }, [dispatch, id]);
 
   const deleteBuzz = () => {

@@ -39,6 +39,14 @@ const oneBuzzReducer = (
       newBuzz = { ...(action as LoadOneBuzzActionInterface).buzz };
       break;
 
+    case actionsType.cleanBuzzDetail:
+      newBuzz = {
+        topic: "",
+        text: "",
+        author: "",
+      };
+      break;
+
     case actionsType.incrementLikes:
       newBuzz = { ...currentBuzz };
       (newBuzz as BuzzObject).likes += 1;
