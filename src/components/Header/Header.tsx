@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
 import {
@@ -6,6 +7,7 @@ import {
   primary,
   secondary,
 } from "../../styles/globalStyles";
+import { TitleProps } from "../../types/componentsInterfaces";
 
 const TitlePage = styled.h1`
   font-size: 22px;
@@ -28,9 +30,12 @@ const ListItem = styled.li`
   padding-left: 0;
 `;
 
-interface TitleProps {
-  title: string;
-}
+const SpanHeader = styled.span`
+  font-family: nunito, sans-serif;
+  font-size: 18px;
+  color: ${primary};
+  text-decoration: none;
+`;
 
 const Header = ({ title }: TitleProps): JSX.Element => {
   return (
@@ -45,11 +50,15 @@ const Header = ({ title }: TitleProps): JSX.Element => {
               <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
             </ListItem>
             <ListItem>
-              <img
-                width="30px"
-                src="images/burger-menu.png"
-                alt="menu three lines"
-              />
+              {!localStorage.getItem("UserToken") ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <SpanHeader>Log In</SpanHeader>
+                </Link>
+              ) : (
+                <Link to="/logout" style={{ textDecoration: "none" }}>
+                  <SpanHeader>Log Out</SpanHeader>
+                </Link>
+              )}
             </ListItem>
           </ListUlHorizontal>
         </nav>

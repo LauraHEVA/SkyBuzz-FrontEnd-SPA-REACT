@@ -3,3 +3,7 @@ export interface ButtonProps {
   text: string;
   className: string;
 }
+
+export interface TitleProps {
+  title: string;
+}
