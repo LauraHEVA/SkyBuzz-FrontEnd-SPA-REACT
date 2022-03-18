@@ -1,7 +1,9 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import { loginUserThunk } from "../../redux/thunks/userThunk";
+import { primary } from "../../styles/globalStyles";
 
 const FormLogin = (): JSX.Element => {
   const emptyDataForm = {
@@ -44,10 +46,10 @@ const FormLogin = (): JSX.Element => {
           <label htmlFor="username" className="form-label">
             Username
           </label>
-          <input
+          <InputForm
             name="username"
             type="text"
-            placeholder="Enter Your Username"
+            placeholder="Username"
             className="form-control"
             id="username"
             value={formData.username}
@@ -58,7 +60,7 @@ const FormLogin = (): JSX.Element => {
           <label htmlFor="password" className="form-label">
             Password
           </label>
-          <input
+          <InputForm
             name="password"
             type="password"
             className="form-control"
@@ -75,5 +77,12 @@ const FormLogin = (): JSX.Element => {
     </div>
   );
 };
+
+const InputForm = styled.input`
+  background-color: ${primary};
+  ::placeholder {
+    color: wheat;
+  }
+`;
 
 export default FormLogin;
