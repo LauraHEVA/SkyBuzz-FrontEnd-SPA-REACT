@@ -16,6 +16,7 @@ import Header from "./components/Header/Header";
 import NavMenu from "./components/NavMenu/NavMenu";
 import Footer from "./components/Footer/Footer";
 import Toastr from "./components/Toastr/Toastr";
+import LoginPage from "./pages/LoginPage ";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/newbuzz" element={<NewBuzzPage />} />
-        <Route path="/login" element={<NotFoundPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={"placeholder <RegisterPage>"} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/buzz/:id" element={<DetailBuzzPage />} />
