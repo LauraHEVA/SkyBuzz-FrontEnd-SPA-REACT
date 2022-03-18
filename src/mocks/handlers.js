@@ -61,4 +61,24 @@ export const handlers = [
       return res(ctx.status(200), ctx.json(userLogged.response));
     }
   ),
+
+  rest.get(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/6230c7a2f9d0f5ee1f58d6d9`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          buzz: {
+            topic: "general",
+            likes: 0,
+            comments: [],
+            author: "Dan",
+            text: "React Redux",
+            id: "6230c7a2f9d0f5ee1f58d6d9",
+            date: "2022-03-12T14:14:10.573Z",
+          },
+        })
+      );
+    }
+  ),
 ];

@@ -3,6 +3,7 @@ import {
   deleteBuzzThunk,
   incrementLikesThunk,
   loadAllBuzzsThunk,
+  loadDetailBuzzThunk,
 } from "./buzzsThunk";
 
 describe("Given a loadAllBuzzsThunk function", () => {
@@ -47,7 +48,7 @@ describe("Given a deleteBuzzThunk", () => {
 
 describe("Given an addBuzzThunk", () => {
   describe("When it's called with a new buzz to create", () => {
-    test("Then it should call dispatch with de addBuzzAction as parameter", async () => {
+    test("Then it should call dispatch with the addBuzzAction as parameter", async () => {
       const newBuzzToAdd = {
         author: "Freddie",
         text: "We are the champions",
@@ -74,7 +75,7 @@ describe("Given an addBuzzThunk", () => {
 
 describe("Given an incrementLikesThunk", () => {
   describe("When it's called with a new buzz to create", () => {
-    test("Then it should call dispatch with de addBuzzAction as parameter", async () => {
+    test("Then it should call dispatch with the addBuzzAction as parameter", async () => {
       const newBuzzToLike = {
         author: "Mia Wallace",
         text: "I hate uncomfortable silences",
@@ -92,6 +93,33 @@ describe("Given an incrementLikesThunk", () => {
 
       const likeThunk = incrementLikesThunk(newBuzzToLike.id);
       await likeThunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given an loadDetailBuzzThunk", () => {
+  describe("When it's called with an id", () => {
+    test("Then it should call dispatch with the details object buzz in response", async () => {
+      const buzzToLoad = {
+        topic: "general",
+        likes: 0,
+        comments: [],
+        author: "Dan",
+        text: "React Redux",
+        id: "6230c7a2f9d0f5ee1f58d6d9",
+        date: "2022-03-12T14:14:10.573Z",
+      };
+      const expectedAction = {
+        type: "load-detail-buzz",
+        buzz: buzzToLoad,
+      };
+      const dispatch = jest.fn();
+
+      const loadDetailThunk = loadDetailBuzzThunk(buzzToLoad.id);
+      await loadDetailThunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
