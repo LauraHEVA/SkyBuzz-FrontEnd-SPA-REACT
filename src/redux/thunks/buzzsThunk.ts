@@ -58,12 +58,14 @@ export const addNewBuzzThunk =
 
 export const incrementLikesThunk =
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}/like`,
       {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
         },
       }
     );
