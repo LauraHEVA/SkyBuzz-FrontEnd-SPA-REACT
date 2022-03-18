@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { LoginData } from "../../types/userInterfaces";
+import { DecodedToken, LoginData } from "../../types/userInterfaces";
 
 export const loginUserThunk =
   (user: LoginData) =>
@@ -19,7 +19,7 @@ export const loginUserThunk =
 
     if (response.ok) {
       const token = await response.json();
-      const { id, username } = await jwtDecode(token.token);
+      const { id, username }: DecodedToken = await jwtDecode(token.token);
       localStorage.setItem("UserToken", token.token);
       dispatch(loginUserAction({ id, username, token: token.token }));
     }
