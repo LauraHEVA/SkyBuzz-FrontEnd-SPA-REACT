@@ -7,16 +7,12 @@ describe("Given a loginUserThunk function", () => {
         username: "Laura0",
         password: "Laura1234",
       };
-      const expectedAction = {
-        type: "login-user",
-        user: user,
-      };
       const dispatch = jest.fn();
 
       const loginThunk = loginUserThunk(user);
       await loginThunk(dispatch);
 
-      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
