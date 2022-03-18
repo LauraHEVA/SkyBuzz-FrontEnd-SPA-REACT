@@ -35,7 +35,7 @@ const FormLogin = (): JSX.Element => {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
-    navigate(`/people`);
+    navigate(`/home`);
   };
   return (
     <div className="container">

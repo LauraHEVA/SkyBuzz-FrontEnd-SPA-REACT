@@ -21,10 +21,15 @@ export const loadAllBuzzsThunk = async (
 
 export const deleteBuzzThunk =
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}`,
       {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
       }
     );
     if (response.ok) {
@@ -35,12 +40,14 @@ export const deleteBuzzThunk =
 export const addNewBuzzThunk =
   (buzz: BuzzBasic) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/new`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
         },
         body: JSON.stringify(buzz),
       }
@@ -51,12 +58,14 @@ export const addNewBuzzThunk =
 
 export const incrementLikesThunk =
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}/like`,
       {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
         },
       }
     );
