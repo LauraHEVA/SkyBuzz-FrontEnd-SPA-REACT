@@ -1,11 +1,11 @@
 import { MainContainerPage } from "../styles/globalStyledComponents";
-import FormNewBuzz from "../components/FormNewBuzz/FormNewBuzz";
+import FormLogin from "../components/FormLogin/FormLogin";
 
 const LoginPage = () => {
   return (
     <>
       <MainContainerPage>
-        <FormNewBuzz />
+        <FormLogin />
       </MainContainerPage>
     </>
   );
