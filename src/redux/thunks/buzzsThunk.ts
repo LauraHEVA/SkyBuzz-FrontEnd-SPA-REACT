@@ -21,10 +21,15 @@ export const loadAllBuzzsThunk = async (
 
 export const deleteBuzzThunk =
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}`,
       {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
       }
     );
     if (response.ok) {
