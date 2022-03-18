@@ -30,6 +30,13 @@ const ListItem = styled.li`
   padding-left: 0;
 `;
 
+const SpanHeader = styled.span`
+  font-family: nunito, sans-serif;
+  font-size: 18px;
+  color: ${primary};
+  text-decoration: none;
+`;
+
 const Header = ({ title }: TitleProps): JSX.Element => {
   return (
     <>
@@ -43,13 +50,15 @@ const Header = ({ title }: TitleProps): JSX.Element => {
               <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
             </ListItem>
             <ListItem>
-              <Link to="/login">
-                <span>LogIn</span>
-              </Link>
-              <span> | </span>
-              <Link to="/logout">
-                <span>LogOut</span>
-              </Link>
+              {!localStorage.getItem("UserToken") ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <SpanHeader>Log In</SpanHeader>
+                </Link>
+              ) : (
+                <Link to="/logout" style={{ textDecoration: "none" }}>
+                  <SpanHeader>Log Out</SpanHeader>
+                </Link>
+              )}
             </ListItem>
           </ListUlHorizontal>
         </nav>
