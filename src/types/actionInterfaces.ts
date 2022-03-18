@@ -1,4 +1,5 @@
 import { BuzzBasic, BuzzObject } from "./buzzInterfaces";
+import { LoginData } from "./userInterfaces";
 
 export interface SomeActionInterface {
   type: string;
@@ -18,4 +19,8 @@ export interface AddNewBuzzActionInterface extends SomeActionInterface {
 
 export interface LoadOneBuzzActionInterface extends SomeActionInterface {
   buzz: BuzzObject;
+}
+
+export interface LoginUserActionInterface extends SomeActionInterface {
+  user: LoginData;
 }

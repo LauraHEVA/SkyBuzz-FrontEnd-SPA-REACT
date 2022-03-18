@@ -46,4 +46,5 @@ export const cleanBuzzDetailAction = (): SomeActionInterface => ({
 
 export const loginUserAction = (user: LoginData): SomeActionInterface => ({
   type: actionsType.loginUser,
+  user: user,
 });
