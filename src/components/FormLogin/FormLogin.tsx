@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { loginUserThunk } from "../../redux/thunks/userThunk";
 
 const FormLogin = (): JSX.Element => {
   const emptyDataForm = {

@@ -2,6 +2,7 @@ import jwtDecode from "jwt-decode";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { DecodedToken, LoginData } from "../../types/userInterfaces";
+import { loginUserAction } from "../actions/actionsCreator";
 
 export const loginUserThunk =
   (user: LoginData) =>
