@@ -16,7 +16,7 @@ import Header from "./components/Header/Header";
 import NavMenu from "./components/NavMenu/NavMenu";
 import Footer from "./components/Footer/Footer";
 import Toastr from "./components/Toastr/Toastr";
-import LoginPage from "./pages/LoginPage ";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
