@@ -40,12 +40,14 @@ export const deleteBuzzThunk =
 export const addNewBuzzThunk =
   (buzz: BuzzBasic) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}buzzs/new`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
         },
         body: JSON.stringify(buzz),
       }
