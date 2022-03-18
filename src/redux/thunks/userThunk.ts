@@ -8,7 +8,7 @@ export const loginUserThunk =
   (user: LoginData) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
-      `${process.env.REACT_APP_PUBLIC_API}/users/login`,
+      `${process.env.REACT_APP_PUBLIC_API}users/login`,
       {
         method: "POST",
         headers: {
