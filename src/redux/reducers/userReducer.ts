@@ -8,6 +8,7 @@ import actionsType from "../actions/actionsType";
 const userReducer = (
   currentUser: LoginData = {
     username: "",
+    password: "",
   },
   action: SomeActionInterface | LoginUserActionInterface = {
     type: "",

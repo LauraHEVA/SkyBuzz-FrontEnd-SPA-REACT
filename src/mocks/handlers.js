@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { BuzzListTest } from "./mockedObjects";
+import { BuzzListTest, userLogged } from "./mockedObjects";
 
 export const handlers = [
   rest.get(`${process.env.REACT_APP_PUBLIC_API}buzzs/`, (req, res, ctx) => {
@@ -52,6 +52,13 @@ export const handlers = [
     `${process.env.REACT_APP_PUBLIC_API}buzzs/6230c7a2f9d0f5ee1f58d6d9/like`,
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(`Buzz liked correctly`));
+    }
+  ),
+
+  rest.post(
+    `${process.env.REACT_APP_PUBLIC_API}users/login`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(userLogged.response));
     }
   ),
 ];

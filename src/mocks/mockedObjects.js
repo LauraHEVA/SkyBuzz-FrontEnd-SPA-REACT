@@ -18,3 +18,10 @@ export const BuzzListTest = [
     id: "6230c7a2f9d0f5ee1f58d6d9",
   },
 ];
+
+export const userLogged = {
+  response: {
+    token:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGF1cmEiLCJpZCI6IjYyMzI0NWRlY2FhN2Q2OWY5NmYxMGE5NSIsImlhdCI6MTY0NzYxOTA0MSwiZXhwIjoxNjQ4MjIzODQxfQ.Q6iChFgPKYzRRNsc-qf0J6kAggZfzsQ9ZBUZgYK0o4w",
+  },
+};

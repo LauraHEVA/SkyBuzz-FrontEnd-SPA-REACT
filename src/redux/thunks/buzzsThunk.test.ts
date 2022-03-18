@@ -17,7 +17,7 @@ describe("Given a loadAllBuzzsThunk function", () => {
 
 describe("Given a deleteBuzzThunk", () => {
   describe("When it's called with an existent id", () => {
-    test("Then it should call dispatch with de deleteBuzzAction as parameter", async () => {
+    test("Then it should call dispatch with the deleteBuzzAction as parameter", async () => {
       const id = "324k2lB";
       const expectedAction = {
         type: "delete-one-buzz",
