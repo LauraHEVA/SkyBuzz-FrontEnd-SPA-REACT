@@ -5,6 +5,7 @@ const actionsType = {
   incrementLikes: "increment-likes",
   loadDetailBuzz: "load-detail-buzz",
   cleanBuzzDetail: "clean-buzz-detail",
+  loginUser: "login-user",
 };
 
 export default actionsType;
