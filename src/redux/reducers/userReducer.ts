@@ -5,7 +5,7 @@ import {
 import { LoginData } from "../../types/userInterfaces";
 import actionsType from "../actions/actionsType";
 
-const usersReducer = (
+const userReducer = (
   currentUser: LoginData = {
     username: "",
   },
@@ -25,4 +25,4 @@ const usersReducer = (
   return newUser;
 };
 
-export default usersReducer;
+export default userReducer;
