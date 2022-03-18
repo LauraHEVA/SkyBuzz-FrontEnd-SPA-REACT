@@ -12,8 +12,10 @@ describe("Given ButtonSubmit component", () => {
       );
 
       const button = screen.getByText(text);
+      const buttonRole = screen.getByRole("button");
 
       expect(button).toBeInTheDocument();
+      expect(buttonRole).toBeInTheDocument();
     });
   });
 });
