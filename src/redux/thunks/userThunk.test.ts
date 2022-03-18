@@ -18,7 +18,6 @@ describe("Given a loginUserThunk function", () => {
 
       const loginThunk = loginUserThunk(user);
       await loginThunk(dispatch);
-      console.log(dispatch.mock.calls[0][0]);
 
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
