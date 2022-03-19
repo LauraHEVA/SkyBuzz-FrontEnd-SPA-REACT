@@ -20,6 +20,10 @@ const userReducer = (
       newUser = { ...(action as LoginUserActionInterface).user };
       break;
 
+    case actionsType.logoutUser:
+      newUser = null;
+      break;
+
     default:
       newUser = { ...currentUser };
   }

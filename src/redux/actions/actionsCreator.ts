@@ -49,3 +49,7 @@ export const loginUserAction = (user: LoginData): LoginUserActionInterface => ({
   type: actionsType.loginUser,
   user: user,
 });
+
+export const logoutUserAction = (): SomeActionInterface => ({
+  type: actionsType.logoutUser,
+});

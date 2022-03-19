@@ -91,7 +91,6 @@ const InputForm = styled.input`
   height: 45px;
   margin: 40px auto;
   color: ${background};
-
   ::placeholder {
     color: ${background};
     font-family: poppins, sans-serif;

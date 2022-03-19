@@ -1,6 +1,6 @@
 import { MainContainerPage } from "../styles/globalStyledComponents";
-import FormLogin from "../components/FormLogin/FormLogin";
 import Title from "../components/Title/Title";
+import FormLogin from "../components/FormLogin/FormLogin";
 
 const LoginPage = () => {
   return (
