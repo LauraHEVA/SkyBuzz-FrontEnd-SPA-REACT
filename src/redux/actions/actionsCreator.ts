@@ -7,7 +7,7 @@ import {
   LoginUserActionInterface,
 } from "../../types/actionInterfaces";
 import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
-import { UserData } from "../../types/userInterfaces";
+import { LoginData, UserData } from "../../types/userInterfaces";
 import actionsType from "./actionsType";
 
 export const loadAllBuzzsAction = (
@@ -46,7 +46,7 @@ export const cleanBuzzDetailAction = (): SomeActionInterface => ({
 });
 
 export const loginUserAction = (
-  userData: UserData
+  userData: UserData | LoginData
 ): LoginUserActionInterface => ({
   type: actionsType.loginUser,
   userData: userData,

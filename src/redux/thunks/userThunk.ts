@@ -1,11 +1,11 @@
 import jwtDecode from "jwt-decode";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { DecodedToken, LoginData } from "../../types/userInterfaces";
+import { DecodedToken, LoginData, UserData } from "../../types/userInterfaces";
 import { loginUserAction } from "../actions/actionsCreator";
 
 export const loginUserThunk =
-  (user: LoginData) =>
+  (user: LoginData | UserData) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
       `${process.env.REACT_APP_PUBLIC_API}users/login`,
@@ -24,9 +24,10 @@ export const loginUserThunk =
       localStorage.setItem("UserToken", token.token);
       const loggedUser = {
         username: user.username,
-        password: user.password,
+        password: (user as LoginData).password,
         id: decodedToken.id,
         token: token.token,
+        loggedIn: true,
       };
       dispatch(loginUserAction(loggedUser));
     }
