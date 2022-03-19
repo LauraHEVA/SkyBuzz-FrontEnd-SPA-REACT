@@ -131,8 +131,7 @@ export const SecondaryBtn = styled.button`
   width: 165px;
   height: 45px;
   color: ${primary};
-  border: 1px solid ${backgroundSecondary};
-  box-shadow: 0 4px 10px ${grey};
+  border: 1px solid ${primary};
   :hover {
     background-color: ${secondary};
     color: ${primary};
