@@ -28,7 +28,7 @@ const LogoutPage = () => {
         <Title title="Are you sure you want to log out?" />
         <ButtonLogoutContainer>
           <ButtonPrimary
-            text="Log out"
+            text="Yes, Log out"
             className="btn-primary"
             actionOnClick={logOut}
           ></ButtonPrimary>

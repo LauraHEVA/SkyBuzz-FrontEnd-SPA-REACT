@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { RootState } from "../../redux/store";
 import { ListUlHorizontal } from "../../styles/globalStyledComponents";
 import {
   breakpointXS,
@@ -8,6 +10,7 @@ import {
   secondary,
 } from "../../styles/globalStyles";
 import { TitleProps } from "../../types/componentsInterfaces";
+import { LoginData, UserData } from "../../types/userInterfaces";
 
 const TitlePage = styled.h1`
   font-size: 22px;
@@ -38,6 +41,7 @@ const SpanHeader = styled.span`
 `;
 
 const Header = ({ title }: TitleProps): JSX.Element => {
+  const user: UserData = useSelector((state: RootState) => state.user);
   return (
     <>
       <MainContainerHeader>
@@ -50,7 +54,7 @@ const Header = ({ title }: TitleProps): JSX.Element => {
               <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
             </ListItem>
             <ListItem>
-              {!localStorage.getItem("UserToken") ? (
+              {!user.loggedIn ? (
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <SpanHeader>Log In</SpanHeader>
                 </Link>
