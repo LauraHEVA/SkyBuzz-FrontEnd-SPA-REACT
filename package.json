@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/mukta": "^4.5.3",
     "@fontsource/nunito": "^4.5.4",
     "@fontsource/permanent-marker": "^4.5.1",
     "@fontsource/poppins": "^4.5.2",
