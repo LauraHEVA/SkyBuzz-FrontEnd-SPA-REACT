@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import "@fontsource/nunito";
+import "@fontsource/mukta";
 import "@fontsource/poppins";
 import "@fontsource/permanent-marker";
 import "@fontsource/shadows-into-light";

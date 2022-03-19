@@ -3,7 +3,10 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { loginUserThunk } from "../../redux/thunks/userThunk";
-import { primary } from "../../styles/globalStyles";
+import { ButtonSubmitContainer } from "../../styles/globalStyledComponents";
+import { background, primary } from "../../styles/globalStyles";
+import ButtonDisabled from "../Buttons/ButtonDisabled";
+import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 const FormLogin = (): JSX.Element => {
   const emptyDataForm = {
@@ -39,13 +42,11 @@ const FormLogin = (): JSX.Element => {
   const goToHomePage = () => {
     navigate(`/home`);
   };
+
   return (
     <div className="container">
       <form onSubmit={formSubmit} autoComplete="off">
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
-          </label>
           <InputForm
             name="username"
             type="text"
@@ -57,9 +58,6 @@ const FormLogin = (): JSX.Element => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
           <InputForm
             name="password"
             type="password"
@@ -70,9 +68,18 @@ const FormLogin = (): JSX.Element => {
             onChange={handleForm}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        {formData.password.length > 6 && formData.username.length > 2 ? (
+          <ButtonSubmitContainer>
+            <ButtonSubmit className={"btn-primary"} text={"Log in"} />
+          </ButtonSubmitContainer>
+        ) : (
+          <ButtonSubmitContainer>
+            <ButtonDisabled
+              className={"btn btn-outline-secondary"}
+              text={"Log in"}
+            />
+          </ButtonSubmitContainer>
+        )}
       </form>
     </div>
   );
@@ -80,8 +87,14 @@ const FormLogin = (): JSX.Element => {
 
 const InputForm = styled.input`
   background-color: ${primary};
+  border-radius: 10px;
+  height: 45px;
+  margin: 40px auto;
+  color: ${background};
+
   ::placeholder {
-    color: wheat;
+    color: ${background};
+    font-family: poppins, sans-serif;
   }
 `;
 
