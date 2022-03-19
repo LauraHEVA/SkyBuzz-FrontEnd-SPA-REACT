@@ -2,32 +2,36 @@ import {
   LoginUserActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
-import { LoginData } from "../../types/userInterfaces";
+import { UserData } from "../../types/userInterfaces";
 import actionsType from "../actions/actionsType";
 
+const initialUserData = {
+  name: "",
+  username: "",
+  id: "",
+  loggedIn: false,
+};
+
 const userReducer = (
-  currentUser: LoginData = {
-    username: "",
-    password: "",
-  },
+  userData: UserData = initialUserData,
   action: SomeActionInterface | LoginUserActionInterface = {
     type: "",
   }
 ) => {
-  let newUser;
+  let newUserData;
   switch (action.type) {
     case actionsType.loginUser:
-      newUser = { ...(action as LoginUserActionInterface).user };
+      newUserData = { ...(action as LoginUserActionInterface).userData };
       break;
 
     case actionsType.logoutUser:
-      newUser = null;
+      newUserData = { ...initialUserData };
       break;
 
     default:
-      newUser = { ...currentUser };
+      newUserData = { ...userData };
   }
-  return newUser;
+  return newUserData;
 };
 
 export default userReducer;

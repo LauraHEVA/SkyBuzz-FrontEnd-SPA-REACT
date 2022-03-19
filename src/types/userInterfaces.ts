@@ -2,7 +2,13 @@ export interface LoginData {
   username: string;
   password: string;
   token?: string;
-  id?: string;
+}
+
+export interface UserData {
+  name: string;
+  username: string;
+  id: string;
+  loggedIn: boolean;
 }
 
 export interface DecodedToken {

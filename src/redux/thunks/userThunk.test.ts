@@ -7,12 +7,13 @@ describe("Given a loginUserThunk function", () => {
         username: "Laura0",
         password: "Laura1234",
         id: "623245decaa7d69f96f10a95",
+        loggedIn: true,
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGF1cmEiLCJpZCI6IjYyMzI0NWRlY2FhN2Q2OWY5NmYxMGE5NSIsImlhdCI6MTY0NzYxOTA0MSwiZXhwIjoxNjQ4MjIzODQxfQ.Q6iChFgPKYzRRNsc-qf0J6kAggZfzsQ9ZBUZgYK0o4w",
       };
       const expectedAction = {
         type: "login-user",
-        user: user,
+        userData: user,
       };
       const dispatch = jest.fn();
 
