@@ -18,6 +18,7 @@ import NavMenu from "./components/NavMenu/NavMenu";
 import Footer from "./components/Footer/Footer";
 import Toastr from "./components/Toastr/Toastr";
 import LoginPage from "./pages/LoginPage";
+import LogoutPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/newbuzz" element={<NewBuzzPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/logout" element={<LogoutPage />} />
         <Route path="/register" element={"placeholder <RegisterPage>"} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/buzz/:id" element={<DetailBuzzPage />} />
