@@ -78,6 +78,12 @@ export const ButtonSubmitContainer = styled.div`
   justify-content: flex-end;
 `;
 
+export const ButtonLogoutContainer = styled.div`
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+`;
+
 export const ContainerHeader = styled.div`
   position: fixed;
   top: 0px;
