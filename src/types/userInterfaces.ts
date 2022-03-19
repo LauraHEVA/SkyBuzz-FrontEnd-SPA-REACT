@@ -11,6 +11,12 @@ export interface UserData {
   loggedIn: boolean;
 }
 
+export interface RegisterUserData {
+  name: string;
+  username: string;
+  password: string;
+}
+
 export interface DecodedToken {
   username: string;
   id: string;

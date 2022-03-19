@@ -1,21 +1,20 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { loginUserThunk } from "../../redux/thunks/userThunk";
+import { registerUserThunk } from "../../redux/thunks/userThunk";
 import {
   ButtonLogoutContainer,
-  ButtonRegisterContainer,
   CreateAccountContainer,
   SecondaryText,
 } from "../../styles/globalStyledComponents";
 import { background, primary } from "../../styles/globalStyles";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
-import ButtonSecondary from "../Buttons/ButtonSecondary";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
-const FormLogin = (): JSX.Element => {
+const FormRegister = (): JSX.Element => {
   const emptyDataForm = {
+    name: "",
     username: "",
     password: "",
   };
@@ -38,25 +37,32 @@ const FormLogin = (): JSX.Element => {
 
   const formSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    await dispatch(loginUserThunk(formData));
+    await dispatch(registerUserThunk(formData));
     resetForm();
-    goToHomePage();
+    goToLogin();
   };
 
   const navigate = useNavigate();
 
-  const goToHomePage = () => {
-    navigate(`/home`);
-  };
-
-  const goToRegister = () => {
-    navigate(`/register`);
+  const goToLogin = () => {
+    navigate(`/login`);
   };
 
   return (
     <>
       <div className="container">
         <form onSubmit={formSubmit} autoComplete="off">
+          <div className="mb-3">
+            <InputForm
+              name="name"
+              type="text"
+              placeholder="Name"
+              className="form-control"
+              id="name"
+              value={formData.name}
+              onChange={handleForm}
+            />
+          </div>
           <div className="mb-3">
             <InputForm
               name="username"
@@ -79,30 +85,25 @@ const FormLogin = (): JSX.Element => {
               onChange={handleForm}
             />
           </div>
-          {formData.password.length > 6 && formData.username.length > 2 ? (
+          {formData.password.length > 6 &&
+          formData.username.length > 2 &&
+          formData.name.length > 2 ? (
             <ButtonLogoutContainer>
-              <ButtonSubmit className={"btn-primary"} text={"Log in"} />
+              <ButtonSubmit className={"btn-primary"} text={"Register"} />
             </ButtonLogoutContainer>
           ) : (
             <ButtonLogoutContainer>
               <ButtonDisabled
                 className={"btn btn-outline-secondary"}
-                text={"Log in"}
+                text={"Register"}
               />
             </ButtonLogoutContainer>
           )}
         </form>
         <CreateAccountContainer className="createAccountContainer">
-          <SecondaryText>Create an account</SecondaryText>
-          <ButtonRegisterContainer>
-            <ButtonSecondary
-              actionOnClick={() => {
-                goToRegister();
-              }}
-              className={"btn-primary"}
-              text={"Register"}
-            />
-          </ButtonRegisterContainer>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <SecondaryText>Log In</SecondaryText>
+          </Link>
         </CreateAccountContainer>
       </div>
     </>
@@ -121,4 +122,4 @@ const InputForm = styled.input`
   }
 `;
 
-export default FormLogin;
+export default FormRegister;

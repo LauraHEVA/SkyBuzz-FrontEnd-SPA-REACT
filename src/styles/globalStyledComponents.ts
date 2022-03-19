@@ -226,3 +226,7 @@ export const CreateAccountContainer = styled.div`
   padding: 20px;
   width: 100%;
 `;
+
+export const SecondaryText = styled.p`
+  color: ${primary};
+`;

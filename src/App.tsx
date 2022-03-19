@@ -19,6 +19,7 @@ import Footer from "./components/Footer/Footer";
 import Toastr from "./components/Toastr/Toastr";
 import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         <Route path="/newbuzz" element={<NewBuzzPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/register" element={"placeholder <RegisterPage>"} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/buzz/:id" element={<DetailBuzzPage />} />
         <Route path="/buzz/*" element={<NotFoundPage />} />
