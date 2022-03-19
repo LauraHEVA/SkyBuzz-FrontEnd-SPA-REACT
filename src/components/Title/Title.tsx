@@ -1,7 +1,7 @@
 import { H2Login, H3Login } from "../../styles/globalStyledComponents";
 import { TitleProps } from "../../types/componentsInterfaces";
 
-const Title = ({ title }: TitleProps) => {
+const Title = ({ title }: TitleProps): JSX.Element => {
   return (
     <>
       <H2Login>SkyBuzz</H2Login>
