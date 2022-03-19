@@ -18,7 +18,7 @@ import NavMenu from "./components/NavMenu/NavMenu";
 import Footer from "./components/Footer/Footer";
 import Toastr from "./components/Toastr/Toastr";
 import LoginPage from "./pages/LoginPage";
-import LogoutPage from "./pages/LoginPage";
+import LogoutPage from "./pages/LogoutPage";
 
 function App() {
   return (
