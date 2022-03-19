@@ -127,14 +127,14 @@ export const ContainerFormNewBuzz = styled.div`
   }
 `;
 
-export const H2Login = styled.h2`
+export const H2LogsUser = styled.h2`
   color: ${primary};
   font-size: 64px;
   font-family: Mukta, nunito, sans-serif;
   text-align: center;
 `;
 
-export const H3Login = styled.h3`
+export const H3LogsUser = styled.h3`
   color: ${primary};
   font-size: 16px;
   font-family: poppins, nunito, sans-serif;
