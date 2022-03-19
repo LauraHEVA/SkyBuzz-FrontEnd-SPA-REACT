@@ -7,6 +7,7 @@ const actionsType = {
   cleanBuzzDetail: "clean-buzz-detail",
   loginUser: "login-user",
   logoutUser: "logout-user",
+  registerUser: "register-user",
 };
 
 export default actionsType;
