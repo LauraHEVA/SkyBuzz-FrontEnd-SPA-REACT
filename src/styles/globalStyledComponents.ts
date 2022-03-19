@@ -73,6 +73,11 @@ export const ButtonContainerNewBuzz = styled.div`
   z-index: 2;
 `;
 
+export const ButtonRegisterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const ButtonSubmitContainer = styled.div`
   margin-top: 18px;
   display: flex;
@@ -97,6 +102,24 @@ export const ContainerHeader = styled.div`
 `;
 
 export const PrimaryBtn = styled.button`
+  background-color: ${primary};
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  width: 165px;
+  height: 45px;
+  color: ${backgroundSecondary};
+  border: 1px solid ${backgroundSecondary};
+  box-shadow: 0 4px 10px ${grey};
+  :hover {
+    background-color: ${secondary};
+    color: ${primary};
+  }
+`;
+
+export const SecondaryBtn = styled.button`
   background-color: ${primary};
   font-family: poppins;
   font-size: 16px;
@@ -170,4 +193,16 @@ export const SpanHeader = styled.span`
   font-size: 18px;
   color: ${primary};
   text-decoration: none;
+`;
+
+export const CreateAccountContainer = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  border-top: 1px solid black;
+  padding: 20px;
+  width: 60vh;
 `;
