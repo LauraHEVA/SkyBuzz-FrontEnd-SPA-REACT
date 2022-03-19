@@ -13,8 +13,9 @@ import ButtonDisabled from "../Buttons/ButtonDisabled";
 import ButtonSecondary from "../Buttons/ButtonSecondary";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
-const FormLogin = (): JSX.Element => {
+const FormRegister = (): JSX.Element => {
   const emptyDataForm = {
+    name: "",
     username: "",
     password: "",
   };
@@ -39,13 +40,13 @@ const FormLogin = (): JSX.Element => {
     event.preventDefault();
     await dispatch(loginUserThunk(formData));
     resetForm();
-    goToHomePage();
+    goToLogin();
   };
 
   const navigate = useNavigate();
 
-  const goToHomePage = () => {
-    navigate(`/home`);
+  const goToLogin = () => {
+    navigate(`/login`);
   };
 
   const goToRegister = () => {
@@ -92,7 +93,7 @@ const FormLogin = (): JSX.Element => {
           )}
         </form>
         <CreateAccountContainer className="createAccountContainer">
-          <SecondaryText>Create an account</SecondaryText>
+          <p>Create an account</p>
           <ButtonRegisterContainer>
             <ButtonSecondary
               actionOnClick={() => {
@@ -120,8 +121,4 @@ const InputForm = styled.input`
   }
 `;
 
-const SecondaryText = styled.p`
-  color: ${primary};
-`;
-
-export default FormLogin;
+export default FormRegister;
