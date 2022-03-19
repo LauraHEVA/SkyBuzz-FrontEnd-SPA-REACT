@@ -5,6 +5,13 @@ export interface LoginData {
   id?: string;
 }
 
+export interface UserData {
+  name: string;
+  username: string;
+  id: string;
+  loggedIn: boolean;
+}
+
 export interface DecodedToken {
   username: string;
   id: string;
