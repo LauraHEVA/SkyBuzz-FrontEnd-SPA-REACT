@@ -101,7 +101,6 @@ const FormRegister = (): JSX.Element => {
           )}
         </form>
         <CreateAccountContainer className="createAccountContainer">
-          <SecondaryText>Login</SecondaryText>
           <Link to="/login" style={{ textDecoration: "none" }}>
             <SecondaryText>Log In</SecondaryText>
           </Link>
