@@ -13,7 +13,7 @@ const initialUserData = {
 };
 
 const userReducer = (
-  currentUser: UserData = initialUserData,
+  userData: UserData = initialUserData,
   action: SomeActionInterface | LoginUserActionInterface = {
     type: "",
   }
@@ -21,15 +21,15 @@ const userReducer = (
   let newUserData;
   switch (action.type) {
     case actionsType.loginUser:
-      newUserData = { ...(action as LoginUserActionInterface).user };
+      newUserData = { ...(action as LoginUserActionInterface).userData };
       break;
 
     case actionsType.logoutUser:
-      newUserData = null;
+      newUserData = { ...initialUserData };
       break;
 
     default:
-      newUserData = { ...currentUser };
+      newUserData = { ...userData };
   }
   return newUserData;
 };
