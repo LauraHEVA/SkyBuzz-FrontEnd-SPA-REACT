@@ -10,7 +10,7 @@ import {
   secondary,
 } from "../../styles/globalStyles";
 import { TitleProps } from "../../types/componentsInterfaces";
-import { LoginData, UserData } from "../../types/userInterfaces";
+import { UserData } from "../../types/userInterfaces";
 
 const TitlePage = styled.h1`
   font-size: 22px;
