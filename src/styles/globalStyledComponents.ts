@@ -67,6 +67,18 @@ export const MainContainerPage = styled.div`
   }
 `;
 
+export const MainContainerLogsUserPage = styled.div`
+  margin-left: 15px;
+  margin-right: 25px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 370px;
+  @media (min-width: ${breakpointXS}) {
+    margin-left: calc(${widthNavMenu}*1.7);
+    margin-top: 140px;
+  }
+`;
+
 export const ButtonContainerNewBuzz = styled.div`
   position: fixed;
   bottom: 50px;
