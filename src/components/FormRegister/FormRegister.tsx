@@ -1,16 +1,15 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { loginUserThunk } from "../../redux/thunks/userThunk";
 import {
   ButtonLogoutContainer,
-  ButtonRegisterContainer,
   CreateAccountContainer,
+  SecondaryText,
 } from "../../styles/globalStyledComponents";
 import { background, primary } from "../../styles/globalStyles";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
-import ButtonSecondary from "../Buttons/ButtonSecondary";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 const FormRegister = (): JSX.Element => {
@@ -38,7 +37,7 @@ const FormRegister = (): JSX.Element => {
 
   const formSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    await dispatch(loginUserThunk(formData));
+    await dispatch(loginUserThunk(formData)); // fixme
     resetForm();
     goToLogin();
   };
@@ -49,14 +48,21 @@ const FormRegister = (): JSX.Element => {
     navigate(`/login`);
   };
 
-  const goToRegister = () => {
-    navigate(`/register`);
-  };
-
   return (
     <>
       <div className="container">
         <form onSubmit={formSubmit} autoComplete="off">
+          <div className="mb-3">
+            <InputForm
+              name="name"
+              type="text"
+              placeholder="Name"
+              className="form-control"
+              id="name"
+              value={formData.name}
+              onChange={handleForm}
+            />
+          </div>
           <div className="mb-3">
             <InputForm
               name="username"
@@ -79,30 +85,26 @@ const FormRegister = (): JSX.Element => {
               onChange={handleForm}
             />
           </div>
-          {formData.password.length > 6 && formData.username.length > 2 ? (
+          {formData.password.length > 6 &&
+          formData.username.length > 2 &&
+          formData.name.length > 2 ? (
             <ButtonLogoutContainer>
-              <ButtonSubmit className={"btn-primary"} text={"Log in"} />
+              <ButtonSubmit className={"btn-primary"} text={"Register"} />
             </ButtonLogoutContainer>
           ) : (
             <ButtonLogoutContainer>
               <ButtonDisabled
                 className={"btn btn-outline-secondary"}
-                text={"Log in"}
+                text={"Register"}
               />
             </ButtonLogoutContainer>
           )}
         </form>
         <CreateAccountContainer className="createAccountContainer">
-          <p>Create an account</p>
-          <ButtonRegisterContainer>
-            <ButtonSecondary
-              actionOnClick={() => {
-                goToRegister();
-              }}
-              className={"btn-primary"}
-              text={"Register"}
-            />
-          </ButtonRegisterContainer>
+          <SecondaryText>Login</SecondaryText>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <SecondaryText>Log In</SecondaryText>
+          </Link>
         </CreateAccountContainer>
       </div>
     </>

@@ -7,6 +7,7 @@ import {
   ButtonLogoutContainer,
   ButtonRegisterContainer,
   CreateAccountContainer,
+  SecondaryText,
 } from "../../styles/globalStyledComponents";
 import { background, primary } from "../../styles/globalStyles";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
@@ -118,10 +119,6 @@ const InputForm = styled.input`
     color: ${background};
     font-family: poppins, sans-serif;
   }
-`;
-
-const SecondaryText = styled.p`
-  color: ${primary};
 `;
 
 export default FormLogin;
