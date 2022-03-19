@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import {
+  background,
   backgroundSecondary,
   breakpointXS,
   grey,
@@ -73,6 +74,12 @@ export const ButtonContainerNewBuzz = styled.div`
   z-index: 2;
 `;
 
+export const ButtonRegisterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
 export const ButtonSubmitContainer = styled.div`
   margin-top: 18px;
   display: flex;
@@ -114,6 +121,23 @@ export const PrimaryBtn = styled.button`
   }
 `;
 
+export const SecondaryBtn = styled.button`
+  background-color: ${background};
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  width: 165px;
+  height: 45px;
+  color: ${primary};
+  border: 1px solid ${primary};
+  :hover {
+    background-color: ${secondary};
+    color: ${primary};
+  }
+`;
+
 export const ContainerFontAwesome = styled.div`
   background-color: red;
 `;
@@ -135,18 +159,25 @@ export const ContainerFormNewBuzz = styled.div`
 `;
 
 export const H2LogsUser = styled.h2`
-  color: ${primary};
-  font-size: 64px;
-  font-family: Mukta, nunito, sans-serif;
-  text-align: center;
+  display: none;
+  @media (min-width: ${breakpointXS}) {
+    display: block;
+    color: ${primary};
+    font-size: 64px;
+    font-family: Mukta, nunito, sans-serif;
+    text-align: center;
+  }
 `;
 
 export const H3LogsUser = styled.h3`
+  font-size: 20px;
   color: ${primary};
-  font-size: 16px;
   font-family: poppins, nunito, sans-serif;
   text-align: center;
   padding: 20px 10px;
+  @media (min-width: ${breakpointXS}) {
+    font-size: 16px;
+  }
 `;
 
 export const TitlePage = styled.h1`
@@ -170,4 +201,16 @@ export const SpanHeader = styled.span`
   font-size: 18px;
   color: ${primary};
   text-decoration: none;
+`;
+
+export const CreateAccountContainer = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  border-top: 1px solid black;
+  padding: 20px;
+  width: 100%;
 `;

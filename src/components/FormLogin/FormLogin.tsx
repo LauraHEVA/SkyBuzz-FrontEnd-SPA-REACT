@@ -3,9 +3,14 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { loginUserThunk } from "../../redux/thunks/userThunk";
-import { ButtonSubmitContainer } from "../../styles/globalStyledComponents";
+import {
+  ButtonLogoutContainer,
+  ButtonRegisterContainer,
+  CreateAccountContainer,
+} from "../../styles/globalStyledComponents";
 import { background, primary } from "../../styles/globalStyles";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 const FormLogin = (): JSX.Element => {
@@ -43,45 +48,63 @@ const FormLogin = (): JSX.Element => {
     navigate(`/home`);
   };
 
+  const goToRegister = () => {
+    navigate(`/register`);
+  };
+
   return (
-    <div className="container">
-      <form onSubmit={formSubmit} autoComplete="off">
-        <div className="mb-3">
-          <InputForm
-            name="username"
-            type="text"
-            placeholder="Username"
-            className="form-control"
-            id="username"
-            value={formData.username}
-            onChange={handleForm}
-          />
-        </div>
-        <div className="mb-3">
-          <InputForm
-            name="password"
-            type="password"
-            className="form-control"
-            placeholder="Password"
-            id="password"
-            value={formData.password}
-            onChange={handleForm}
-          />
-        </div>
-        {formData.password.length > 6 && formData.username.length > 2 ? (
-          <ButtonSubmitContainer>
-            <ButtonSubmit className={"btn-primary"} text={"Log in"} />
-          </ButtonSubmitContainer>
-        ) : (
-          <ButtonSubmitContainer>
-            <ButtonDisabled
-              className={"btn btn-outline-secondary"}
-              text={"Log in"}
+    <>
+      <div className="container">
+        <form onSubmit={formSubmit} autoComplete="off">
+          <div className="mb-3">
+            <InputForm
+              name="username"
+              type="text"
+              placeholder="Username"
+              className="form-control"
+              id="username"
+              value={formData.username}
+              onChange={handleForm}
             />
-          </ButtonSubmitContainer>
-        )}
-      </form>
-    </div>
+          </div>
+          <div className="mb-3">
+            <InputForm
+              name="password"
+              type="password"
+              className="form-control"
+              placeholder="Password"
+              id="password"
+              value={formData.password}
+              onChange={handleForm}
+            />
+          </div>
+          {formData.password.length > 6 && formData.username.length > 2 ? (
+            <ButtonLogoutContainer>
+              <ButtonSubmit className={"btn-primary"} text={"Log in"} />
+            </ButtonLogoutContainer>
+          ) : (
+            <ButtonLogoutContainer>
+              <ButtonDisabled
+                className={"btn btn-outline-secondary"}
+                text={"Log in"}
+              />
+            </ButtonLogoutContainer>
+          )}
+        </form>
+        <CreateAccountContainer className="createAccountContainer">
+          <p>Create an account</p>
+          <ButtonRegisterContainer>
+            <ButtonSecondary
+              actionOnClick={() => {
+                goToRegister();
+              }}
+              className={"btn-primary"}
+              text={"Register"}
+            />
+          </ButtonRegisterContainer>
+        </CreateAccountContainer>
+      </div>
+    </>
   );
 };
 
