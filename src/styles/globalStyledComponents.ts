@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import {
+  background,
   backgroundSecondary,
   breakpointXS,
   grey,
@@ -76,6 +77,7 @@ export const ButtonContainerNewBuzz = styled.div`
 export const ButtonRegisterContainer = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 export const ButtonSubmitContainer = styled.div`
@@ -120,7 +122,7 @@ export const PrimaryBtn = styled.button`
 `;
 
 export const SecondaryBtn = styled.button`
-  background-color: ${primary};
+  background-color: ${background};
   font-family: poppins;
   font-size: 16px;
   font-weight: 900;
@@ -128,7 +130,7 @@ export const SecondaryBtn = styled.button`
   border-radius: 10px;
   width: 165px;
   height: 45px;
-  color: ${backgroundSecondary};
+  color: ${primary};
   border: 1px solid ${backgroundSecondary};
   box-shadow: 0 4px 10px ${grey};
   :hover {
@@ -158,18 +160,25 @@ export const ContainerFormNewBuzz = styled.div`
 `;
 
 export const H2LogsUser = styled.h2`
-  color: ${primary};
-  font-size: 64px;
-  font-family: Mukta, nunito, sans-serif;
-  text-align: center;
+  display: none;
+  @media (min-width: ${breakpointXS}) {
+    display: block;
+    color: ${primary};
+    font-size: 64px;
+    font-family: Mukta, nunito, sans-serif;
+    text-align: center;
+  }
 `;
 
 export const H3LogsUser = styled.h3`
+  font-size: 20px;
   color: ${primary};
-  font-size: 16px;
   font-family: poppins, nunito, sans-serif;
   text-align: center;
   padding: 20px 10px;
+  @media (min-width: ${breakpointXS}) {
+    font-size: 16px;
+  }
 `;
 
 export const TitlePage = styled.h1`
@@ -204,5 +213,5 @@ export const CreateAccountContainer = styled.div`
   margin-top: 30px;
   border-top: 1px solid black;
   padding: 20px;
-  width: 60vh;
+  width: 100%;
 `;

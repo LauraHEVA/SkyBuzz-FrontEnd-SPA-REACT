@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { loginUserThunk } from "../../redux/thunks/userThunk";
 import {
+  ButtonLogoutContainer,
   ButtonRegisterContainer,
-  ButtonSubmitContainer,
   CreateAccountContainer,
 } from "../../styles/globalStyledComponents";
 import { background, primary } from "../../styles/globalStyles";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
-import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 const FormLogin = (): JSX.Element => {
@@ -79,32 +79,31 @@ const FormLogin = (): JSX.Element => {
             />
           </div>
           {formData.password.length > 6 && formData.username.length > 2 ? (
-            <ButtonSubmitContainer>
+            <ButtonLogoutContainer>
               <ButtonSubmit className={"btn-primary"} text={"Log in"} />
-            </ButtonSubmitContainer>
+            </ButtonLogoutContainer>
           ) : (
-            <ButtonSubmitContainer>
+            <ButtonLogoutContainer>
               <ButtonDisabled
                 className={"btn btn-outline-secondary"}
                 text={"Log in"}
               />
-            </ButtonSubmitContainer>
+            </ButtonLogoutContainer>
           )}
         </form>
+        <CreateAccountContainer className="createAccountContainer">
+          <p>Create an account</p>
+          <ButtonRegisterContainer>
+            <ButtonSecondary
+              actionOnClick={() => {
+                goToRegister();
+              }}
+              className={"btn-primary"}
+              text={"Register"}
+            />
+          </ButtonRegisterContainer>
+        </CreateAccountContainer>
       </div>
-      <CreateAccountContainer className="createAccountContainer">
-        <p>Create an account</p>
-        <ButtonRegisterContainer>
-          <ButtonPrimary
-            actionOnClick={() => {
-              goToRegister();
-            }}
-            className={"btn-primary"}
-            text={"Register"}
-          />
-        </ButtonRegisterContainer>
-        {/* <Button text={"Register"} actionOnClick={goToRegister}></Button> */}
-      </CreateAccountContainer>
     </>
   );
 };
