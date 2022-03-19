@@ -1,16 +1,14 @@
 import { MainContainerPage } from "../styles/globalStyledComponents";
-import FormLogin from "../components/FormLogin/FormLogin";
 import Title from "../components/Title/Title";
 
-const LoginPage = () => {
+const LogoutPage = () => {
   return (
     <>
       <MainContainerPage>
-        <Title title="Sign in and start buzzing" />
-        <FormLogin />
+        <Title title="Log out" />
       </MainContainerPage>
     </>
   );
 };
 
-export default LoginPage;
+export default LogoutPage;
