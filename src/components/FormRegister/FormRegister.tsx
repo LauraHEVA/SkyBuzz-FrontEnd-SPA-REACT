@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { loginUserThunk } from "../../redux/thunks/userThunk";
+import { registerUserThunk } from "../../redux/thunks/userThunk";
 import {
   ButtonLogoutContainer,
   CreateAccountContainer,
@@ -37,7 +37,7 @@ const FormRegister = (): JSX.Element => {
 
   const formSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    await dispatch(loginUserThunk(formData)); // fixme
+    await dispatch(registerUserThunk(formData));
     resetForm();
     goToLogin();
   };
