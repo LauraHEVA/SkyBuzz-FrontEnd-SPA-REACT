@@ -34,6 +34,7 @@ export const ListUlHorizontal = styled.ul`
 export const ListItem = styled.li`
   list-style: none;
   margin: 0;
+  padding-left: 0;
 `;
 
 export const ListUlVert = styled.ul`
@@ -146,4 +147,27 @@ export const H3LogsUser = styled.h3`
   font-family: poppins, nunito, sans-serif;
   text-align: center;
   padding: 20px 10px;
+`;
+
+export const TitlePage = styled.h1`
+  font-size: 22px;
+  color: ${primary};
+`;
+
+export const MainContainerHeader = styled.div`
+  background-color: ${secondary};
+  height: 60px;
+  border-bottom: 1px solid ${primary};
+  padding: 8px 15px;
+  box-shadow: 0 4px 10px ${grey};
+  @media (min-width: ${breakpointXS}) {
+    background-color: ${secondary};
+  }
+`;
+
+export const SpanHeader = styled.span`
+  font-family: nunito, sans-serif;
+  font-size: 18px;
+  color: ${primary};
+  text-decoration: none;
 `;
