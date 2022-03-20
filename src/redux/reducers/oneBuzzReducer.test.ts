@@ -52,4 +52,24 @@ describe("Given a oneBuzzReducer function", () => {
       expect(newState).toEqual(buzzToLike);
     });
   });
+
+  describe("When it's called with a loadDetailBuzz action and a buzz object", () => {
+    test("Then it should return a new state with the buzz object", () => {
+      const buzzToGetDetail: BuzzBasic | BuzzObject = {
+        topic: "general",
+        likes: 0,
+        comments: [],
+        author: "Freddie",
+        text: "We are the champions",
+        id: "6230c7a2f9d0f5ee1f58d6d9",
+      };
+      const action = {
+        type: "load-detail-buzz",
+        buzz: buzzToGetDetail,
+      };
+      const newState = oneBuzzReducer(buzzToGetDetail, action);
+
+      expect(newState).toEqual(buzzToGetDetail);
+    });
+  });
 });
