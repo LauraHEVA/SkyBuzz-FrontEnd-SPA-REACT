@@ -8,8 +8,12 @@ import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import Footer from "../components/Footer/Footer";
 import ListBuzzs from "../components/ListBuzzs/ListBuzzs";
+import { UserData } from "../types/userInterfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const HomePage = () => {
+  const user: UserData = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
 
   const goToNewBuzz = () => {
@@ -20,15 +24,19 @@ const HomePage = () => {
     <>
       <MainContainerPage>
         <ListBuzzs />
-        <ButtonContainerNewBuzz>
-          <ButtonPrimary
-            actionOnClick={() => {
-              goToNewBuzz();
-            }}
-            className={"btn-primary"}
-            text={"New Buzz"}
-          />
-        </ButtonContainerNewBuzz>
+        {!user.loggedIn ? (
+          <ButtonContainerNewBuzz>
+            <ButtonPrimary
+              actionOnClick={() => {
+                goToNewBuzz();
+              }}
+              className={"btn-primary"}
+              text={"New Buzz"}
+            />
+          </ButtonContainerNewBuzz>
+        ) : (
+          <div></div>
+        )}
       </MainContainerPage>
       <ContainerNavMenu>
         <NavMenu />
