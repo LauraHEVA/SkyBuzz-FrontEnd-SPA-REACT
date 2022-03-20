@@ -1,8 +1,11 @@
 import { BuzzObject } from "../../types/buzzInterfaces";
 import {
+  addNewBuzzAction,
+  cleanBuzzDetailAction,
   deleteBuzzAction,
   incrementLikesAction,
   loadAllBuzzsAction,
+  loadDetailBuzzAction,
 } from "./actionsCreator";
 
 describe("Given a loadAllBuzzs Action", () => {
@@ -68,6 +71,70 @@ describe("Given an incrementLikesAction function", () => {
       };
 
       const action = incrementLikesAction(idToLike);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an addNewBuzzAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'add-new-buzz' and the buzz id as another property", () => {
+      const buzzToCreate = {
+        topic: "general",
+        likes: 0,
+        comments: [1],
+        author: "Madonna",
+        text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
+        date: "2022-03-11T12:22:36.899Z",
+        id: "324k2l",
+      };
+
+      const expectedAction = {
+        type: "add-new-buzz",
+        buzz: buzzToCreate,
+      };
+
+      const action = addNewBuzzAction(buzzToCreate);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an loadDetailBuzzAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'load-detail-buzz' and the buzz id as another property", () => {
+      const buzzToLoad = {
+        topic: "general",
+        likes: 0,
+        comments: [1],
+        author: "Madonna",
+        text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
+        date: "2022-03-11T12:22:36.899Z",
+        id: "324k2l",
+      };
+
+      const expectedAction = {
+        type: "load-detail-buzz",
+        buzz: buzzToLoad,
+      };
+
+      const action = loadDetailBuzzAction(buzzToLoad);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an cleanBuzzDetailAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'clean-buzz-detail' and the buzz id as another property", () => {
+      const expectedAction = {
+        type: "clean-buzz-detail",
+      };
+
+      const action = cleanBuzzDetailAction();
 
       expect(action).toEqual(expectedAction);
     });
