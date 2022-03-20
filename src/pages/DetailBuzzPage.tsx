@@ -15,7 +15,6 @@ import {
   loadDetailBuzzThunk,
 } from "../redux/thunks/buzzsThunk";
 import Buzz from "../components/Buzz/Buzz";
-import { toast } from "react-toastify";
 import { cleanBuzzDetailAction } from "../redux/actions/actionsCreator";
 import { Spinner } from "../components/Spinner/Spinner";
 

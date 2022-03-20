@@ -1,7 +1,6 @@
 import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import styled from "styled-components";
 import { addNewBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import {
@@ -38,9 +37,8 @@ const FormNewBuzz = (): JSX.Element => {
   const onSubmitForm = (event: SyntheticEvent) => {
     event.preventDefault();
     dispatch(addNewBuzzThunk(buzzToCreate));
-    toast.success("Buzz published correctly");
     resetForm();
-    setTimeout(goToHomePage, 2000);
+    setTimeout(goToHomePage, 500);
   };
 
   const onChangeTopic = (event: React.ChangeEvent<HTMLSelectElement>): void => {
