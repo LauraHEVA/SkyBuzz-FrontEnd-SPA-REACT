@@ -57,7 +57,12 @@ export const addNewBuzzThunk =
       }
     );
     const newBuzz = await response.json();
-    dispatch(addNewBuzzAction(newBuzz));
+    if (response.ok) {
+      dispatch(addNewBuzzAction(newBuzz));
+      toast.success("Buzz published!");
+    } else {
+      toast.error("Something went wrong. Buzz not created");
+    }
   };
 
 export const incrementLikesThunk =
