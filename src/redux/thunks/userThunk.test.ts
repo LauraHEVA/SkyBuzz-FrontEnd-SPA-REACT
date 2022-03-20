@@ -27,8 +27,8 @@ describe("Given a loginUserThunk function", () => {
 });
 
 describe("Given a registerUserThunk function", () => {
-  describe("When it is called with correct credentials", () => {
-    test("Then it should call dispatch with the loginUser action", async () => {
+  describe("When it is called with a userData to register", () => {
+    test("Then it should call dispatch with the registerUser action", async () => {
       const userData = {
         name: "Sil",
         username: "Sil0",
