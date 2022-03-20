@@ -20,8 +20,13 @@ import Toastr from "./components/Toastr/Toastr";
 import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
+import { UserData } from "./types/userInterfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 function App() {
+  const user: UserData = useSelector((state: RootState) => state.user);
+
   return (
     <>
       <ContainerHeader>
@@ -30,7 +35,10 @@ function App() {
       <Toastr />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/newbuzz" element={<NewBuzzPage />} />
+        <Route
+          path="/newbuzz"
+          element={user.loggedIn ? <NewBuzzPage /> : <NotFoundPage />}
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/register" element={<RegisterPage />} />
