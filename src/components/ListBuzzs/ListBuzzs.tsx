@@ -18,10 +18,10 @@ const ListBuzzs = (): JSX.Element => {
   const buzzsList: BuzzObject[] = useSelector(
     (state: RootState) => state.buzzs
   );
+  const arrayAllBuzzs = buzzsList.reverse();
   const buzzsPerPage = 15;
   const pages = [];
-  const numPages = Math.ceil(buzzsList.length / buzzsPerPage);
-  const arrayAllBuzzs = [...buzzsList.reverse()];
+  const numPages = Math.ceil(arrayAllBuzzs.length / buzzsPerPage);
   const [currentPage, setCurrentPage] = useState(0);
 
   if (arrayAllBuzzs.length > buzzsPerPage) {
