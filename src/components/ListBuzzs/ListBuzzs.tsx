@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   deleteBuzzThunk,
   incrementLikesThunk,
@@ -11,6 +11,7 @@ import { ListItem } from "../../styles/globalStyledComponents";
 import Buzz from "../Buzz/Buzz";
 import styled from "styled-components";
 import { Spinner } from "../Spinner/Spinner";
+import ArrowPages from "../ArrowPages/ArrowPages";
 
 const ListBuzzs = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const ListBuzzs = (): JSX.Element => {
   const pages = [];
   const numPages = Math.ceil(buzzsList.length / buzzsPerPage);
   const arrayAllBuzzs = [...buzzsList];
+  const [currentPage, setCurrentPage] = useState(0);
 
   if (arrayAllBuzzs.length > buzzsPerPage) {
     let currentOffset = 0;
@@ -37,6 +39,14 @@ const ListBuzzs = (): JSX.Element => {
     pages.push(arrayAllBuzzs);
   }
 
+  const changePage = (mode: boolean) => {
+    if (mode) {
+      setCurrentPage(currentPage + 1);
+    } else {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   useEffect(() => {
     dispatch(loadAllBuzzsThunk);
   }, [dispatch]);
@@ -50,6 +60,25 @@ const ListBuzzs = (): JSX.Element => {
   };
   return (
     <>
+      {numPages > 1 && (
+        <ArrowsContainer data-testid="arrowsContainer">
+          <ArrowPages
+            disabled={currentPage === 0}
+            actionOnClick={() => {
+              changePage(false);
+            }}
+            showSide={true}
+          />
+          <ArrowPages
+            disabled={currentPage === numPages - 1}
+            actionOnClick={() => {
+              changePage(true);
+            }}
+            showSide={false}
+          />
+        </ArrowsContainer>
+      )}
+
       {buzzsList.length > 0 ? (
         <ListUlBuzzs>
           {buzzsList.map((buzz) => {
@@ -79,6 +108,15 @@ const ListUlBuzzs = styled.ul`
   padding-left: 0;
   display: flex;
   flex-direction: column-reverse;
+`;
+
+const ArrowsContainer = styled.div`
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default ListBuzzs;
