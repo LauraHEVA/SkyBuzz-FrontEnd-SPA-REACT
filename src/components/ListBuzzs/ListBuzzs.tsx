@@ -38,8 +38,7 @@ const ListBuzzs = (): JSX.Element => {
   } else {
     pages.push(arrayAllBuzzs);
   }
-  console.log(pages);
-  console.log(currentPage);
+
   const changePage = (mode: boolean) => {
     if (mode) {
       setCurrentPage(currentPage + 1);
