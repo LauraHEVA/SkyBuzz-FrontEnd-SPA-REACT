@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import {
@@ -35,6 +36,9 @@ export const loginUserThunk =
         loggedIn: true,
       };
       dispatch(loginUserAction(loggedUser));
+      toast.success("You're logged in!");
+    } else {
+      toast.error("Wrong credentials");
     }
   };
 
@@ -55,5 +59,8 @@ export const registerUserThunk =
     if (response.ok) {
       const newUser = await response.json();
       dispatch(registerUserAction(newUser));
+      toast.success("User registered correctly");
+    } else {
+      toast.error("Something went wrong with the register process");
     }
   };

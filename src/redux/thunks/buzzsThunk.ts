@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { BuzzBasic } from "../../types/buzzInterfaces";
@@ -34,6 +35,9 @@ export const deleteBuzzThunk =
     );
     if (response.ok) {
       dispatch(deleteBuzzAction(id));
+      toast.success("Buzz deleted correctly");
+    } else {
+      toast.error("Something went wrong. Buzz not deleted");
     }
   };
 
@@ -53,7 +57,12 @@ export const addNewBuzzThunk =
       }
     );
     const newBuzz = await response.json();
-    dispatch(addNewBuzzAction(newBuzz));
+    if (response.ok) {
+      dispatch(addNewBuzzAction(newBuzz));
+      toast.success("Buzz published!");
+    } else {
+      toast.error("Something went wrong. Buzz not created");
+    }
   };
 
 export const incrementLikesThunk =
