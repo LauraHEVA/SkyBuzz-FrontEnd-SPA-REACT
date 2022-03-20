@@ -25,8 +25,7 @@ const FormLogin = (): JSX.Element => {
   const handleForm = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [(event as React.ChangeEvent<HTMLInputElement>).target.id]:
-        event.target.value,
+      [event.target.id]: event.target.value,
     });
   };
 
