@@ -24,7 +24,7 @@ const HomePage = () => {
     <>
       <MainContainerPage>
         <ListBuzzs />
-        {!user.loggedIn ? (
+        {user.loggedIn && (
           <ButtonContainerNewBuzz>
             <ButtonPrimary
               actionOnClick={() => {
@@ -34,8 +34,6 @@ const HomePage = () => {
               text={"New Buzz"}
             />
           </ButtonContainerNewBuzz>
-        ) : (
-          <div></div>
         )}
       </MainContainerPage>
       <ContainerNavMenu>
