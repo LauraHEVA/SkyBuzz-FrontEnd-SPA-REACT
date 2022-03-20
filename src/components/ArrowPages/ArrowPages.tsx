@@ -1,7 +1,7 @@
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { primary, secondary } from "../../styles/globalStyles";
+import { background, primary } from "../../styles/globalStyles";
 import { ArrowPagesProps } from "../../types/componentsInterfaces";
 
 const ArrowPages = ({
@@ -10,7 +10,7 @@ const ArrowPages = ({
   showSide,
 }: ArrowPagesProps): JSX.Element => {
   const ArrowPages = styled.button`
-    background-color: ${primary};
+    background-color: ${background};
     border: none;
   `;
 
@@ -19,8 +19,8 @@ const ArrowPages = ({
       <FontAwesomeIcon
         data-testid="pageArrow"
         icon={showSide ? faAngleLeft : faAngleRight}
-        size="3x"
-        color={disabled ? "dimgray" : secondary}
+        size="2x"
+        color={disabled ? "dimgray" : primary}
       />
     </ArrowPages>
   );

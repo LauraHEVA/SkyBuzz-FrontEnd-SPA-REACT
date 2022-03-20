@@ -111,10 +111,12 @@ const ListUlBuzzs = styled.ul`
 `;
 
 const ArrowsContainer = styled.div`
-  padding-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 100vw;
+  padding-top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   justify-content: space-between;
 `;
