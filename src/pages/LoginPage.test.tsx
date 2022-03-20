@@ -6,7 +6,7 @@ import LoginPage from "./LoginPage";
 
 describe("Given a LoginPage component", () => {
   describe("When it's rendered", () => {
-    test("Then it should render a paragraph with the text 'React Redux'", async () => {
+    test("Then it should render a paragraph with the text 'sign in and start buzzing' and 'create an account'", async () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
