@@ -1,7 +1,7 @@
-import { loginUserThunk } from "./userThunk";
+import { loginUserThunk, registerUserThunk } from "./userThunk";
 
 describe("Given a loginUserThunk function", () => {
-  describe("When it is called", () => {
+  describe("When it is called with correct credentials", () => {
     test("Then it should call dispatch with the loginUser action", async () => {
       const user = {
         username: "Laura0",
@@ -19,6 +19,29 @@ describe("Given a loginUserThunk function", () => {
 
       const loginThunk = loginUserThunk(user);
       await loginThunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given a registerUserThunk function", () => {
+  describe("When it is called with correct credentials", () => {
+    test("Then it should call dispatch with the loginUser action", async () => {
+      const userData = {
+        name: "Lau",
+        username: "Laura0",
+        password: "Laura1234",
+      };
+      const expectedAction = {
+        type: "register-user",
+        userData: userData,
+      };
+      const dispatch = jest.fn();
+
+      const registerThunk = registerUserThunk(userData);
+      await registerThunk(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
