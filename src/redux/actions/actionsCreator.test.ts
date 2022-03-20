@@ -6,6 +6,9 @@ import {
   incrementLikesAction,
   loadAllBuzzsAction,
   loadDetailBuzzAction,
+  loginUserAction,
+  logoutUserAction,
+  registerUserAction,
 } from "./actionsCreator";
 
 describe("Given a loadAllBuzzs Action", () => {
@@ -135,6 +138,61 @@ describe("Given an cleanBuzzDetailAction function", () => {
       };
 
       const action = cleanBuzzDetailAction();
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an loginUserAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'login-user' and the buzz id as another property", () => {
+      const userData = {
+        username: "Laura0",
+        password: "Laura1234",
+      };
+
+      const expectedAction = {
+        type: "login-user",
+        userData: userData,
+      };
+
+      const action = loginUserAction(userData);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an logoutUserAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'logout-user' and the buzz id as another property", () => {
+      const expectedAction = {
+        type: "logout-user",
+      };
+
+      const action = logoutUserAction();
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an registerUserAction function", () => {
+  describe("When it receives a", () => {
+    test("Then it should return an action with type 'register-user' and the buzz id as another property", () => {
+      const userData = {
+        name: "Lau",
+        username: "Laura0",
+        password: "Laura1234",
+      };
+
+      const expectedAction = {
+        type: "register-user",
+        userData: userData,
+      };
+
+      const action = registerUserAction(userData);
 
       expect(action).toEqual(expectedAction);
     });
