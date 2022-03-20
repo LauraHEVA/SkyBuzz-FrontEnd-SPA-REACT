@@ -42,7 +42,7 @@ export const registerUserThunk =
   (user: RegisterUserData) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/users/register`,
+      `${process.env.REACT_APP_PUBLIC_API}users/register`,
       {
         method: "POST",
         headers: {
