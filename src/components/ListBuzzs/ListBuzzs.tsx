@@ -17,6 +17,25 @@ const ListBuzzs = (): JSX.Element => {
   const buzzsList: BuzzObject[] = useSelector(
     (state: RootState) => state.buzzs
   );
+  const buzzsPerPage = 20;
+  const pages = [];
+  const numPages = Math.ceil(buzzsList.length / buzzsPerPage);
+  const arrayAllBuzzs = [...buzzsList];
+
+  if (arrayAllBuzzs.length > buzzsPerPage) {
+    let currentOffset = 0;
+
+    for (let i = 0; i < numPages; i++) {
+      const pageBuzzs = arrayAllBuzzs.slice(
+        currentOffset,
+        currentOffset + buzzsPerPage
+      );
+      pages.push(pageBuzzs);
+      currentOffset += buzzsPerPage;
+    }
+  } else {
+    pages.push(arrayAllBuzzs);
+  }
 
   useEffect(() => {
     dispatch(loadAllBuzzsThunk);
