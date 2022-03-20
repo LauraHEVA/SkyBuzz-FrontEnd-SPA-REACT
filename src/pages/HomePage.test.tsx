@@ -25,21 +25,21 @@ describe("Given a HomePage component", () => {
       expect(links).toHaveLength(3);
     });
 
-    // test("Then it should render a button with the text 'New Buzz' inside", () => {
-    //   render(
-    //     <BrowserRouter>
-    //       <Provider store={store}>
-    //         <HomePage />
-    //       </Provider>
-    //     </BrowserRouter>
-    //   );
+    test.skip("Then it should render a button with the text 'New Buzz' inside", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <HomePage />
+          </Provider>
+        </BrowserRouter>
+      );
 
-    //   // FIXME MOCKEAR USER IS LOGGED IN
-    //   const buttonNewBuzz = screen.getByRole("button");
+      // FIXME MOCKEAR USER IS LOGGED IN
+      const buttonNewBuzz = screen.getByRole("button");
 
-    //   expect(buttonNewBuzz).toBeInTheDocument();
-    //   expect(buttonNewBuzz.textContent).toBe("New Buzz");
-    // });
+      expect(buttonNewBuzz).toBeInTheDocument();
+      expect(buttonNewBuzz.textContent).toBe("New Buzz");
+    });
   });
 
   describe("When it's rendered with an array of Buzzs, with a text 'React Redux' in one of them", () => {

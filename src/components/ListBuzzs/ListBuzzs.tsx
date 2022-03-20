@@ -21,7 +21,7 @@ const ListBuzzs = (): JSX.Element => {
   const buzzsPerPage = 20;
   const pages = [];
   const numPages = Math.ceil(buzzsList.length / buzzsPerPage);
-  const arrayAllBuzzs = [...buzzsList];
+  const arrayAllBuzzs = [...buzzsList.reverse()];
   const [currentPage, setCurrentPage] = useState(0);
 
   if (arrayAllBuzzs.length > buzzsPerPage) {
@@ -38,7 +38,8 @@ const ListBuzzs = (): JSX.Element => {
   } else {
     pages.push(arrayAllBuzzs);
   }
-
+  console.log(pages);
+  console.log(currentPage);
   const changePage = (mode: boolean) => {
     if (mode) {
       setCurrentPage(currentPage + 1);
@@ -81,7 +82,7 @@ const ListBuzzs = (): JSX.Element => {
 
       {buzzsList.length > 0 ? (
         <ListUlBuzzs>
-          {buzzsList.map((buzz) => {
+          {pages[currentPage].map((buzz) => {
             return (
               <ListItem key={buzz.id}>
                 <Buzz
@@ -107,7 +108,7 @@ const ListBuzzs = (): JSX.Element => {
 const ListUlBuzzs = styled.ul`
   padding-left: 0;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 `;
 
 const ArrowsContainer = styled.div`

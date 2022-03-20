@@ -9,21 +9,19 @@ const ArrowPages = ({
   disabled,
   showSide,
 }: ArrowPagesProps): JSX.Element => {
-  const ArrowPages = styled.button`
-    background-color: ${background};
-    border: none;
-  `;
-
   return (
-    <ArrowPages onClick={actionOnClick} disabled={disabled}>
+    <ArrowPagesBtn onClick={actionOnClick} disabled={disabled}>
       <FontAwesomeIcon
         data-testid="pageArrow"
         icon={showSide ? faAngleLeft : faAngleRight}
         size="2x"
         color={disabled ? "dimgray" : primary}
       />
-    </ArrowPages>
+    </ArrowPagesBtn>
   );
 };
-
+const ArrowPagesBtn = styled.button`
+  background-color: ${background};
+  border: none;
+`;
 export default ArrowPages;
