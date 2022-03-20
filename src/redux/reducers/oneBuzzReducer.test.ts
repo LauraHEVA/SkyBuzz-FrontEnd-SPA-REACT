@@ -72,4 +72,20 @@ describe("Given a oneBuzzReducer function", () => {
       expect(newState).toEqual(buzzToGetDetail);
     });
   });
+
+  describe("When it's called with a cleanBuzzDetail action", () => {
+    test("Then it should return a new state with an empty buzz object", () => {
+      const emptyBuzz: BuzzBasic | BuzzObject = {
+        topic: "",
+        text: "",
+        author: "",
+      };
+      const action = {
+        type: "clean-buzz-detail",
+      };
+      const newState = oneBuzzReducer(emptyBuzz, action);
+
+      expect(newState).toEqual(emptyBuzz);
+    });
+  });
 });
