@@ -59,8 +59,7 @@ const DetailBuzzPage = () => {
               buzz={buzzDetail}
               onClickTrash={() => {
                 deleteBuzz();
-                toast.success("Buzz deleted correctly");
-                setTimeout(goToHomePage, 2000);
+                setTimeout(goToHomePage, 500);
               }}
               onClickHeart={() => {
                 addLikeBuzz();

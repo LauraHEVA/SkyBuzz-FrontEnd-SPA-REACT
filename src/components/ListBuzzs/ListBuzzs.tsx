@@ -41,7 +41,6 @@ const ListBuzzs = (): JSX.Element => {
                   buzz={buzz}
                   onClickTrash={() => {
                     deleteBuzz(buzz.id);
-                    toast.success("Buzz deleted correctly");
                   }}
                   onClickHeart={() => {
                     addLikeBuzz(buzz.id);
