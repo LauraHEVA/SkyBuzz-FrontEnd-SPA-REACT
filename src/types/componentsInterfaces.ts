@@ -7,3 +7,9 @@ export interface ButtonProps {
 export interface TitleProps {
   title: string;
 }
+
+export interface ArrowPagesProps {
+  actionOnClick: () => void;
+  disabled: boolean;
+  showSide: boolean;
+}
