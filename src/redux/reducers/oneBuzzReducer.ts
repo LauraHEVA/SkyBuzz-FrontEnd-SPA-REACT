@@ -1,5 +1,4 @@
 import {
-  ActionWithIdInterface,
   LoadOneBuzzActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
@@ -16,10 +15,7 @@ const oneBuzzReducer = (
     comments: [],
     id: "",
   },
-  action:
-    | SomeActionInterface
-    | ActionWithIdInterface
-    | LoadOneBuzzActionInterface = {
+  action: SomeActionInterface | LoadOneBuzzActionInterface = {
     type: "",
     buzz: {
       topic: "",

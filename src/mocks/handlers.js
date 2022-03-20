@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { BuzzListTest, userLogged } from "./mockedObjects";
+import { BuzzListTest, userLogged, userRegistered } from "./mockedObjects";
 
 export const handlers = [
   rest.get(`${process.env.REACT_APP_PUBLIC_API}buzzs/`, (req, res, ctx) => {
@@ -79,6 +79,13 @@ export const handlers = [
           },
         })
       );
+    }
+  ),
+
+  rest.post(
+    `${process.env.REACT_APP_PUBLIC_API}users/register`,
+    (req, res, ctx) => {
+      return res(ctx.status(201), ctx.json(userRegistered.response));
     }
   ),
 ];
