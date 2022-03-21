@@ -13,51 +13,48 @@ import {
   ProfileCircle,
   ProfileContainer,
   TextAuthor,
+  TextBuzz,
   TextTopic,
   TextTimeAgo,
   NumDataIcons,
-  TextBuzzDetail,
+  BuzzCardContainer,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
+import { useNavigate } from "react-router-dom";
 import EditIcon from "../EditIcon/EditIcon";
 import { UserData } from "../../types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import styled from "styled-components";
-import { breakpointXS, greyLight } from "../../styles/globalStyles";
 
-const BuzzDetail = ({
+const BuzzComment = ({
   buzz,
   onClickTrash,
   onClickHeart,
 }: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
 
+  const navigate = useNavigate();
+
+  const viewDetailBuzz = () => {
+    navigate(`/buzz/${buzz.id}`);
+  };
+
   return (
     <>
-      <BuzzCardDetailContainer>
-        <InfoAuthorContainer>
-          <AuthorAndTimeContainer>
-            <PictureAndNamesContainer>
-              <ProfileContainer>
-                <ProfileCircle>
-                  <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
-                </ProfileCircle>
-              </ProfileContainer>
-              <ContainerUserNames>
-                <TextAuthor>{buzz.author.name}</TextAuthor>
-                <TextAuthor>@{buzz.author.username}</TextAuthor>
-              </ContainerUserNames>
-            </PictureAndNamesContainer>
+      <BuzzCardContainer>
+        <ProfileContainer>
+          <ProfileCircle>
+            <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
+          </ProfileCircle>
+        </ProfileContainer>
+        <MessageContainer>
+          <ContainerSuperior>
+            <TextAuthor>{buzz.author.name}</TextAuthor>
             <TextTimeAgo>
               <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
             </TextTimeAgo>
-          </AuthorAndTimeContainer>
-        </InfoAuthorContainer>
-        <MessageContainer>
-          <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-
-          <ContainerSuperior></ContainerSuperior>
+          </ContainerSuperior>
+          <TextBuzz onClick={viewDetailBuzz}>{buzz.text}</TextBuzz>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
@@ -82,41 +79,9 @@ const BuzzDetail = ({
             )}
           </ListUlHorizontal>
         </MessageContainer>
-      </BuzzCardDetailContainer>
+      </BuzzCardContainer>
     </>
   );
 };
 
-const ContainerUserNames = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 20px;
-`;
-
-const PictureAndNamesContainer = styled.div`
-  display: flex;
-`;
-
-const AuthorAndTimeContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const InfoAuthorContainer = styled.div`
-  display: flex;
-`;
-
-const BuzzCardDetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid ${greyLight};
-  margin-bottom: 20px;
-  width: 100%;
-  @media (min-width: ${breakpointXS}) {
-    max-width: 500px;
-  }
-`;
-
-export default BuzzDetail;
+export default BuzzComment;
