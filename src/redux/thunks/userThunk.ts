@@ -27,7 +27,14 @@ export const loginUserThunk =
     if (response.ok) {
       const token = await response.json();
       const decodedToken: DecodedToken = await jwtDecode(token.token);
+      const author = {
+        username: user.username,
+        id: decodedToken.id,
+        name: user.username,
+      };
       localStorage.setItem("UserToken", token.token);
+      localStorage.setItem("author", JSON.stringify(author));
+
       const loggedUser = {
         username: user.username,
         password: (user as LoginData).password,

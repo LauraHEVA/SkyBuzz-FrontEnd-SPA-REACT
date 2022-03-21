@@ -14,7 +14,11 @@ describe("Given Buzz Component", () => {
         topic: "general",
         likes: 0,
         comments: [],
-        author: "LauHater",
+        author: {
+          name: "LauHater",
+          id: "623245decaa7d69f96f10a95",
+          username: "Laura0",
+        },
         text: "Typescript I Hate U",
         id: "324k2l",
         date: new Date().toDateString(),

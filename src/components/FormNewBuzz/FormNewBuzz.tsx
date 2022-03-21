@@ -27,7 +27,6 @@ const FormNewBuzz = (): JSX.Element => {
   const buzzToCreate: BuzzBasic = {
     topic: topicValue,
     text: messageValue,
-    author: "SomeAuthor",
   };
 
   const goToHomePage = () => {
