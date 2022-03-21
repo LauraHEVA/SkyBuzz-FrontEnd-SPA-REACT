@@ -3,7 +3,6 @@ import {
   ListItem,
   ListUlHorizontal,
 } from "../../styles/globalStyledComponents";
-
 import CommentIcon from "../CommentIcon/CommentIcon";
 import HeartIcon from "../HeartIcon/HeartIcon";
 import TrashIcon from "../TrashIcon/TrashIcon";
@@ -12,12 +11,12 @@ import {
   MessageContainer,
   ProfileCircle,
   ProfileContainer,
-  TextAuthor,
   TextBuzz,
   TextTopic,
   TextTimeAgo,
   NumDataIcons,
   BuzzCardContainer,
+  TextAuthorInLine,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
@@ -45,7 +44,8 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
         </ProfileContainer>
         <MessageContainer>
           <ContainerSuperior>
-            <TextAuthor>{buzz.author.name}</TextAuthor>
+            <TextAuthorInLine>{buzz.author.name}</TextAuthorInLine>
+            <TextAuthorInLine>@{buzz.author.username}</TextAuthorInLine>
             <TextTimeAgo>
               <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
             </TextTimeAgo>

@@ -1,5 +1,6 @@
 import { BuzzProps } from "../../types/buzzInterfaces";
 import {
+  ContainerUserNames,
   ListItem,
   ListUlHorizontal,
 } from "../../styles/globalStyledComponents";
@@ -135,13 +136,6 @@ const BuzzDetail = ({
     </>
   );
 };
-
-const ContainerUserNames = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 20px;
-`;
 
 const PictureAndNamesContainer = styled.div`
   display: flex;
