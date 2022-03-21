@@ -22,7 +22,12 @@ const Header = ({ title }: TitleProps): JSX.Element => {
               <TitlePage>{title}</TitlePage>
             </ListItem>
             <ListItem>
-              <img width="40px" src="images/favicon.png" alt="Skybuzz logo" />
+              <img
+                width="40px"
+                height="40px"
+                src="images/favicon.png"
+                alt="Skybuzz logo"
+              />
             </ListItem>
             <ListItem>
               {!user.loggedIn ? (
