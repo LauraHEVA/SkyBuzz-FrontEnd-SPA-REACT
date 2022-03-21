@@ -14,9 +14,9 @@ import {
   incrementLikesThunk,
   loadDetailBuzzThunk,
 } from "../redux/thunks/buzzsThunk";
-import Buzz from "../components/Buzz/Buzz";
 import { cleanBuzzDetailAction } from "../redux/actions/actionsCreator";
 import { Spinner } from "../components/Spinner/Spinner";
+import BuzzDetail from "../components/BuzzDetail/BuzzDetail";
 
 const DetailBuzzPage = () => {
   const { id } = useParams();
@@ -54,7 +54,7 @@ const DetailBuzzPage = () => {
         <>
           <Toastr />
           <MainContainerPage>
-            <Buzz
+            <BuzzDetail
               buzz={buzzDetail}
               onClickTrash={() => {
                 deleteBuzz();
