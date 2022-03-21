@@ -1,7 +1,6 @@
 export interface BuzzBasic {
   topic: string;
   text: string;
-  author: Author;
 }
 
 export interface Author {
@@ -20,4 +19,5 @@ export interface BuzzObject extends BuzzBasic {
   comments: number[];
   date: string;
   id: string;
+  author: Author;
 }

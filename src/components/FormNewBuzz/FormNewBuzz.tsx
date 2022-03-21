@@ -24,11 +24,9 @@ const FormNewBuzz = (): JSX.Element => {
     setMessageValue("");
   };
 
-  const author = JSON.parse(localStorage.getItem("author") ?? "{}");
   const buzzToCreate: BuzzBasic = {
     topic: topicValue,
     text: messageValue,
-    author: author,
   };
 
   const goToHomePage = () => {
