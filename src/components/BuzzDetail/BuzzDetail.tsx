@@ -18,7 +18,8 @@ import {
   NumDataIcons,
   TextBuzzDetail,
   BuzzCardContainer,
-  TextBuzz,
+  TextAuthorInLine,
+  TextAuthorNormal,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import EditIcon from "../EditIcon/EditIcon";
@@ -48,7 +49,7 @@ const BuzzDetail = ({
               </ProfileContainer>
               <ContainerUserNames>
                 <TextAuthor>{buzz.author.name}</TextAuthor>
-                <TextAuthor>@{buzz.author.username}</TextAuthor>
+                <TextAuthorNormal>@{buzz.author.username}</TextAuthorNormal>
               </ContainerUserNames>
             </PictureAndNamesContainer>
             <TextTimeAgo>
@@ -95,12 +96,13 @@ const BuzzDetail = ({
             </ProfileContainer>
             <MessageContainer>
               <ContainerSuperior>
-                <TextAuthor>{buzz.author.name}</TextAuthor>
+                <TextAuthorInLine>{buzz.author.name}</TextAuthorInLine>
+                <TextAuthorInLine>@{buzz.author.username}</TextAuthorInLine>
                 <TextTimeAgo>
                   <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
                 </TextTimeAgo>
               </ContainerSuperior>
-              <TextBuzz>{buzz.text}</TextBuzz>
+              <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
               <TextTopic>#{buzz.topic}</TextTopic>
               <ListUlHorizontal>
                 <ListItem>
