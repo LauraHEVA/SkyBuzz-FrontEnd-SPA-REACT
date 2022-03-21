@@ -22,8 +22,13 @@ import {
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
 import EditIcon from "../EditIcon/EditIcon";
+import { UserData } from "../../types/userInterfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
+  const user: UserData = useSelector((state: RootState) => state.user);
+
   const navigate = useNavigate();
 
   const viewDetailBuzz = () => {
@@ -52,16 +57,22 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
               <NumDataIcons>{buzz.comments.length}</NumDataIcons>
               <CommentIcon />
             </ListItem>
-            <ListItem>
-              <NumDataIcons>{buzz.likes}</NumDataIcons>
-              <HeartIcon onClick={onClickHeart} />
-            </ListItem>
-            <ListItem>
-              <TrashIcon onClick={onClickTrash} />
-            </ListItem>
-            <ListItem>
-              <EditIcon />
-            </ListItem>
+            {user.loggedIn ? (
+              <>
+                <ListItem>
+                  <NumDataIcons>{buzz.likes}</NumDataIcons>
+                  <HeartIcon onClick={onClickHeart} />
+                </ListItem>
+                <ListItem>
+                  <TrashIcon onClick={onClickTrash} />
+                </ListItem>
+                <ListItem>
+                  <EditIcon />
+                </ListItem>
+              </>
+            ) : (
+              <></>
+            )}
           </ListUlHorizontal>
         </MessageContainer>
       </BuzzCardContainer>
