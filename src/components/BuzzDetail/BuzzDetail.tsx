@@ -13,7 +13,6 @@ import {
   ProfileCircle,
   ProfileContainer,
   TextAuthor,
-  TextBuzz,
   TextTopic,
   TextTimeAgo,
   NumDataIcons,
@@ -21,7 +20,6 @@ import {
   TextBuzzDetail,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
-import { useNavigate } from "react-router-dom";
 
 const BuzzDetail = ({
   buzz,
