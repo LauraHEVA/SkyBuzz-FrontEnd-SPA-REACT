@@ -72,7 +72,7 @@ describe("Given a HomePage component", () => {
             comments: [],
             author: {
               name: "Dan",
-              username: "Danilovic",
+              username: "Abramov",
               id: "623245decaa7d69f96f10a95",
             },
             text: "I Hate Typescript",
