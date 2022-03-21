@@ -23,9 +23,17 @@ import RegisterPage from "./pages/RegisterPage";
 import { UserData } from "./types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
+import { useEffect } from "react";
 
 function App() {
   const user: UserData = useSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      user.loggedIn = true;
+    }
+  }, [user]);
 
   return (
     <>
