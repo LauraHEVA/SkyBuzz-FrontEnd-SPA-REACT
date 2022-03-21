@@ -26,7 +26,11 @@ import { UserData } from "../../types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
-const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
+const BuzzComment = ({
+  buzz,
+  onClickTrash,
+  onClickHeart,
+}: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
 
   const navigate = useNavigate();
@@ -80,4 +84,4 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
   );
 };
 
-export default Buzz;
+export default BuzzComment;

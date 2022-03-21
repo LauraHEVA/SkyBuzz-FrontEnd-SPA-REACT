@@ -63,6 +63,11 @@ export const TextBuzz = styled.p`
   cursor: pointer;
 `;
 
+export const TextBuzzDetail = styled.p`
+  color: ${primary};
+  font-size: 14px;
+`;
+
 export const TextTopic = styled.p`
   color: ${primary};
   font-weight: 900;
