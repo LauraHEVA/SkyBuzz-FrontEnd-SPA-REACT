@@ -21,6 +21,7 @@ import {
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
+import EditIcon from "../EditIcon/EditIcon";
 
 const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
   const navigate = useNavigate();
@@ -57,6 +58,9 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
             </ListItem>
             <ListItem>
               <TrashIcon onClick={onClickTrash} />
+            </ListItem>
+            <ListItem>
+              <EditIcon />
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>

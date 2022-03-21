@@ -20,6 +20,7 @@ import {
   TextBuzzDetail,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
+import EditIcon from "../EditIcon/EditIcon";
 
 const BuzzDetail = ({
   buzz,
@@ -54,6 +55,9 @@ const BuzzDetail = ({
             </ListItem>
             <ListItem>
               <TrashIcon onClick={onClickTrash} />
+            </ListItem>
+            <ListItem>
+              <EditIcon />
             </ListItem>
           </ListUlHorizontal>
         </MessageContainer>
