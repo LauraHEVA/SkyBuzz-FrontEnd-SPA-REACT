@@ -230,3 +230,16 @@ export const CreateAccountContainer = styled.div`
 export const SecondaryText = styled.p`
   color: ${primary};
 `;
+
+export const ContainerUserNames = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+`;
+
+export const ContainerUserNamesBuzz = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
