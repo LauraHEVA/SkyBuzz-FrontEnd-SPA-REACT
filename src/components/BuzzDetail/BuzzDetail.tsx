@@ -85,47 +85,51 @@ const BuzzDetail = ({
           </ListUlHorizontal>
         </MessageContainer>
       </BuzzCardDetailContainer>
-      <div>
-        <BuzzCardContainer>
-          <ProfileContainer>
-            <ProfileCircle>
-              <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
-            </ProfileCircle>
-          </ProfileContainer>
-          <MessageContainer>
-            <ContainerSuperior>
-              <TextAuthor>{buzz.author.name}</TextAuthor>
-              <TextTimeAgo>
-                <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
-              </TextTimeAgo>
-            </ContainerSuperior>
-            <TextBuzz>{buzz.text}</TextBuzz>
-            <TextTopic>#{buzz.topic}</TextTopic>
-            <ListUlHorizontal>
-              <ListItem>
-                <NumDataIcons>{buzz.comments.length}</NumDataIcons>
-                <CommentIcon />
-              </ListItem>
-              {user.loggedIn ? (
-                <>
-                  <ListItem>
-                    <NumDataIcons>{buzz.likes}</NumDataIcons>
-                    <HeartIcon onClick={onClickHeart} />
-                  </ListItem>
-                  <ListItem>
-                    <TrashIcon onClick={onClickTrash} />
-                  </ListItem>
-                  <ListItem>
-                    <EditIcon />
-                  </ListItem>
-                </>
-              ) : (
-                <></>
-              )}
-            </ListUlHorizontal>
-          </MessageContainer>
-        </BuzzCardContainer>
-      </div>
+      {buzz.comments.length ? (
+        <div>
+          <BuzzCardContainer>
+            <ProfileContainer>
+              <ProfileCircle>
+                <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
+              </ProfileCircle>
+            </ProfileContainer>
+            <MessageContainer>
+              <ContainerSuperior>
+                <TextAuthor>{buzz.author.name}</TextAuthor>
+                <TextTimeAgo>
+                  <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
+                </TextTimeAgo>
+              </ContainerSuperior>
+              <TextBuzz>{buzz.text}</TextBuzz>
+              <TextTopic>#{buzz.topic}</TextTopic>
+              <ListUlHorizontal>
+                <ListItem>
+                  <NumDataIcons>{buzz.comments.length}</NumDataIcons>
+                  <CommentIcon />
+                </ListItem>
+                {user.loggedIn ? (
+                  <>
+                    <ListItem>
+                      <NumDataIcons>{buzz.likes}</NumDataIcons>
+                      <HeartIcon onClick={onClickHeart} />
+                    </ListItem>
+                    <ListItem>
+                      <TrashIcon onClick={onClickTrash} />
+                    </ListItem>
+                    <ListItem>
+                      <EditIcon />
+                    </ListItem>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </ListUlHorizontal>
+            </MessageContainer>
+          </BuzzCardContainer>
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
