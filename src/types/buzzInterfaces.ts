@@ -1,11 +1,17 @@
 export interface BuzzBasic {
   topic: string;
   text: string;
-  author: string;
+  author: Author;
+}
+
+export interface Author {
+  id: string;
+  name: string;
+  username: string;
 }
 
 export interface BuzzProps {
-  buzz: BuzzObject | BuzzBasic;
+  buzz: BuzzObject;
   onClickTrash: React.MouseEventHandler;
   onClickHeart: React.MouseEventHandler;
 }

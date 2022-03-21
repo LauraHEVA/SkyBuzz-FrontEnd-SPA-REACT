@@ -50,7 +50,11 @@ describe("Given an addBuzzThunk", () => {
   describe("When it's called with a new buzz to create", () => {
     test("Then it should call dispatch with the addBuzzAction as parameter", async () => {
       const newBuzzToAdd = {
-        author: "Freddie",
+        author: {
+          name: "LauHater",
+          id: "623245decaa7d69f96f10a95",
+          username: "Laura0",
+        },
         text: "We are the champions",
         topic: "general",
         date: "2022-03-15T12:41:30.606Z",

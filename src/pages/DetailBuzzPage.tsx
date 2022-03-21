@@ -5,7 +5,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
 import Toastr from "../components/Toastr/Toastr";
-import { BuzzBasic, BuzzObject } from "../types/buzzInterfaces";
+import { BuzzObject } from "../types/buzzInterfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
@@ -28,7 +28,7 @@ const DetailBuzzPage = () => {
 
   const dispatch = useDispatch();
 
-  const buzzDetail: BuzzBasic | BuzzObject = useSelector(
+  const buzzDetail: BuzzObject = useSelector(
     (state: RootState) => state.oneBuzz
   );
 

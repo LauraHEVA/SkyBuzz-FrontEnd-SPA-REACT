@@ -1,23 +1,33 @@
-import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "../actions/actionsType";
 import oneBuzzReducer from "./oneBuzzReducer";
 
 describe("Given a oneBuzzReducer function", () => {
   describe("When it's called with a incrementLikes action with an id", () => {
     test("Then it should return a new state with the buzz likes incremented in one", () => {
-      const buzzToLike: BuzzBasic | BuzzObject = {
+      const buzzToLike: BuzzObject = {
         topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
         likes: 0,
         comments: [],
-        author: "Madonna",
+        author: {
+          name: "Dan",
+          username: "Danilovic",
+          id: "623245decaa7d69f96f10a95",
+        },
         text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
         id: "324k2l",
       };
-      const buzzResult: BuzzBasic | BuzzObject = {
+      const buzzResult: BuzzObject = {
         topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
         likes: 1,
         comments: [],
-        author: "Madonna",
+        author: {
+          name: "Dan",
+          username: "Danilovic",
+          id: "623245decaa7d69f96f10a95",
+        },
         text: "Madonna is writting a message Madonna is writting a very long and repeated message Madonna is writting a message Madonna is writting a message Madonna is writting a message",
         id: "324k2l",
       };
@@ -35,11 +45,16 @@ describe("Given a oneBuzzReducer function", () => {
 
   describe("When it's called with a nonexistent action", () => {
     test("Then it should return a new state with the same current buzz", () => {
-      const buzzToLike: BuzzBasic | BuzzObject = {
+      const buzzToLike: BuzzObject = {
         topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
         likes: 0,
         comments: [],
-        author: "Freddie",
+        author: {
+          name: "Dan",
+          username: "Danilovic",
+          id: "623245decaa7d69f96f10a95",
+        },
         text: "We are the champions",
         id: "6230c7a2f9d0f5ee1f58d6d9",
       };
@@ -55,11 +70,16 @@ describe("Given a oneBuzzReducer function", () => {
 
   describe("When it's called with a loadDetailBuzz action and a buzz object", () => {
     test("Then it should return a new state with the buzz object", () => {
-      const buzzToGetDetail: BuzzBasic | BuzzObject = {
+      const buzzToGetDetail: BuzzObject = {
         topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
         likes: 0,
         comments: [],
-        author: "Freddie",
+        author: {
+          name: "Dan",
+          username: "Danilovic",
+          id: "623245decaa7d69f96f10a95",
+        },
         text: "We are the champions",
         id: "6230c7a2f9d0f5ee1f58d6d9",
       };
@@ -75,10 +95,18 @@ describe("Given a oneBuzzReducer function", () => {
 
   describe("When it's called with a cleanBuzzDetail action", () => {
     test("Then it should return a new state with an empty buzz object", () => {
-      const emptyBuzz: BuzzBasic | BuzzObject = {
+      const emptyBuzz: BuzzObject = {
         topic: "",
+        date: "",
         text: "",
-        author: "",
+        likes: 0,
+        id: "",
+        author: {
+          name: "",
+          username: "",
+          id: "",
+        },
+        comments: [],
       };
       const action = {
         type: "clean-buzz-detail",

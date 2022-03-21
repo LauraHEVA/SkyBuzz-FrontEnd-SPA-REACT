@@ -1,6 +1,10 @@
 export const BuzzListTest = [
   {
-    author: "Freddie",
+    author: {
+      name: "LauHater",
+      id: "623245decaa7d69f96f10a95",
+      username: "Laura0",
+    },
     text: "We are the champions",
     topic: "general",
     date: "2022-03-15T12:41:30.606Z",
@@ -9,7 +13,11 @@ export const BuzzListTest = [
     id: "6230897a6de0d0453487ef80",
   },
   {
-    author: "Mia Wallace",
+    author: {
+      name: "LauHater",
+      id: "623245decaa7d69f96f10a95",
+      username: "Laura0",
+    },
     text: "I hate uncomfortable silences",
     topic: "general",
     date: "2022-03-15T13:41:30.606Z",

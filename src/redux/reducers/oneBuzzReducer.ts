@@ -2,14 +2,18 @@ import {
   LoadOneBuzzActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
-import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
+import { BuzzObject } from "../../types/buzzInterfaces";
 import actionsType from "../actions/actionsType";
 
 const oneBuzzReducer = (
-  currentBuzz: BuzzBasic | BuzzObject = {
+  currentBuzz: BuzzObject = {
     topic: "",
     text: "",
-    author: "",
+    author: {
+      name: "",
+      username: "",
+      id: "",
+    },
     date: "",
     likes: 0,
     comments: [],
@@ -20,7 +24,11 @@ const oneBuzzReducer = (
     buzz: {
       topic: "",
       text: "",
-      author: "",
+      author: {
+        name: "",
+        username: "",
+        id: "",
+      },
       date: "",
       likes: 0,
       comments: [],
@@ -28,7 +36,7 @@ const oneBuzzReducer = (
     },
   }
 ) => {
-  let newBuzz: BuzzBasic;
+  let newBuzz: BuzzObject;
 
   switch (action.type) {
     case actionsType.loadDetailBuzz:
@@ -39,7 +47,15 @@ const oneBuzzReducer = (
       newBuzz = {
         topic: "",
         text: "",
-        author: "",
+        author: {
+          name: "",
+          username: "",
+          id: "",
+        },
+        date: "",
+        likes: 0,
+        comments: [],
+        id: "",
       };
       break;
 
