@@ -1,0 +1,12 @@
+{
+  "name": "SkyBuzz",
+  "short_name": "SkyBuzz",
+  "start_url": "/home",
+  "icons": [],
+  "theme_color": "#086375",
+  "background_color": "#DEF7EC",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "description": "App to post messages to your friends and collegues"
+}
