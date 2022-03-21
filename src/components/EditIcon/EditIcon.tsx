@@ -5,7 +5,7 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 const EditIcon = (): JSX.Element => {
   return (
     <>
-      <FaIcon data-testid="comment" icon={faPen} size="lg" color={primary} />
+      <FaIcon data-testid="edit" icon={faPen} size="lg" color={primary} />
     </>
   );
 };
