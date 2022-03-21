@@ -29,7 +29,7 @@ function App() {
   const user: UserData = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("UserToken");
     if (token) {
       user.loggedIn = true;
     }
