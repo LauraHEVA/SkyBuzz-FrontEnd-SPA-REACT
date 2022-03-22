@@ -30,7 +30,9 @@ import BuzzComment from "../BuzzComment/BuzzComment";
 import {
   deleteBuzzThunk,
   incrementLikesThunk,
+  loadDetailBuzzThunk,
 } from "../../redux/thunks/buzzsThunk";
+import { useEffect } from "react";
 
 const BuzzDetail = ({
   buzz,
@@ -39,6 +41,10 @@ const BuzzDetail = ({
 }: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadDetailBuzzThunk);
+  }, [dispatch]);
 
   const deleteBuzz = (id: string) => {
     dispatch(deleteBuzzThunk(id));
