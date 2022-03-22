@@ -3,10 +3,7 @@ import {
   ListItem,
   ListUlHorizontal,
 } from "../../styles/globalStyledComponents";
-
 import CommentIcon from "../CommentIcon/CommentIcon";
-import HeartIcon from "../HeartIcon/HeartIcon";
-import TrashIcon from "../TrashIcon/TrashIcon";
 import {
   ContainerSuperior,
   MessageContainer,
@@ -16,22 +13,12 @@ import {
   TextBuzz,
   TextTopic,
   TextTimeAgo,
-  NumDataIcons,
   BuzzCardContainer,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
-import { UserData } from "../../types/userInterfaces";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
 
-const BuzzComment = ({
-  buzz,
-  onClickTrash,
-  onClickHeart,
-}: BuzzCommentProps | BuzzProps): JSX.Element => {
-  const user: UserData = useSelector((state: RootState) => state.user);
-
+const BuzzComment = ({ buzz }: BuzzCommentProps | BuzzProps): JSX.Element => {
   const navigate = useNavigate();
 
   const viewDetailBuzz = () => {
@@ -59,24 +46,6 @@ const BuzzComment = ({
             <ListItem>
               <CommentIcon />
             </ListItem>
-            {user.loggedIn ? (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon onClick={onClickHeart} />
-                </ListItem>
-                <ListItem>
-                  <TrashIcon onClick={onClickTrash} />
-                </ListItem>
-              </>
-            ) : (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon />
-                </ListItem>
-              </>
-            )}
           </ListUlHorizontal>
         </MessageContainer>
       </BuzzCardContainer>

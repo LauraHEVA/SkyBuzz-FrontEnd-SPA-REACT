@@ -8,7 +8,7 @@ export interface UserData {
   name: string;
   username: string;
   id: string;
-  loggedIn: boolean;
+  loggedIn?: boolean;
 }
 
 export interface RegisterUserData {
@@ -21,4 +21,8 @@ export interface DecodedToken {
   username: string;
   id: string;
   iat: number;
+}
+
+export interface UserCardProps {
+  user: UserData;
 }
