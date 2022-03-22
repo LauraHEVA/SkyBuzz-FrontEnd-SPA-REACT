@@ -34,7 +34,6 @@ const BuzzDetail = ({
   onClickHeart,
 }: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
-  console.log(buzz);
 
   return (
     <>
