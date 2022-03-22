@@ -1,6 +1,5 @@
 import { UserData } from "../../types/userInterfaces";
 import actionsType from "../actions/actionsType";
-import buzzsReducer from "./buzzsReducer";
 import usersReducer from "./usersReducer";
 
 describe("Given a usersReducer function", () => {
@@ -51,7 +50,7 @@ describe("Given a usersReducer function", () => {
         users: currentUsers,
       };
 
-      const newState = buzzsReducer(currentUsers, action);
+      const newState = usersReducer(currentUsers, action);
 
       expect(newState).toEqual(currentUsers);
     });
