@@ -4,6 +4,7 @@ import { ThunkDispatch } from "redux-thunk";
 import { BuzzBasic } from "../../types/buzzInterfaces";
 import {
   addNewBuzzAction,
+  commentBuzzAction,
   deleteBuzzAction,
   incrementLikesAction,
   loadAllBuzzsAction,
@@ -98,25 +99,25 @@ export const loadDetailBuzzThunk =
   };
 
 export const commentBuzzThunk =
-  (buzzComment: BuzzBasic) =>
+  (buzzComment: BuzzBasic, id: string) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const userToken = localStorage.getItem("UserToken");
     const response = await fetch(
-      `${process.env.REACT_APP_PUBLIC_API}buzzs/new`,
+      `${process.env.REACT_APP_PUBLIC_API}buzzs/${id}/comment`,
       {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userToken}`,
         },
-        body: JSON.stringify(buzz),
+        body: JSON.stringify(buzzComment),
       }
     );
-    const newBuzz = await response.json();
+    const newBuzzCommented = await response.json();
     if (response.ok) {
-      dispatch(addNewBuzzAction(newBuzz));
-      toast.success("Buzz published!");
+      dispatch(commentBuzzAction(newBuzzCommented));
+      toast.success("Comment published!");
     } else {
-      toast.error("Something went wrong. Buzz not created");
+      toast.error("Something went wrong. Comment not published");
     }
   };
