@@ -35,6 +35,7 @@ const BuzzDetail = ({
   onClickHeart,
 }: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
+  console.log(buzz);
 
   return (
     <>
@@ -93,7 +94,9 @@ const BuzzDetail = ({
           <BuzzCardContainer>
             <ProfileContainer>
               <ProfileCircle>
-                <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
+                <span>
+                  {buzz.comments.author.name.substring(0, 2).toUpperCase()}
+                </span>
               </ProfileCircle>
             </ProfileContainer>
             <MessageContainer>

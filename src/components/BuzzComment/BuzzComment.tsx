@@ -1,4 +1,8 @@
-import { BuzzProps } from "../../types/buzzInterfaces";
+import {
+  BuzzCommentProps,
+  BuzzObject,
+  BuzzProps,
+} from "../../types/buzzInterfaces";
 import {
   ListItem,
   ListUlHorizontal,
@@ -29,7 +33,7 @@ const BuzzComment = ({
   buzz,
   onClickTrash,
   onClickHeart,
-}: BuzzProps): JSX.Element => {
+}: BuzzCommentProps | BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
 
   const navigate = useNavigate();
@@ -57,7 +61,9 @@ const BuzzComment = ({
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
-              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
+              <NumDataIcons>
+                {(buzz as BuzzObject).comments.length}
+              </NumDataIcons>
               <CommentIcon />
             </ListItem>
             {user.loggedIn ? (

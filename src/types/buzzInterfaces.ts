@@ -16,8 +16,21 @@ export interface BuzzProps {
 }
 export interface BuzzObject extends BuzzBasic {
   likes: number;
-  comments: number[];
+  comments: BuzzCommentInterface[];
   date: string;
   id: string;
   author: Author;
+}
+
+export interface BuzzCommentInterface extends BuzzBasic {
+  likes: number;
+  date: string;
+  id: string;
+  author: Author;
+}
+
+export interface BuzzCommentProps {
+  buzz: BuzzCommentInterface;
+  onClickTrash: React.MouseEventHandler;
+  onClickHeart: React.MouseEventHandler;
 }
