@@ -1,7 +1,8 @@
 import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { addNewBuzzThunk } from "../../redux/thunks/buzzsThunk";
+import { commentBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import {
   ButtonSubmitContainer,
   ContainerFormComment,
@@ -14,6 +15,7 @@ import Toastr from "../Toastr/Toastr";
 
 const FormComment = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   const [topicValue, setTopicValue] = useState<string>("general");
   const [messageValue, setMessageValue] = useState<string>("");
@@ -30,7 +32,7 @@ const FormComment = (): JSX.Element => {
 
   const onSubmitForm = (event: SyntheticEvent) => {
     event.preventDefault();
-    dispatch(addNewBuzzThunk(commentBuzz));
+    dispatch(commentBuzzThunk(commentBuzz, id as string));
     resetForm();
   };
 
