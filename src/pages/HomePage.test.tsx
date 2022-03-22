@@ -8,8 +8,6 @@ import en from "javascript-time-ago/locale/en.json";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 
-// const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
-
 describe("Given a HomePage component", () => {
   describe("When it's rendered", () => {
     test("Then it should render a NavBar with three icons as Links", () => {
