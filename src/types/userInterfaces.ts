@@ -22,3 +22,7 @@ export interface DecodedToken {
   id: string;
   iat: number;
 }
+
+export interface UserCardProps {
+  user: UserData;
+}
