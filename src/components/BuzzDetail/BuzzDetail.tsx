@@ -23,7 +23,6 @@ import {
   TextAuthorNormal,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
-import EditIcon from "../EditIcon/EditIcon";
 import { UserData } from "../../types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -77,12 +76,14 @@ const BuzzDetail = ({
                 <ListItem>
                   <TrashIcon onClick={onClickTrash} />
                 </ListItem>
-                <ListItem>
-                  <EditIcon />
-                </ListItem>
               </>
             ) : (
-              <></>
+              <>
+                <ListItem>
+                  <NumDataIcons>{buzz.likes}</NumDataIcons>
+                  <HeartIcon />
+                </ListItem>
+              </>
             )}
           </ListUlHorizontal>
         </MessageContainer>
@@ -119,12 +120,14 @@ const BuzzDetail = ({
                     <ListItem>
                       <TrashIcon onClick={onClickTrash} />
                     </ListItem>
-                    <ListItem>
-                      <EditIcon />
-                    </ListItem>
                   </>
                 ) : (
-                  <></>
+                  <>
+                    <ListItem>
+                      <NumDataIcons>{buzz.likes}</NumDataIcons>
+                      <HeartIcon />
+                    </ListItem>
+                  </>
                 )}
               </ListUlHorizontal>
             </MessageContainer>
