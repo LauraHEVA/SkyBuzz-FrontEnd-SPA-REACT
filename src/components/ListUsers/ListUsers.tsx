@@ -12,7 +12,7 @@ import { loadAllUsersThunk } from "../../redux/thunks/usersThunk";
 const ListUsers = (): JSX.Element => {
   const dispatch = useDispatch();
   const usersList: UserData[] = useSelector((state: RootState) => state.users);
-  console.log(usersList);
+
   const usersPerPage = 10;
   const pages = [];
   const numPages = Math.ceil(usersList.length / usersPerPage);
