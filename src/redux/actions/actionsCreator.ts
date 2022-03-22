@@ -6,6 +6,7 @@ import {
   SomeActionInterface,
   LoginUserActionInterface,
   CommentBuzzActionInterface,
+  LoadAllUsersActionInterface,
 } from "../../types/actionInterfaces";
 import { BuzzBasic, BuzzObject } from "../../types/buzzInterfaces";
 import {
@@ -71,4 +72,11 @@ export const commentBuzzAction = (
 ): CommentBuzzActionInterface => ({
   type: actionsType.addBuzz,
   buzzComment,
+});
+
+export const loadAllUsersAction = (
+  users: UserData[]
+): LoadAllUsersActionInterface => ({
+  type: actionsType.loadAllUsers,
+  users,
 });
