@@ -65,7 +65,7 @@ const oneBuzzReducer = (
 
     case actionsType.incrementLikes:
       newBuzz = { ...currentBuzz };
-      (newBuzz as BuzzObject).likes += 1;
+      newBuzz.likes += 1;
       break;
 
     case actionsType.commentBuzz:
