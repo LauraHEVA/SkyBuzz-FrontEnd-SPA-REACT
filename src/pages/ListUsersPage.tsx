@@ -1,17 +1,12 @@
-import UserCard from "../components/UserCard/UserCard";
+import ListUsers from "../components/ListUsers/ListUsers";
+import { MainContainerPage } from "../styles/globalStyledComponents";
 
 const ListUsersPage = () => {
-  const user = {
-    name: "Marc",
-    username: "Marc0",
-    id: "623245decaa7d69f96f10a95",
-  };
   return (
     <>
-      <UserCard user={user} />
-      <UserCard user={user} />
-      <UserCard user={user} />
-      <UserCard user={user} />
+      <MainContainerPage>
+        <ListUsers />
+      </MainContainerPage>
     </>
   );
 };
