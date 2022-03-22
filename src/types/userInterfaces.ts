@@ -8,7 +8,7 @@ export interface UserData {
   name: string;
   username: string;
   id: string;
-  loggedIn: boolean;
+  loggedIn?: boolean;
 }
 
 export interface RegisterUserData {

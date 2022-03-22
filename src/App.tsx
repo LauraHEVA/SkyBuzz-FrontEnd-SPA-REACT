@@ -24,6 +24,7 @@ import { UserData } from "./types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import { useEffect } from "react";
+import ListUsersPage from "./pages/ListUsersPage";
 
 function App() {
   const user: UserData = useSelector((state: RootState) => state.user);
@@ -50,6 +51,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/buzzers" element={<ListUsersPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/buzz/:id" element={<DetailBuzzPage />} />
         <Route path="/buzz/*" element={<NotFoundPage />} />

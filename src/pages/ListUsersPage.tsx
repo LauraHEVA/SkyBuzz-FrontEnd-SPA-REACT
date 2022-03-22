@@ -1,47 +1,19 @@
-import NavMenu from "../components/NavMenu/NavMenu";
-import {
-  ContainerNavMenu,
-  ButtonContainerNewBuzz,
-  MainContainerPage,
-} from "../styles/globalStyledComponents";
-import { useNavigate } from "react-router-dom";
-import ButtonPrimary from "../components/Buttons/ButtonPrimary";
-import Footer from "../components/Footer/Footer";
-import ListBuzzs from "../components/ListBuzzs/ListBuzzs";
-import { UserData } from "../types/userInterfaces";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import UserCard from "../components/UserCard/UserCard";
 
-const HomePage = () => {
-  const user: UserData = useSelector((state: RootState) => state.user);
-  const navigate = useNavigate();
-
-  const goToNewBuzz = () => {
-    navigate(`/newbuzz`);
+const ListUsersPage = () => {
+  const user = {
+    name: "Marc",
+    username: "Marc0",
+    id: "623245decaa7d69f96f10a95",
   };
-
   return (
     <>
-      <MainContainerPage>
-        <ListBuzzs />
-        {user.loggedIn && (
-          <ButtonContainerNewBuzz>
-            <ButtonPrimary
-              actionOnClick={() => {
-                goToNewBuzz();
-              }}
-              className={"btn-primary"}
-              text={"New Buzz"}
-            />
-          </ButtonContainerNewBuzz>
-        )}
-      </MainContainerPage>
-      <ContainerNavMenu>
-        <NavMenu />
-      </ContainerNavMenu>
-      <Footer />
+      <UserCard user={user} />
+      <UserCard user={user} />
+      <UserCard user={user} />
+      <UserCard user={user} />
     </>
   );
 };
 
-export default HomePage;
+export default ListUsersPage;
