@@ -170,6 +170,15 @@ export const ContainerFormNewBuzz = styled.div`
   }
 `;
 
+export const ContainerFormComment = styled.div`
+  font-family: nunito, sans-serif;
+  color: ${primary};
+  max-width: 500px;
+  @media (min-width: ${breakpointXS}) {
+    margin-top: 60px;
+  }
+`;
+
 export const H2LogsUser = styled.h2`
   display: none;
   @media (min-width: ${breakpointXS}) {

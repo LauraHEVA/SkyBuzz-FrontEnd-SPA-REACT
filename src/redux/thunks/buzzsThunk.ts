@@ -38,6 +38,7 @@ export const deleteBuzzThunk =
       toast.success("Buzz deleted correctly");
     } else {
       toast.error("Something went wrong. Buzz not deleted");
+      toast.error("Remember you can only delete your Buzzs");
     }
   };
 
@@ -80,6 +81,8 @@ export const incrementLikesThunk =
     );
     if (response.ok) {
       dispatch(incrementLikesAction(id));
+    } else {
+      toast.error("Log in to like!");
     }
   };
 
