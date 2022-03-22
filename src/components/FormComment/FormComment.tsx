@@ -66,7 +66,6 @@ const FormComment = (): JSX.Element => {
               <option value="jobs">Jobs</option>
             </select>
           </div>
-
           <div className="form-floating">
             <InputMessage
               className="form-control"
