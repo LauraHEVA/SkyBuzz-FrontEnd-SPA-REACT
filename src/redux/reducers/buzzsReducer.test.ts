@@ -10,7 +10,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -23,7 +23,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -52,7 +52,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -81,7 +81,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -94,7 +94,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -115,7 +115,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -139,7 +139,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -152,7 +152,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -169,7 +169,7 @@ describe("Given a buzzsReducer function", () => {
         buzz: {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -185,7 +185,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -198,7 +198,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -211,7 +211,7 @@ describe("Given a buzzsReducer function", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",

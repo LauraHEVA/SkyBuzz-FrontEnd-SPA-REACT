@@ -18,7 +18,7 @@ describe("Given a loadAllBuzzs Action", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -31,7 +31,7 @@ describe("Given a loadAllBuzzs Action", () => {
         {
           topic: "general",
           likes: 0,
-          comments: [1],
+          comments: [],
           author: {
             name: "LauHater",
             id: "623245decaa7d69f96f10a95",
@@ -94,7 +94,7 @@ describe("Given an addNewBuzzAction function", () => {
       const buzzToCreate = {
         topic: "general",
         likes: 0,
-        comments: [1],
+        comments: [],
         author: {
           name: "LauHater",
           id: "623245decaa7d69f96f10a95",
@@ -123,7 +123,7 @@ describe("Given an loadDetailBuzzAction function", () => {
       const buzzToLoad = {
         topic: "general",
         likes: 0,
-        comments: [1],
+        comments: [],
         author: {
           name: "LauHater",
           id: "623245decaa7d69f96f10a95",

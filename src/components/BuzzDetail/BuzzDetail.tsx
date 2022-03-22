@@ -59,7 +59,6 @@ const BuzzDetail = ({
         </InfoAuthorContainer>
         <MessageContainer>
           <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-
           <ContainerSuperior></ContainerSuperior>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
