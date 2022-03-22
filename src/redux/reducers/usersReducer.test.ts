@@ -1,4 +1,3 @@
-import { BuzzObject } from "../../types/buzzInterfaces";
 import { UserData } from "../../types/userInterfaces";
 import actionsType from "../actions/actionsType";
 import buzzsReducer from "./buzzsReducer";
