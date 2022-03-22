@@ -1,12 +1,14 @@
-import { LoadAllUsersActionInterface } from "../../types/actionInterfaces";
+import {
+  LoadAllUsersActionInterface,
+  SomeActionInterface,
+} from "../../types/actionInterfaces";
 import { UserData } from "../../types/userInterfaces";
 import actionsType from "../actions/actionsType";
 
 const usersReducer = (
   currentUsers: UserData[] = [],
-  action: LoadAllUsersActionInterface = {
+  action: SomeActionInterface | LoadAllUsersActionInterface = {
     type: "",
-    users: [],
   }
 ) => {
   let newUsersList: UserData[];

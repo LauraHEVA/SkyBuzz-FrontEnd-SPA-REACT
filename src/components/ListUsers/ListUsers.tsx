@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useEffect, useState } from "react";
-import { loadAllBuzzsThunk } from "../../redux/thunks/buzzsThunk";
 import { ListItem } from "../../styles/globalStyledComponents";
 import styled from "styled-components";
 import { Spinner } from "../Spinner/Spinner";
 import ArrowPages from "../ArrowPages/ArrowPages";
 import { UserData } from "../../types/userInterfaces";
 import UserCard from "../UserCard/UserCard";
+import { loadAllUsersThunk } from "../../redux/thunks/usersThunk";
 
 const ListUsers = (): JSX.Element => {
   const dispatch = useDispatch();
   const usersList: UserData[] = useSelector((state: RootState) => state.users);
-
+  console.log(usersList);
   const usersPerPage = 10;
   const pages = [];
   const numPages = Math.ceil(usersList.length / usersPerPage);
@@ -22,11 +22,11 @@ const ListUsers = (): JSX.Element => {
     let currentOffset = 0;
 
     for (let i = 0; i < numPages; i++) {
-      const pageBuzzs = usersList.slice(
+      const pageUsers = usersList.slice(
         currentOffset,
         currentOffset + usersPerPage
       );
-      pages.push(pageBuzzs);
+      pages.push(pageUsers);
       currentOffset += usersPerPage;
     }
   } else {
@@ -42,7 +42,7 @@ const ListUsers = (): JSX.Element => {
   };
 
   useEffect(() => {
-    dispatch(loadAllBuzzsThunk);
+    dispatch(loadAllUsersThunk);
   }, [dispatch]);
 
   return (
