@@ -95,8 +95,8 @@ const BuzzDetail = ({
                   <BuzzComment
                     onClickTrash={() => {}}
                     onClickHeart={() => {}}
-                    key={buzz.comments[0].id}
-                    buzz={buzz.comments[0]}
+                    key={comment.id}
+                    buzz={comment}
                   ></BuzzComment>
                 </ListItem>
               );
