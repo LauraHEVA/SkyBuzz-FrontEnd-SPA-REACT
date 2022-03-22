@@ -22,11 +22,15 @@ import {
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { UserData } from "../../types/userInterfaces";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import styled from "styled-components";
 import { breakpointXS, greyLight } from "../../styles/globalStyles";
 import BuzzComment from "../BuzzComment/BuzzComment";
+import {
+  deleteBuzzThunk,
+  incrementLikesThunk,
+} from "../../redux/thunks/buzzsThunk";
 
 const BuzzDetail = ({
   buzz,
@@ -34,7 +38,15 @@ const BuzzDetail = ({
   onClickHeart,
 }: BuzzProps): JSX.Element => {
   const user: UserData = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
 
+  const deleteBuzz = (id: string) => {
+    dispatch(deleteBuzzThunk(id));
+  };
+
+  const addLikeBuzz = (id: string) => {
+    dispatch(incrementLikesThunk(id));
+  };
   return (
     <>
       <BuzzCardDetailContainer>
@@ -93,8 +105,12 @@ const BuzzDetail = ({
               return (
                 <ListItem key={comment.id}>
                   <BuzzComment
-                    onClickTrash={() => {}}
-                    onClickHeart={() => {}}
+                    onClickTrash={() => {
+                      deleteBuzz(comment.id);
+                    }}
+                    onClickHeart={() => {
+                      addLikeBuzz(comment.id);
+                    }}
                     key={comment.id}
                     buzz={comment}
                   ></BuzzComment>
