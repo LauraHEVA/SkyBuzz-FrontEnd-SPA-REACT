@@ -252,3 +252,10 @@ export const ContainerUserNamesBuzz = styled.div`
   flex-direction: column;
   align-items: flex-start;
 `;
+
+export const ContainerFollowersData = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 20px;
+`;

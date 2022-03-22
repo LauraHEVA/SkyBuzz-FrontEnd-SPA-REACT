@@ -48,7 +48,7 @@ const ListUsers = (): JSX.Element => {
   return (
     <>
       {numPages > 1 && (
-        <ArrowsContainer data-testid="arrowsContainer">
+        <ArrowsContainerUsers data-testid="arrowsContainer">
           <ArrowPages
             disabled={currentPage === 0}
             actionOnClick={() => {
@@ -63,7 +63,7 @@ const ListUsers = (): JSX.Element => {
             }}
             showSide={false}
           />
-        </ArrowsContainer>
+        </ArrowsContainerUsers>
       )}
 
       {usersList.length > 0 ? (
@@ -89,13 +89,13 @@ const ListUlUsers = styled.ul`
   flex-direction: column;
 `;
 
-const ArrowsContainer = styled.div`
+const ArrowsContainerUsers = styled.div`
   padding-top: 0;
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   width: 100%;
-  max-width: 500px;
+  max-width: 460px;
   display: flex;
   justify-content: space-between;
 `;
