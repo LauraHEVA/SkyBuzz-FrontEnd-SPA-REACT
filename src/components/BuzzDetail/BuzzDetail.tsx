@@ -77,12 +77,14 @@ const BuzzDetail = ({
                 <ListItem>
                   <TrashIcon onClick={onClickTrash} />
                 </ListItem>
-                <ListItem>
-                  <EditIcon />
-                </ListItem>
               </>
             ) : (
-              <></>
+              <>
+                <ListItem>
+                  <NumDataIcons>{buzz.likes}</NumDataIcons>
+                  <HeartIcon />
+                </ListItem>
+              </>
             )}
           </ListUlHorizontal>
         </MessageContainer>

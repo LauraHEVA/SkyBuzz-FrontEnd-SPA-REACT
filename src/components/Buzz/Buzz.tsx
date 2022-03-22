@@ -20,7 +20,6 @@ import {
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
-import EditIcon from "../EditIcon/EditIcon";
 import { UserData } from "../../types/userInterfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -66,12 +65,14 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
                 <ListItem>
                   <TrashIcon onClick={onClickTrash} />
                 </ListItem>
-                <ListItem>
-                  <EditIcon />
-                </ListItem>
               </>
             ) : (
-              <></>
+              <>
+                <ListItem>
+                  <NumDataIcons>{buzz.likes}</NumDataIcons>
+                  <HeartIcon />
+                </ListItem>
+              </>
             )}
           </ListUlHorizontal>
         </MessageContainer>
