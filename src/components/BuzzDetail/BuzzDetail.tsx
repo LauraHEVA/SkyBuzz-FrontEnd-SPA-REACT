@@ -18,8 +18,6 @@ import {
   TextTimeAgo,
   NumDataIcons,
   TextBuzzDetail,
-  BuzzCardContainer,
-  TextAuthorInLine,
   TextAuthorNormal,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
@@ -28,6 +26,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import styled from "styled-components";
 import { breakpointXS, greyLight } from "../../styles/globalStyles";
+import BuzzComment from "../BuzzComment/BuzzComment";
 
 const BuzzDetail = ({
   buzz,
@@ -59,7 +58,6 @@ const BuzzDetail = ({
         </InfoAuthorContainer>
         <MessageContainer>
           <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-
           <ContainerSuperior></ContainerSuperior>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
@@ -90,48 +88,20 @@ const BuzzDetail = ({
       </BuzzCardDetailContainer>
       {buzz.comments.length ? (
         <div>
-          <BuzzCardContainer>
-            <ProfileContainer>
-              <ProfileCircle>
-                <span>{buzz.author.name.substring(0, 2).toUpperCase()}</span>
-              </ProfileCircle>
-            </ProfileContainer>
-            <MessageContainer>
-              <ContainerSuperior>
-                <TextAuthorInLine>{buzz.author.name}</TextAuthorInLine>
-                <TextAuthorInLine>@{buzz.author.username}</TextAuthorInLine>
-                <TextTimeAgo>
-                  <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
-                </TextTimeAgo>
-              </ContainerSuperior>
-              <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-              <TextTopic>#{buzz.topic}</TextTopic>
-              <ListUlHorizontal>
-                <ListItem>
-                  <NumDataIcons>{buzz.comments.length}</NumDataIcons>
-                  <CommentIcon />
+          <ListUlBuzzs>
+            {buzz.comments.map((comment) => {
+              return (
+                <ListItem key={comment.id}>
+                  <BuzzComment
+                    onClickTrash={() => {}}
+                    onClickHeart={() => {}}
+                    key={buzz.comments[0].id}
+                    buzz={buzz.comments[0]}
+                  ></BuzzComment>
                 </ListItem>
-                {user.loggedIn ? (
-                  <>
-                    <ListItem>
-                      <NumDataIcons>{buzz.likes}</NumDataIcons>
-                      <HeartIcon onClick={onClickHeart} />
-                    </ListItem>
-                    <ListItem>
-                      <TrashIcon onClick={onClickTrash} />
-                    </ListItem>
-                  </>
-                ) : (
-                  <>
-                    <ListItem>
-                      <NumDataIcons>{buzz.likes}</NumDataIcons>
-                      <HeartIcon />
-                    </ListItem>
-                  </>
-                )}
-              </ListUlHorizontal>
-            </MessageContainer>
-          </BuzzCardContainer>
+              );
+            })}
+          </ListUlBuzzs>
         </div>
       ) : (
         <></>
@@ -163,6 +133,12 @@ const BuzzCardDetailContainer = styled.div`
   @media (min-width: ${breakpointXS}) {
     max-width: 500px;
   }
+`;
+
+const ListUlBuzzs = styled.ul`
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default BuzzDetail;

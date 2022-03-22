@@ -111,7 +111,11 @@ describe("Given an loadDetailBuzzThunk", () => {
         topic: "general",
         likes: 0,
         comments: [],
-        author: "Dan",
+        author: {
+          name: "Dan",
+          username: "Abramov",
+          id: "623245decaa7d69f96f10a95",
+        },
         text: "React Redux",
         id: "6230c7a2f9d0f5ee1f58d6d9",
         date: "2022-03-12T14:14:10.573Z",
