@@ -4,7 +4,6 @@ import {
 } from "../styles/globalStyledComponents";
 import { useNavigate, useParams } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
-import Toastr from "../components/Toastr/Toastr";
 import { BuzzObject } from "../types/buzzInterfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
@@ -53,7 +52,6 @@ const DetailBuzzPage = () => {
     <>
       {buzzDetail.text !== "" ? (
         <>
-          <Toastr />
           <MainContainerPage>
             <BuzzDetail
               buzz={buzzDetail}

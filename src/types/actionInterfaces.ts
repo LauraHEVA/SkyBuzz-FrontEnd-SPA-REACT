@@ -24,3 +24,7 @@ export interface LoadOneBuzzActionInterface extends SomeActionInterface {
 export interface LoginUserActionInterface extends SomeActionInterface {
   userData: UserData | LoginData;
 }
+
+export interface CommentBuzzActionInterface extends SomeActionInterface {
+  buzzComment: BuzzObject;
+}
