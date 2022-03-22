@@ -27,11 +27,7 @@ import { RootState } from "../../redux/store";
 import styled from "styled-components";
 import { breakpointXS, greyLight } from "../../styles/globalStyles";
 import BuzzComment from "../BuzzComment/BuzzComment";
-import {
-  deleteBuzzThunk,
-  incrementLikesThunk,
-  loadDetailBuzzThunk,
-} from "../../redux/thunks/buzzsThunk";
+import { loadDetailBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import { useEffect } from "react";
 
 const BuzzDetail = ({
@@ -46,13 +42,6 @@ const BuzzDetail = ({
     dispatch(loadDetailBuzzThunk);
   }, [dispatch]);
 
-  const deleteBuzz = (id: string) => {
-    dispatch(deleteBuzzThunk(id));
-  };
-
-  const addLikeBuzz = (id: string) => {
-    dispatch(incrementLikesThunk(id));
-  };
   return (
     <>
       <BuzzCardDetailContainer>
@@ -110,16 +99,7 @@ const BuzzDetail = ({
             {buzz.comments.map((comment) => {
               return (
                 <ListItem key={comment.id}>
-                  <BuzzComment
-                    onClickTrash={() => {
-                      deleteBuzz(comment.id);
-                    }}
-                    onClickHeart={() => {
-                      addLikeBuzz(comment.id);
-                    }}
-                    key={comment.id}
-                    buzz={comment}
-                  ></BuzzComment>
+                  <BuzzComment key={comment.id} buzz={comment}></BuzzComment>
                 </ListItem>
               );
             })}

@@ -41,7 +41,7 @@ const buzzsReducer = (
     case actionsType.incrementLikes:
       newBuzzsList = currentBuzzs.map((buzz) => {
         if (buzz.id === (action as ActionWithIdInterface).id) {
-          (buzz as BuzzObject).likes += 1;
+          buzz.likes += 1;
           return buzz;
         } else {
           return buzz;

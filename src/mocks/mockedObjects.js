@@ -43,3 +43,18 @@ export const userRegistered = {
     id: "623790b0dfa33dfc6f497aca",
   },
 };
+
+export const reponseComment = {
+  response: {
+    buzz: {
+      author: "623987643eca94dcdf7ae13a",
+      text: "en serio, parad de romper github que hay más gente usándolo",
+      topic: "jobs",
+      date: "2022-03-22T18:54:36.067Z",
+      likes: 6,
+      isComment: false,
+      comments: ["623a378825281c0e190ea368"],
+      id: "623a1b6c25fb49749da9daec",
+    },
+  },
+};

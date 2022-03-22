@@ -31,6 +31,4 @@ export interface BuzzCommentInterface extends BuzzBasic {
 
 export interface BuzzCommentProps {
   buzz: BuzzCommentInterface;
-  onClickTrash: React.MouseEventHandler;
-  onClickHeart: React.MouseEventHandler;
 }

@@ -7,11 +7,46 @@ import {
 } from "./buzzsThunk";
 
 describe("Given a loadAllBuzzsThunk function", () => {
-  describe("When it is called", () => {
-    test("Then it should dispatch a function", async () => {
+  describe("When it is called with an array of buzzs", () => {
+    test("Then it should dispatch a function with the array as a property", async () => {
       const dispatch = jest.fn();
+      const buzzsToGet = [
+        {
+          topic: "general",
+          likes: 0,
+          comments: [],
+          author: {
+            name: "Dan",
+            username: "Danilovic",
+            id: "623245decaa7d69f96f10a95",
+          },
+          text: "React Redux",
+          id: "324k2lA",
+          date: "2022-03-12T14:14:10.573Z",
+        },
+        {
+          topic: "general",
+          likes: 0,
+          comments: [],
+          author: {
+            name: "Dan",
+            username: "Danilovic",
+            id: "623245decaa7d69f96f10a95",
+          },
+          text: "I Hate Typescript",
+          id: "324k2lB",
+          date: "2022-03-12T14:14:10.573Z",
+        },
+      ];
+
+      const expectedAction = {
+        type: "load-all-buzzs",
+        buzzs: buzzsToGet,
+      };
+
       await loadAllBuzzsThunk(dispatch);
-      expect(dispatch).toHaveBeenCalled();
+
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
 });

@@ -49,7 +49,9 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
               <ReactTimeAgo date={Date.parse(buzz.date)} locale="en-US" />
             </TextTimeAgo>
           </ContainerSuperior>
-          <TextBuzz onClick={viewDetailBuzz}>{buzz.text}</TextBuzz>
+          <TextBuzz data-testid="buzz-text" onClick={viewDetailBuzz}>
+            {buzz.text}
+          </TextBuzz>
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>

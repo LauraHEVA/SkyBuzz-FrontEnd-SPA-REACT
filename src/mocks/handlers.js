@@ -1,5 +1,10 @@
 import { rest } from "msw";
-import { BuzzListTest, userLogged, userRegistered } from "./mockedObjects";
+import {
+  BuzzListTest,
+  reponseComment,
+  userLogged,
+  userRegistered,
+} from "./mockedObjects";
 
 export const handlers = [
   rest.get(`${process.env.REACT_APP_PUBLIC_API}buzzs/`, (req, res, ctx) => {
@@ -98,6 +103,39 @@ export const handlers = [
     `${process.env.REACT_APP_PUBLIC_API}users/register`,
     (req, res, ctx) => {
       return res(ctx.status(201), ctx.json(userRegistered.response));
+    }
+  ),
+
+  rest.get(`${process.env.REACT_APP_PUBLIC_API}users/all`, (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        users: [
+          {
+            buzzs: [],
+            name: "Laura",
+            username: "Laura0",
+            password:
+              "$2b$10$dMTNK.KOdxL0WAa5v57J4eaRc/1HUGSmr5KSPC4PT17z.HqIOtoHK",
+            id: "623245decaa7d69f96f10a95",
+          },
+          {
+            buzzs: [],
+            name: "Luis",
+            username: "Luis0",
+            password:
+              "$2b$10$BPQhi4DUZ6S0uVyHFkcB.OouOgGfrtSGEBtMchaME1mgQVSj9W8.u",
+            id: "623392bccaa7d69f96f10aa2",
+          },
+        ],
+      })
+    );
+  }),
+
+  rest.put(
+    `${process.env.REACT_APP_PUBLIC_API}buzzs/6230c7a2f9d0f5ee1f58d6d9/comment`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(reponseComment.response));
     }
   ),
 ];

@@ -2,10 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
-import Buzz from "./Buzz";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
-import userEvent from "@testing-library/user-event";
+import BuzzComment from "./BuzzComment";
 
 const mockNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -13,7 +12,7 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe("Given Buzz Component", () => {
+describe("Given BuzzComment Component", () => {
   describe("When its rendered with a message 'Typescript I Hate U' and the user clicks on it", () => {
     test("Then it should display paragraph with the text 'Typescript I Hate U' and navigate to the detail page", () => {
       const textMessage = "Typescript I Hate U";
@@ -28,26 +27,20 @@ describe("Given Buzz Component", () => {
         },
         text: "Typescript I Hate U",
         id: "324k2l",
-        date: new Date().toDateString(),
+        date: "2022-03-21T23:39:15.025Z",
       };
       TimeAgo.addLocale(en);
 
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <Buzz
-              buzz={buzzFake}
-              onClickTrash={() => {}}
-              onClickHeart={() => {}}
-            />
+            <BuzzComment buzz={buzzFake} />
           </Provider>
         </BrowserRouter>
       );
 
       const foundText = screen.getByText(textMessage);
-      userEvent.click(foundText);
 
-      expect(mockNavigate).toHaveBeenCalled();
       expect(foundText).toBeInTheDocument();
     });
   });
