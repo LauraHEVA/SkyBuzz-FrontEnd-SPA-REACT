@@ -11,7 +11,6 @@ import {
 import { BuzzBasic } from "../../types/buzzInterfaces";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
-import Toastr from "../Toastr/Toastr";
 
 const FormComment = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -92,7 +91,6 @@ const FormComment = (): JSX.Element => {
             </ButtonSubmitContainer>
           )}
         </form>
-        <Toastr />
       </ContainerFormComment>
     </>
   );

@@ -10,7 +10,6 @@ import {
 import { BuzzBasic } from "../../types/buzzInterfaces";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
-import Toastr from "../Toastr/Toastr";
 
 const FormNewBuzz = (): JSX.Element => {
   const navigate = useNavigate();
@@ -95,7 +94,6 @@ const FormNewBuzz = (): JSX.Element => {
           </ButtonSubmitContainer>
         )}
       </form>
-      <Toastr />
     </ContainerFormNewBuzz>
   );
 };
