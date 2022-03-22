@@ -1,4 +1,5 @@
 import {
+  CommentBuzzActionInterface,
   LoadOneBuzzActionInterface,
   SomeActionInterface,
 } from "../../types/actionInterfaces";
@@ -19,7 +20,10 @@ const oneBuzzReducer = (
     comments: [],
     id: "",
   },
-  action: SomeActionInterface | LoadOneBuzzActionInterface = {
+  action:
+    | SomeActionInterface
+    | LoadOneBuzzActionInterface
+    | CommentBuzzActionInterface = {
     type: "",
     buzz: {
       topic: "",
@@ -62,6 +66,11 @@ const oneBuzzReducer = (
     case actionsType.incrementLikes:
       newBuzz = { ...currentBuzz };
       (newBuzz as BuzzObject).likes += 1;
+      break;
+
+    case actionsType.commentBuzz:
+      newBuzz = { ...currentBuzz };
+      currentBuzz.comments.push((action as CommentBuzzActionInterface).buzz);
       break;
 
     default:

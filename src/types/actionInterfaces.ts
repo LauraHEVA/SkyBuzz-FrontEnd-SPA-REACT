@@ -26,6 +26,6 @@ export interface LoginUserActionInterface extends SomeActionInterface {
 }
 
 export interface CommentBuzzActionInterface extends SomeActionInterface {
-  buzz: BuzzBasic;
+  buzz: BuzzObject;
   id: string;
 }
