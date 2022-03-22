@@ -8,6 +8,7 @@ const actionsType = {
   loginUser: "login-user",
   logoutUser: "logout-user",
   registerUser: "register-user",
+  commentBuzz: "comment-buzz",
 };
 
 export default actionsType;
