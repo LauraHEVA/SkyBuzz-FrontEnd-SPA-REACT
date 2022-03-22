@@ -90,12 +90,20 @@ const BuzzDetail = ({
       </BuzzCardDetailContainer>
       {buzz.comments.length ? (
         <div>
-          <BuzzComment
-            onClickTrash={() => {}}
-            onClickHeart={() => {}}
-            key={buzz.comments[0].id}
-            buzz={buzz.comments[0]}
-          ></BuzzComment>
+          <ListUlBuzzs>
+            {buzz.comments.map((comment) => {
+              return (
+                <ListItem key={comment.id}>
+                  <BuzzComment
+                    onClickTrash={() => {}}
+                    onClickHeart={() => {}}
+                    key={buzz.comments[0].id}
+                    buzz={buzz.comments[0]}
+                  ></BuzzComment>
+                </ListItem>
+              );
+            })}
+          </ListUlBuzzs>
         </div>
       ) : (
         <></>
@@ -127,6 +135,12 @@ const BuzzCardDetailContainer = styled.div`
   @media (min-width: ${breakpointXS}) {
     max-width: 500px;
   }
+`;
+
+const ListUlBuzzs = styled.ul`
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default BuzzDetail;
