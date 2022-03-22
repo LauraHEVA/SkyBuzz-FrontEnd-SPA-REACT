@@ -5,10 +5,17 @@ import { store } from "../../redux/store";
 import Buzz from "./Buzz";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
+import userEvent from "@testing-library/user-event";
+
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 describe("Given Buzz Component", () => {
-  describe("When its rendered with a message 'Typescript I Hate U'", () => {
-    test("Then it should display paragraph with the text 'Typescript I Hate U'", () => {
+  describe("When its rendered with a message 'Typescript I Hate U' and the user clicks on it", () => {
+    test("Then it should display paragraph with the text 'Typescript I Hate U' and navigate to the detail page", () => {
       const textMessage = "Typescript I Hate U";
       const buzzFake = {
         topic: "general",
@@ -38,7 +45,9 @@ describe("Given Buzz Component", () => {
       );
 
       const foundText = screen.getByText(textMessage);
+      userEvent.click(foundText);
 
+      expect(mockNavigate).toHaveBeenCalled();
       expect(foundText).toBeInTheDocument();
     });
   });

@@ -70,7 +70,7 @@ export const registerUserAction = (userData: RegisterUserData) => ({
 export const commentBuzzAction = (
   buzzComment: BuzzObject
 ): CommentBuzzActionInterface => ({
-  type: actionsType.addBuzz,
+  type: actionsType.commentBuzz,
   buzzComment,
 });
 

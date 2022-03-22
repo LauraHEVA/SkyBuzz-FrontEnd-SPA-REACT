@@ -6,9 +6,9 @@ import {
   loadDetailBuzzThunk,
 } from "./buzzsThunk";
 
-describe("Given a loadAllUsersThunk function", () => {
-  describe("When it is called", () => {
-    test("Then it should dispatch a function", async () => {
+describe("Given a loadAllBuzzsThunk function", () => {
+  describe("When it is called with an array of buzzs", () => {
+    test("Then it should dispatch a function with the array as a property", async () => {
       const dispatch = jest.fn();
       const buzzsToGet = [
         {
