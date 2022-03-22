@@ -80,6 +80,8 @@ export const incrementLikesThunk =
     );
     if (response.ok) {
       dispatch(incrementLikesAction(id));
+    } else {
+      toast.error("Log in to like!");
     }
   };
 
