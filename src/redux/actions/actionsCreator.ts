@@ -67,7 +67,7 @@ export const registerUserAction = (userData: RegisterUserData) => ({
 });
 
 export const commentBuzzAction = (
-  buzz: BuzzBasic,
+  buzz: BuzzObject,
   id: string
 ): CommentBuzzActionInterface => ({
   type: actionsType.addBuzz,
