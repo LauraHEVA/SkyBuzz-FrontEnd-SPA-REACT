@@ -70,7 +70,9 @@ const oneBuzzReducer = (
 
     case actionsType.commentBuzz:
       newBuzz = { ...currentBuzz };
-      currentBuzz.comments.push((action as CommentBuzzActionInterface).buzz);
+      currentBuzz.comments.push(
+        (action as CommentBuzzActionInterface).buzzComment
+      );
       break;
 
     default:

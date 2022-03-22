@@ -96,3 +96,27 @@ export const loadDetailBuzzThunk =
     const buzzDetail = buzzDetailResponse.buzz;
     dispatch(loadDetailBuzzAction(buzzDetail));
   };
+
+export const commentBuzzThunk =
+  (buzzComment: BuzzBasic) =>
+  async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("UserToken");
+    const response = await fetch(
+      `${process.env.REACT_APP_PUBLIC_API}buzzs/new`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+        body: JSON.stringify(buzz),
+      }
+    );
+    const newBuzz = await response.json();
+    if (response.ok) {
+      dispatch(addNewBuzzAction(newBuzz));
+      toast.success("Buzz published!");
+    } else {
+      toast.error("Something went wrong. Buzz not created");
+    }
+  };
