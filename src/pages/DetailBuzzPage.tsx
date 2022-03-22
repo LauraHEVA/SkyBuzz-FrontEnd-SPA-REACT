@@ -17,6 +17,7 @@ import {
 import { cleanBuzzDetailAction } from "../redux/actions/actionsCreator";
 import { Spinner } from "../components/Spinner/Spinner";
 import BuzzDetail from "../components/BuzzDetail/BuzzDetail";
+import FormComment from "../components/FormComment/FormComment";
 
 const DetailBuzzPage = () => {
   const { id } = useParams();
@@ -64,6 +65,7 @@ const DetailBuzzPage = () => {
                 addLikeBuzz();
               }}
             />
+            <FormComment />
             <ButtonContainerNewBuzz>
               <ButtonPrimary
                 actionOnClick={() => {

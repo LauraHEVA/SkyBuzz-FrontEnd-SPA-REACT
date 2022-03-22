@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { addNewBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import {
   ButtonSubmitContainer,
-  ContainerFormNewBuzz,
+  ContainerFormComment,
+  SecondaryText,
 } from "../../styles/globalStyledComponents";
 import { BuzzBasic } from "../../types/buzzInterfaces";
 import ButtonDisabled from "../Buttons/ButtonDisabled";
@@ -44,52 +45,55 @@ const FormComment = (): JSX.Element => {
   };
 
   return (
-    <ContainerFormNewBuzz className="container">
-      <form onSubmit={onSubmitForm} autoComplete="off">
-        <div className="input-group mb-3">
-          <label className="input-group-text" htmlFor="topicBuzz">
-            Topic
-          </label>
-          <select
-            className="form-select"
-            id="topicBuzz"
-            defaultValue="general"
-            onChange={onChangeTopic}
-          >
-            <option value="general">General</option>
-            <option value="resources">Resources</option>
-            <option value="playtime">PlayTime</option>
-            <option value="events">Events</option>
-            <option value="jobs">Jobs</option>
-          </select>
-        </div>
+    <>
+      <ContainerFormComment className="container">
+        <SecondaryText>Comment this buzz...</SecondaryText>
+        <form onSubmit={onSubmitForm} autoComplete="off">
+          <div className="input-group mb-3">
+            <label className="input-group-text" htmlFor="topicBuzz">
+              Topic
+            </label>
+            <select
+              className="form-select"
+              id="topicBuzz"
+              defaultValue="general"
+              onChange={onChangeTopic}
+            >
+              <option value="general">General</option>
+              <option value="resources">Resources</option>
+              <option value="playtime">PlayTime</option>
+              <option value="events">Events</option>
+              <option value="jobs">Jobs</option>
+            </select>
+          </div>
 
-        <div className="form-floating">
-          <InputMessage
-            className="form-control"
-            placeholder="Leave a comment here"
-            id="messageBuzz"
-            type="text"
-            value={messageValue}
-            onChange={onChangeMessage}
-          ></InputMessage>
-          <label htmlFor="messageBuzz">Writte your buzz here...</label>
-        </div>
-        {messageValue.length > 2 && messageValue.length < 201 ? (
-          <ButtonSubmitContainer>
-            <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
-          </ButtonSubmitContainer>
-        ) : (
-          <ButtonSubmitContainer>
-            <ButtonDisabled
-              className={"btn btn-outline-secondary"}
-              text={"Buzz It!"}
-            />
-          </ButtonSubmitContainer>
-        )}
-      </form>
-      <Toastr />
-    </ContainerFormNewBuzz>
+          <div className="form-floating">
+            <InputMessage
+              className="form-control"
+              placeholder="Leave a comment here"
+              id="messageBuzz"
+              type="text"
+              value={messageValue}
+              onChange={onChangeMessage}
+            ></InputMessage>
+            <label htmlFor="messageBuzz">Writte your buzz here...</label>
+          </div>
+          {messageValue.length > 2 && messageValue.length < 201 ? (
+            <ButtonSubmitContainer>
+              <ButtonSubmit className={"btn-primary"} text={"Buzz It!"} />
+            </ButtonSubmitContainer>
+          ) : (
+            <ButtonSubmitContainer>
+              <ButtonDisabled
+                className={"btn btn-outline-secondary"}
+                text={"Buzz It!"}
+              />
+            </ButtonSubmitContainer>
+          )}
+        </form>
+        <Toastr />
+      </ContainerFormComment>
+    </>
   );
 };
 
