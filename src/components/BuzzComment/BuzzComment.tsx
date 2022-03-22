@@ -1,8 +1,4 @@
-import {
-  BuzzCommentProps,
-  BuzzObject,
-  BuzzProps,
-} from "../../types/buzzInterfaces";
+import { BuzzCommentProps, BuzzProps } from "../../types/buzzInterfaces";
 import {
   ListItem,
   ListUlHorizontal,
@@ -61,9 +57,6 @@ const BuzzComment = ({
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
-              <NumDataIcons>
-                {(buzz as BuzzObject).comments.length}
-              </NumDataIcons>
               <CommentIcon />
             </ListItem>
             {user.loggedIn ? (
