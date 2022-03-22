@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
-import userEvent from "@testing-library/user-event";
 import BuzzComment from "./BuzzComment";
 
 const mockNavigate = jest.fn();
@@ -28,7 +27,7 @@ describe("Given BuzzComment Component", () => {
         },
         text: "Typescript I Hate U",
         id: "324k2l",
-        date: new Date().toDateString(),
+        date: "2022-03-21T23:39:15.025Z",
       };
       TimeAgo.addLocale(en);
 
