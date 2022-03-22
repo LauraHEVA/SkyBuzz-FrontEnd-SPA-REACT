@@ -38,9 +38,7 @@ export const deleteBuzzThunk =
       dispatch(deleteBuzzAction(id));
       toast.success("Buzz deleted correctly");
     } else {
-      toast.error(
-        "Something went wrong. Buzz not deleted. Remember you can only delete your Buzzs"
-      );
+      toast.error("Buzz not deleted. Remember you can only delete your Buzzs");
     }
   };
 

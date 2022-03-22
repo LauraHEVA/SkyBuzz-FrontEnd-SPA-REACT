@@ -59,24 +59,6 @@ const BuzzComment = ({
             <ListItem>
               <CommentIcon />
             </ListItem>
-            {user.loggedIn ? (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon onClick={onClickHeart} />
-                </ListItem>
-                <ListItem>
-                  <TrashIcon onClick={onClickTrash} />
-                </ListItem>
-              </>
-            ) : (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon />
-                </ListItem>
-              </>
-            )}
           </ListUlHorizontal>
         </MessageContainer>
       </BuzzCardContainer>
