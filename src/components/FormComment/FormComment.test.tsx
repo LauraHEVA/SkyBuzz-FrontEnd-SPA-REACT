@@ -48,7 +48,7 @@ describe("Given a FormComment component", () => {
       expect(textboxFounded).toHaveValue("Some great message");
 
       const buttonFounded = screen.getByRole("button");
-      userEvent.click(buttonFounded);
+      expect(buttonFounded).toBeInTheDocument();
     });
 
     test("It should display a form with an options to select", () => {
