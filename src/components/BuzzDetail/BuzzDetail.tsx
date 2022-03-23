@@ -41,7 +41,6 @@ const BuzzDetail = ({
   useEffect(() => {
     dispatch(loadDetailBuzzThunk);
   }, [dispatch]);
-
   return (
     <>
       <BuzzCardDetailContainer>
