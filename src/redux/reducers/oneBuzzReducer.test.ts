@@ -116,4 +116,71 @@ describe("Given a oneBuzzReducer function", () => {
       expect(newState).toEqual(emptyBuzz);
     });
   });
+
+  describe("When it's called with a commentBuzz action", () => {
+    test("Then it should return a new state with the comment included in the array of comments of the current buzz", () => {
+      const buzzToComment: BuzzObject = {
+        topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
+        likes: 1,
+        comments: [],
+        author: {
+          name: "Mia",
+          username: "Wallace",
+          id: "623245decaa7d69f96f10a45",
+        },
+        text: "I hate uncomfortable silences",
+        id: "324kAABB",
+      };
+
+      const commentToAdd = {
+        author: {
+          name: "Mia",
+          username: "Wallace",
+          id: "623245decaa7d69f96f10a45",
+        },
+        date: "2022-03-20T23:48:53.316+00:00",
+        likes: 1,
+        id: "idinvented",
+        topic: "general",
+        text: "pero a ver, muchachada, display: none existe y tiene sus casos de uso",
+      };
+
+      const buzzResult: BuzzObject = {
+        topic: "general",
+        date: "2022-03-20T23:48:53.316+00:00",
+        likes: 1,
+        comments: [
+          {
+            author: {
+              name: "Mia",
+              username: "Wallace",
+              id: "623245decaa7d69f96f10a45",
+            },
+            date: "2022-03-20T23:48:53.316+00:00",
+            likes: 1,
+            id: "idinvented",
+            topic: "general",
+            text: "pero a ver, muchachada, display: none existe y tiene sus casos de uso",
+          },
+        ],
+        author: {
+          name: "Mia",
+          username: "Wallace",
+          id: "623245decaa7d69f96f10a45",
+        },
+        text: "I hate uncomfortable silences",
+        id: "324kAABB",
+      };
+
+      const action = {
+        type: actionsType.commentBuzz,
+        buzzComment: commentToAdd,
+      };
+
+      const newState = oneBuzzReducer(buzzToComment, action);
+
+      expect(newState).toEqual(buzzResult);
+    });
+  });
 });
