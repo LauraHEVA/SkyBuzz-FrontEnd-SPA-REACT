@@ -67,6 +67,20 @@ export const MainContainerPage = styled.div`
   }
 `;
 
+export const MainContainerDetailPage = styled.div`
+  margin-left: 15px;
+  margin-right: 25px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media (min-width: ${breakpointXS}) {
+    margin-left: calc(${widthNavMenu}*1.7);
+    margin-top: 140px;
+  }
+`;
+
 export const MainContainerLogsUserPage = styled.div`
   margin-left: 15px;
   margin-right: 25px;
