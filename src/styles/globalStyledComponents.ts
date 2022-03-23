@@ -173,9 +173,10 @@ export const ContainerFormNewBuzz = styled.div`
 export const ContainerFormComment = styled.div`
   font-family: nunito, sans-serif;
   color: ${primary};
-  max-width: 500px;
+  margin-bottom: 130px;
   @media (min-width: ${breakpointXS}) {
-    margin-top: 60px;
+    margin-top: 50px;
+    margin-bottom: 200px;
   }
 `;
 
