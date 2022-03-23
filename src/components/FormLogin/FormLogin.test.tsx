@@ -62,8 +62,8 @@ describe("Given a formLogin component", () => {
       const foundElement1 = screen.queryByTestId("inputUsername");
       const foundElement2 = screen.queryByTestId("inputPassword");
 
-      userEvent.type(foundElement1, "Luisito");
-      userEvent.type(foundElement2, "Luisito1234");
+      userEvent.type(foundElement1 as HTMLElement, "Luisito");
+      userEvent.type(foundElement2 as HTMLElement, "Luisito1234");
 
       const buttonFounded = screen.getByText(textButton);
       userEvent.click(buttonFounded);
