@@ -1,12 +1,5 @@
 import { BuzzProps } from "../../types/buzzInterfaces";
 import {
-  ListItem,
-  ListUlHorizontal,
-} from "../../styles/globalStyledComponents";
-import CommentIcon from "../CommentIcon/CommentIcon";
-import HeartIcon from "../HeartIcon/HeartIcon";
-import TrashIcon from "../TrashIcon/TrashIcon";
-import {
   ContainerSuperior,
   MessageContainer,
   ProfileCircle,
@@ -14,19 +7,14 @@ import {
   TextBuzz,
   TextTopic,
   TextTimeAgo,
-  NumDataIcons,
   BuzzCardContainer,
   TextAuthorInLine,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
-import { UserData } from "../../types/userInterfaces";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import BuzzInfoBottom from "../BuzzInfoBottom/BuzzInfoBottom";
 
 const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
-  const user: UserData = useSelector((state: RootState) => state.user);
-
   const navigate = useNavigate();
 
   const viewDetailBuzz = () => {
@@ -53,30 +41,11 @@ const Buzz = ({ buzz, onClickTrash, onClickHeart }: BuzzProps): JSX.Element => {
             {buzz.text}
           </TextBuzz>
           <TextTopic>#{buzz.topic}</TextTopic>
-          <ListUlHorizontal>
-            <ListItem>
-              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
-              <CommentIcon />
-            </ListItem>
-            {user.loggedIn ? (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon onClick={onClickHeart} />
-                </ListItem>
-                <ListItem>
-                  <TrashIcon onClick={onClickTrash} />
-                </ListItem>
-              </>
-            ) : (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon />
-                </ListItem>
-              </>
-            )}
-          </ListUlHorizontal>
+          <BuzzInfoBottom
+            buzz={buzz}
+            onClickHeart={onClickHeart}
+            onClickTrash={onClickTrash}
+          />
         </MessageContainer>
       </BuzzCardContainer>
     </>
