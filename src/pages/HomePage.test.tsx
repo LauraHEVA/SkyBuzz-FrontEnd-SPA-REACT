@@ -7,6 +7,13 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
+import userEvent from "@testing-library/user-event";
+
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 describe("Given a HomePage component", () => {
   describe("When it's rendered", () => {
@@ -89,6 +96,9 @@ describe("Given a HomePage component", () => {
       );
 
       const buttonFound = await screen.findByText(/new buzz/i);
+      userEvent.click(buttonFound);
+
+      expect(mockNavigate).toHaveBeenCalled();
 
       expect(buttonFound).toBeInTheDocument();
     });
