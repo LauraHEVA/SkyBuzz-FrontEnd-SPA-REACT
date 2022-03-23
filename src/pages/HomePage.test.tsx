@@ -99,7 +99,6 @@ describe("Given a HomePage component", () => {
       userEvent.click(buttonFound);
 
       expect(mockNavigate).toHaveBeenCalled();
-
       expect(buttonFound).toBeInTheDocument();
     });
   });
