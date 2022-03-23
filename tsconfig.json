@@ -18,7 +18,9 @@
     "rootDir": "./src/",
     "outDir": "./dist/",
     "noEmitOnError": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "types": ["jest", "node", "@types/testing-library__jest-dom"]
   },
-  "include": ["src"]
+  "include": ["src", "./*/*.ts", "./*/*.tsx"],
+  "exclude": ["node_modules", "cypress"]
 }
