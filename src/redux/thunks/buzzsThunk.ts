@@ -114,7 +114,7 @@ export const commentBuzzThunk =
     );
     const newBuzzCommented = await response.json();
     if (response.ok) {
-      dispatch(commentBuzzAction(newBuzzCommented));
+      dispatch(commentBuzzAction(newBuzzCommented.buzzComment));
       toast.success("Comment published!");
     } else {
       toast.error("Something went wrong. Comment not published");

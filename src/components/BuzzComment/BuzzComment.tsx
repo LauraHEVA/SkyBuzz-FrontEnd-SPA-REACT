@@ -24,7 +24,7 @@ const BuzzComment = ({ buzz }: BuzzCommentProps | BuzzProps): JSX.Element => {
   const viewDetailBuzz = () => {
     navigate(`/buzz/${buzz.id}`);
   };
-
+  console.log(buzz);
   return (
     <>
       <BuzzCardContainer>

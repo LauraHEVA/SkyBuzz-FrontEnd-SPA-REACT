@@ -47,7 +47,6 @@ const DetailBuzzPage = () => {
   const addLikeBuzz = () => {
     dispatch(incrementLikesThunk(id as string));
   };
-
   return (
     <>
       {buzzDetail.text !== "" ? (
