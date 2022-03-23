@@ -53,6 +53,7 @@ const FormRegister = (): JSX.Element => {
         <form onSubmit={formSubmit} autoComplete="off">
           <div className="mb-3">
             <InputForm
+              data-testid="inputName"
               name="name"
               type="text"
               placeholder="Name"
@@ -64,6 +65,7 @@ const FormRegister = (): JSX.Element => {
           </div>
           <div className="mb-3">
             <InputForm
+              data-testid="inputUsername"
               name="username"
               type="text"
               placeholder="Username"
@@ -75,6 +77,7 @@ const FormRegister = (): JSX.Element => {
           </div>
           <div className="mb-3">
             <InputForm
+              data-testid="inputPassword"
               name="password"
               type="password"
               className="form-control"

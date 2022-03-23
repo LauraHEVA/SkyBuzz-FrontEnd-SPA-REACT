@@ -73,6 +73,7 @@ describe("Given a formLogin component", () => {
 
       expect(foundElement1).toHaveValue("Luisito");
       expect(foundElement2).toHaveValue("Luisito1234");
+      expect(buttonFounded).not.toBeDisabled();
     });
   });
 });
