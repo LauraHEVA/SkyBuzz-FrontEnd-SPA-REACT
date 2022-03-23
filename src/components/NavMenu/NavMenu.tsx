@@ -13,6 +13,38 @@ import AllUsersIcon from "../AllUsersIcon/AllUsersIcon";
 import HomeIcon from "../HomeIcon/HomeIcon";
 import UserIcon from "../UserIcon/UserIcon";
 
+const NavMenu = (): JSX.Element => {
+  return (
+    <>
+      <ContainerNavMenu>
+        <ListUlNavMenu>
+          <ListItem>
+            <Link to="/login">
+              <ContainerIcon>
+                <UserIcon />
+              </ContainerIcon>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/home">
+              <ContainerIcon>
+                <HomeIcon />
+              </ContainerIcon>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link to="/buzzers">
+              <ContainerIcon>
+                <AllUsersIcon />
+              </ContainerIcon>
+            </Link>
+          </ListItem>
+        </ListUlNavMenu>
+      </ContainerNavMenu>
+    </>
+  );
+};
+
 const ContainerNavMenu = styled.nav`
   background-color: ${secondary};
   font-size: 22px;
@@ -57,37 +89,5 @@ const ContainerIcon = styled.div`
     }
   }
 `;
-
-const NavMenu = (): JSX.Element => {
-  return (
-    <>
-      <ContainerNavMenu>
-        <ListUlNavMenu>
-          <ListItem>
-            <Link to="/login">
-              <ContainerIcon>
-                <UserIcon />
-              </ContainerIcon>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link to="/home">
-              <ContainerIcon>
-                <HomeIcon />
-              </ContainerIcon>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link to="/buzzers">
-              <ContainerIcon>
-                <AllUsersIcon />
-              </ContainerIcon>
-            </Link>
-          </ListItem>
-        </ListUlNavMenu>
-      </ContainerNavMenu>
-    </>
-  );
-};
 
 export default NavMenu;
