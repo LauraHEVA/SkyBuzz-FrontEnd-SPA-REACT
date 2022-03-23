@@ -67,20 +67,6 @@ export const MainContainerPage = styled.div`
   }
 `;
 
-export const MainContainerDetailPage = styled.div`
-  margin-left: 15px;
-  margin-right: 25px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media (min-width: ${breakpointXS}) {
-    margin-left: calc(${widthNavMenu}*1.7);
-    margin-top: 140px;
-  }
-`;
-
 export const MainContainerLogsUserPage = styled.div`
   margin-left: 15px;
   margin-right: 25px;
@@ -187,9 +173,10 @@ export const ContainerFormNewBuzz = styled.div`
 export const ContainerFormComment = styled.div`
   font-family: nunito, sans-serif;
   color: ${primary};
-  max-width: 500px;
+  margin-bottom: 130px;
   @media (min-width: ${breakpointXS}) {
-    margin-top: 60px;
+    margin-top: 50px;
+    margin-bottom: 200px;
   }
 `;
 

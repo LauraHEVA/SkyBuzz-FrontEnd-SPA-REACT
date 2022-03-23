@@ -1,6 +1,6 @@
 import {
   ButtonContainerNewBuzz,
-  MainContainerDetailPage,
+  MainContainerPage,
 } from "../styles/globalStyledComponents";
 import { useNavigate, useParams } from "react-router-dom";
 import ButtonPrimary from "../components/Buttons/ButtonPrimary";
@@ -51,7 +51,7 @@ const DetailBuzzPage = () => {
     <>
       {buzzDetail.text !== "" ? (
         <>
-          <MainContainerDetailPage>
+          <MainContainerPage>
             <BuzzDetail
               buzz={buzzDetail}
               onClickTrash={() => {
@@ -72,7 +72,7 @@ const DetailBuzzPage = () => {
                 text={"Go Back"}
               />
             </ButtonContainerNewBuzz>
-          </MainContainerDetailPage>
+          </MainContainerPage>
         </>
       ) : (
         <Spinner />
