@@ -13,31 +13,33 @@ import ButtonDisabled from "../Buttons/ButtonDisabled";
 import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 const FormRegister = (): JSX.Element => {
-  const emptyDataForm = {
+  const emptyDataFormRegister = {
     name: "",
     username: "",
     password: "",
   };
 
-  const [formData, setFormData] = useState(emptyDataForm);
+  const [formDataRegister, setFormDataRegister] = useState(
+    emptyDataFormRegister
+  );
 
-  const handleForm = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
+  const handleFormRegister = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormDataRegister({
+      ...formDataRegister,
       [event.target.id]: event.target.value,
     });
   };
 
-  const resetForm = () => {
-    setFormData(emptyDataForm);
+  const resetFormRegister = () => {
+    setFormDataRegister(emptyDataFormRegister);
   };
 
   const dispatch = useDispatch();
 
-  const formSubmit = async (event: SyntheticEvent) => {
+  const formSubmitRegister = async (event: SyntheticEvent) => {
     event.preventDefault();
-    await dispatch(registerUserThunk(formData));
-    resetForm();
+    await dispatch(registerUserThunk(formDataRegister));
+    resetFormRegister();
     goToLogin();
   };
 
@@ -50,7 +52,7 @@ const FormRegister = (): JSX.Element => {
   return (
     <>
       <div className="container">
-        <form onSubmit={formSubmit} autoComplete="off">
+        <form onSubmit={formSubmitRegister} autoComplete="off">
           <div className="mb-3">
             <InputForm
               data-testid="inputName"
@@ -59,8 +61,8 @@ const FormRegister = (): JSX.Element => {
               placeholder="Name"
               className="form-control"
               id="name"
-              value={formData.name}
-              onChange={handleForm}
+              value={formDataRegister.name}
+              onChange={handleFormRegister}
             />
           </div>
           <div className="mb-3">
@@ -71,8 +73,8 @@ const FormRegister = (): JSX.Element => {
               placeholder="Username"
               className="form-control"
               id="username"
-              value={formData.username}
-              onChange={handleForm}
+              value={formDataRegister.username}
+              onChange={handleFormRegister}
             />
           </div>
           <div className="mb-3">
@@ -83,13 +85,13 @@ const FormRegister = (): JSX.Element => {
               className="form-control"
               placeholder="Password"
               id="password"
-              value={formData.password}
-              onChange={handleForm}
+              value={formDataRegister.password}
+              onChange={handleFormRegister}
             />
           </div>
-          {formData.password.length > 6 &&
-          formData.username.length > 2 &&
-          formData.name.length > 2 ? (
+          {formDataRegister.password.length > 6 &&
+          formDataRegister.username.length > 2 &&
+          formDataRegister.name.length > 2 ? (
             <ButtonLogoutContainer>
               <ButtonSubmit className={"btn-primary"} text={"Register"} />
             </ButtonLogoutContainer>
