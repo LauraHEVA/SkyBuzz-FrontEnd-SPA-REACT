@@ -86,7 +86,7 @@ const FormComment = (): JSX.Element => {
             <ButtonSubmitContainer>
               <ButtonDisabled
                 className={"btn btn-outline-secondary"}
-                text={"Buzz It!"}
+                text={"Comment"}
               />
             </ButtonSubmitContainer>
           )}
