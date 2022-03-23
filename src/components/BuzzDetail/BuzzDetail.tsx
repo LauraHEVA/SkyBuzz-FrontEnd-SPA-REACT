@@ -7,11 +7,11 @@ import {
   MessageContainer,
   ProfileCircle,
   ProfileContainer,
-  TextAuthor,
-  TextTopic,
   TextTimeAgo,
   TextBuzzDetail,
-  TextAuthorNormal,
+  TextAuthorDetail,
+  TextAuthorNormalDetail,
+  TextTopicDetail,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useDispatch } from "react-redux";
@@ -44,8 +44,10 @@ const BuzzDetail = ({
                 </ProfileCircle>
               </ProfileContainer>
               <ContainerUserNames>
-                <TextAuthor>{buzz.author.name}</TextAuthor>
-                <TextAuthorNormal>@{buzz.author.username}</TextAuthorNormal>
+                <TextAuthorDetail>{buzz.author.name}</TextAuthorDetail>
+                <TextAuthorNormalDetail>
+                  @{buzz.author.username}
+                </TextAuthorNormalDetail>
               </ContainerUserNames>
             </PictureAndNamesContainer>
             <TextTimeAgo>
@@ -55,7 +57,7 @@ const BuzzDetail = ({
         </InfoAuthorContainer>
         <MessageContainer>
           <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-          <TextTopic>#{buzz.topic}</TextTopic>
+          <TextTopicDetail>#{buzz.topic}</TextTopicDetail>
           <BuzzInfoBottom
             buzz={buzz}
             onClickHeart={onClickHeart}

@@ -17,14 +17,11 @@ const LogoutPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const goToHomePage = () => {
-    navigate(`/home`);
-  };
-
   const logOut = () => {
     localStorage.setItem("UserToken", "");
+    localStorage.setItem("author", "");
     dispatch(logoutUserAction());
-    goToHomePage();
+    navigate(`/home`);
   };
 
   return (

@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import LogoutPage from "./LogoutPage";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
+import userEvent from "@testing-library/user-event";
 
 const mockNavigate = jest.fn();
 
@@ -36,7 +37,12 @@ describe("Given a LogoutPage component", () => {
       );
 
       const foundHeading = screen.getByRole("heading", { level: 3 });
+      const buttonFounded = screen.getByRole("button", {
+        name: "Yes, Log out",
+      });
+
       expect(foundHeading.textContent).toBe(expectedText);
+      expect(buttonFounded).toBeInTheDocument();
     });
   });
 });

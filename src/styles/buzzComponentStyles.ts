@@ -58,10 +58,27 @@ export const TextAuthor = styled.p`
   margin-bottom: 10px;
 `;
 
+export const TextAuthorDetail = styled.p`
+  color: ${primary};
+  font-weight: 900;
+  font-size: 16px;
+  text-shadow: 0 3px 3px ${grey};
+  margin-top: 0;
+  margin-bottom: 10px;
+`;
+
 export const TextAuthorNormal = styled.p`
   color: ${primary};
   font-weight: 300;
   font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+`;
+
+export const TextAuthorNormalDetail = styled.p`
+  color: ${primary};
+  font-weight: 300;
+  font-size: 16px;
   margin-top: 0;
   margin-bottom: 10px;
 `;
@@ -83,13 +100,19 @@ export const TextBuzz = styled.p`
 
 export const TextBuzzDetail = styled.p`
   color: ${primary};
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 export const TextTopic = styled.p`
   color: ${primary};
   font-weight: 900;
   font-size: 12px;
+`;
+
+export const TextTopicDetail = styled.p`
+  color: ${primary};
+  font-weight: 900;
+  font-size: 14px;
 `;
 
 export const TextTimeAgo = styled.span`

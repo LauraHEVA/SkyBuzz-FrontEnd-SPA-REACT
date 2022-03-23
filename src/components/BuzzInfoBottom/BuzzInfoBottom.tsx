@@ -34,7 +34,7 @@ const BuzzInfoBottom = ({ buzz, onClickHeart, onClickTrash }: BuzzProps) => {
         <>
           <ListItem>
             <NumDataIcons>{buzz.likes}</NumDataIcons>
-            <HeartIcon onClick={onClickTrash} />
+            <HeartIcon onClick={onClickHeart} />
           </ListItem>
         </>
       )}
