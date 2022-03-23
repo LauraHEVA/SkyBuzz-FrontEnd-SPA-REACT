@@ -1,8 +1,15 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
 import FormNewBuzz from "./FormNewBuzz";
+
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 describe("Given a form component", () => {
   describe("When it's rendered", () => {
@@ -22,7 +29,7 @@ describe("Given a form component", () => {
       expect(textFounded).toBeInTheDocument();
     });
 
-    test("It should display a form with an input to writte a message", () => {
+    test("It should display a form with an input to writte a message, and get the text when the user fill it", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
@@ -35,7 +42,13 @@ describe("Given a form component", () => {
         name: "Writte your buzz here...",
       });
 
+      userEvent.type(textboxFounded as HTMLElement, "Some great message");
+
       expect(textboxFounded).toBeInTheDocument();
+      expect(textboxFounded).toHaveValue("Some great message");
+
+      const buttonFounded = screen.getByRole("button");
+      userEvent.click(buttonFounded);
     });
 
     test("It should display a form with an options to select", () => {
