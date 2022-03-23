@@ -19,6 +19,7 @@ const LogoutPage = () => {
 
   const logOut = () => {
     localStorage.setItem("UserToken", "");
+    localStorage.setItem("author", "");
     dispatch(logoutUserAction());
     navigate(`/home`);
   };
