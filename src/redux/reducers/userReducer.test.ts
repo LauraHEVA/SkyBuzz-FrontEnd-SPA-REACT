@@ -57,6 +57,7 @@ describe("Given a userReducer function", () => {
 
       const action = {
         type: actionsType.logoutUser,
+        userData: initialUserData,
       };
 
       const newUserData = {

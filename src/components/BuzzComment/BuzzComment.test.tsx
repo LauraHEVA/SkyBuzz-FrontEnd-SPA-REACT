@@ -5,6 +5,7 @@ import { store } from "../../redux/store";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import BuzzComment from "./BuzzComment";
+import userEvent from "@testing-library/user-event";
 
 const mockNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -40,7 +41,9 @@ describe("Given BuzzComment Component", () => {
       );
 
       const foundText = screen.getByText(textMessage);
+      userEvent.click(foundText);
 
+      expect(mockNavigate).toHaveBeenCalled();
       expect(foundText).toBeInTheDocument();
     });
   });

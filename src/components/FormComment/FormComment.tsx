@@ -60,6 +60,7 @@ const FormComment = (): JSX.Element => {
               defaultValue="general"
               onChange={onChangeTopic}
             >
+              <option value="comment">Comment Buzz</option>
               <option value="general">General</option>
               <option value="resources">Resources</option>
               <option value="playtime">PlayTime</option>

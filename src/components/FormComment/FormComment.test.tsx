@@ -79,6 +79,9 @@ describe("Given a FormComment component", () => {
       const option5Founded = screen.getByRole("option", {
         name: "Jobs",
       });
+      const option6Founded = screen.getByRole("option", {
+        name: "Comment Buzz",
+      });
       const allOptions = screen.getAllByRole("option");
 
       expect(comboboxFounded).toBeInTheDocument();
@@ -87,7 +90,8 @@ describe("Given a FormComment component", () => {
       expect(option3Founded).toBeInTheDocument();
       expect(option4Founded).toBeInTheDocument();
       expect(option5Founded).toBeInTheDocument();
-      expect(allOptions).toHaveLength(5);
+      expect(option6Founded).toBeInTheDocument();
+      expect(allOptions).toHaveLength(6);
     });
   });
 });
