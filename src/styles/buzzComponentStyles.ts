@@ -100,13 +100,19 @@ export const TextBuzz = styled.p`
 
 export const TextBuzzDetail = styled.p`
   color: ${primary};
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 export const TextTopic = styled.p`
   color: ${primary};
   font-weight: 900;
   font-size: 12px;
+`;
+
+export const TextTopicDetail = styled.p`
+  color: ${primary};
+  font-weight: 900;
+  font-size: 14px;
 `;
 
 export const TextTimeAgo = styled.span`

@@ -14,6 +14,7 @@ import {
   TextAuthorNormal,
   TextAuthorDetail,
   TextAuthorNormalDetail,
+  TextTopicDetail,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useDispatch } from "react-redux";
@@ -59,7 +60,7 @@ const BuzzDetail = ({
         </InfoAuthorContainer>
         <MessageContainer>
           <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-          <TextTopic>#{buzz.topic}</TextTopic>
+          <TextTopicDetail>#{buzz.topic}</TextTopicDetail>
           <BuzzInfoBottom
             buzz={buzz}
             onClickHeart={onClickHeart}
