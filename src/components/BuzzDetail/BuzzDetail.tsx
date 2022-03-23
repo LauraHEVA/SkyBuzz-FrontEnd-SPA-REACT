@@ -2,40 +2,31 @@ import { BuzzProps } from "../../types/buzzInterfaces";
 import {
   ContainerUserNames,
   ListItem,
-  ListUlHorizontal,
 } from "../../styles/globalStyledComponents";
-
-import CommentIcon from "../CommentIcon/CommentIcon";
-import HeartIcon from "../HeartIcon/HeartIcon";
-import TrashIcon from "../TrashIcon/TrashIcon";
 import {
-  ContainerSuperior,
   MessageContainer,
   ProfileCircle,
   ProfileContainer,
   TextAuthor,
   TextTopic,
   TextTimeAgo,
-  NumDataIcons,
   TextBuzzDetail,
   TextAuthorNormal,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
-import { UserData } from "../../types/userInterfaces";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { breakpointXS, greyLight } from "../../styles/globalStyles";
 import BuzzComment from "../BuzzComment/BuzzComment";
 import { loadDetailBuzzThunk } from "../../redux/thunks/buzzsThunk";
 import { useEffect } from "react";
+import BuzzInfoBottom from "../BuzzInfoBottom/BuzzInfoBottom";
 
 const BuzzDetail = ({
   buzz,
   onClickTrash,
   onClickHeart,
 }: BuzzProps): JSX.Element => {
-  const user: UserData = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -64,32 +55,12 @@ const BuzzDetail = ({
         </InfoAuthorContainer>
         <MessageContainer>
           <TextBuzzDetail>{buzz.text}</TextBuzzDetail>
-          <ContainerSuperior></ContainerSuperior>
           <TextTopic>#{buzz.topic}</TextTopic>
-          <ListUlHorizontal>
-            <ListItem>
-              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
-              <CommentIcon />
-            </ListItem>
-            {user.loggedIn ? (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon onClick={onClickHeart} />
-                </ListItem>
-                <ListItem>
-                  <TrashIcon onClick={onClickTrash} />
-                </ListItem>
-              </>
-            ) : (
-              <>
-                <ListItem>
-                  <NumDataIcons>{buzz.likes}</NumDataIcons>
-                  <HeartIcon />
-                </ListItem>
-              </>
-            )}
-          </ListUlHorizontal>
+          <BuzzInfoBottom
+            buzz={buzz}
+            onClickHeart={onClickHeart}
+            onClickTrash={onClickTrash}
+          />
         </MessageContainer>
       </BuzzCardDetailContainer>
       {buzz.comments.length ? (
