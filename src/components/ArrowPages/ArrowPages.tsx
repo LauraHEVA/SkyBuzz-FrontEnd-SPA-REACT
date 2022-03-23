@@ -12,6 +12,7 @@ const ArrowPages = ({
   return (
     <ArrowPagesBtn onClick={actionOnClick} disabled={disabled}>
       <FontAwesomeIcon
+        title="pageArrow"
         data-testid="pageArrow"
         icon={showSide ? faAngleLeft : faAngleRight}
         size="2x"

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
-import FormNewBuzz from "./FormNewBuzz";
+import FormComment from "./FormComment";
 
 const mockNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -11,15 +11,15 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe("Given a FormNewBuzz component", () => {
+describe("Given a FormComment component", () => {
   describe("When it's rendered", () => {
     test("It should display a button with the text 'Buzz It!", () => {
-      const textButton = "Buzz It!";
+      const textButton = "Comment";
 
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <FormNewBuzz />
+            <FormComment />
           </Provider>
         </BrowserRouter>
       );
@@ -33,7 +33,7 @@ describe("Given a FormNewBuzz component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <FormNewBuzz />
+            <FormComment />
           </Provider>
         </BrowserRouter>
       );
@@ -48,14 +48,14 @@ describe("Given a FormNewBuzz component", () => {
       expect(textboxFounded).toHaveValue("Some great message");
 
       const buttonFounded = screen.getByRole("button");
-      userEvent.click(buttonFounded);
+      expect(buttonFounded).toBeInTheDocument();
     });
 
     test("It should display a form with an options to select", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <FormNewBuzz />
+            <FormComment />
           </Provider>
         </BrowserRouter>
       );
