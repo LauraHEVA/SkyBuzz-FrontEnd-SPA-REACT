@@ -115,16 +115,14 @@ export const handlers = [
             buzzs: [],
             name: "Laura",
             username: "Laura0",
-            password:
-              "$2b$10$dMTNK.KOdxL0WAa5v57J4eaRc/1HUGSmr5KSPC4PT17z.HqIOtoHK",
+            password: "1234",
             id: "623245decaa7d69f96f10a95",
           },
           {
             buzzs: [],
             name: "Luis",
             username: "Luis0",
-            password:
-              "$2b$10$BPQhi4DUZ6S0uVyHFkcB.OouOgGfrtSGEBtMchaME1mgQVSj9W8.u",
+            password: "1234",
             id: "623392bccaa7d69f96f10aa2",
           },
         ],
