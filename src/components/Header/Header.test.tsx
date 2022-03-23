@@ -41,9 +41,9 @@ describe("Given a Header Component", () => {
         </Provider>
       );
 
-      const foundLink = screen.getByRole("link", { name: text });
+      const linkFounded = screen.getByRole("link", { name: text });
 
-      expect(foundLink).toBeInTheDocument();
+      expect(linkFounded).toBeInTheDocument();
     });
   });
 
