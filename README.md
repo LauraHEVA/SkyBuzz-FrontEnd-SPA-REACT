@@ -11,6 +11,7 @@ This project was developed by [https://github.com/LauraHEVA](Laura Hernández), 
 
 `Frontend` : React | Typescript | Redux | Styled-components | Jest | Cypress
 `Backend` : NodeJS | ExpressJS | MongoDB | Mongoose | JWT | Jest
+`Other` : Figma | Postman | Husky | SonarQube | Trello (Agile methodology board)
 
 ## Available Scripts
 
