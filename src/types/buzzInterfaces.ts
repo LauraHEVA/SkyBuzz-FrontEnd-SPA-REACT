@@ -27,6 +27,7 @@ export interface BuzzCommentInterface extends BuzzBasic {
   date: string;
   id: string;
   author: Author;
+  comments: BuzzCommentInterface[];
 }
 
 export interface BuzzCommentProps {
