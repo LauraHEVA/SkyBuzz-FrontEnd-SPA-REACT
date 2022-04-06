@@ -67,6 +67,7 @@ describe("Given BuzzDetail Component", () => {
             likes: 0,
             date: "2022-03-21T23:40:07.555Z",
             id: "62390cd7815f7c4c0b411f6f",
+            comments: [],
           },
         ],
         author: {

@@ -14,6 +14,7 @@ import {
   TextTopic,
   TextTimeAgo,
   BuzzCardContainer,
+  NumDataIcons,
 } from "../../styles/buzzComponentStyles";
 import ReactTimeAgo from "react-time-ago";
 import { useNavigate } from "react-router-dom";
@@ -44,6 +45,7 @@ const BuzzComment = ({ buzz }: BuzzCommentProps | BuzzProps): JSX.Element => {
           <TextTopic>#{buzz.topic}</TextTopic>
           <ListUlHorizontal>
             <ListItem>
+              <NumDataIcons>{buzz.comments.length}</NumDataIcons>
               <CommentIcon />
             </ListItem>
           </ListUlHorizontal>

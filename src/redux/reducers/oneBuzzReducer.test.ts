@@ -161,6 +161,7 @@ describe("Given a oneBuzzReducer function", () => {
             likes: 1,
             id: "idinvented",
             topic: "general",
+            comments: [],
             text: "pero a ver, muchachada, display: none existe y tiene sus casos de uso",
           },
         ],
