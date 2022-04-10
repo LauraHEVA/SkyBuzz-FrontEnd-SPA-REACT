@@ -142,6 +142,7 @@ describe("Given a oneBuzzReducer function", () => {
         date: "2022-03-20T23:48:53.316+00:00",
         likes: 1,
         id: "idinvented",
+        comments: [],
         topic: "general",
         text: "pero a ver, muchachada, display: none existe y tiene sus casos de uso",
       };
