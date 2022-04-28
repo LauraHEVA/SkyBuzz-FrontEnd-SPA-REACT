@@ -22,7 +22,7 @@ This project was developed by [Laura Hernández](https://github.com/LauraHEVA), 
 This is a PWA (Progressive Web App).
 You can download the App following this steps:
 
-1. Open the [web app](https://skybuzz-laura-hernandez.netlify.app/) in your browser.
+1. Open the [web app](https://skybuzz-laurahv-v2.netlify.app/) in your browser.
 2. Click on an install button in the address bar.
 3. The App will be installed into your device.
 
